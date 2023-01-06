@@ -7,7 +7,7 @@ on:
       - development
 
 jobs:
-  versioning:
+  compile:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,7 +17,7 @@ jobs:
       - name: compile
         uses: dante-ev/latex-action@latest
         with:
-          root_file: report.tex
+          root_file: thesis.tex
           args: -pdf -shell-escape -latexoption=-file-line-error -latexoption=-interaction=nonstopmode
       - name: versioning
         id: versioning
