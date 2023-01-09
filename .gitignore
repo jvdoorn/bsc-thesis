@@ -300,5 +300,8 @@ TSWLatexianTemp*
 # Uncomment the next line to have this generated file ignored.
 #*Notes.bib
 
+# Ignore .DS_Store file from macOS.
+.DS_Store
+
 # Ignore main output file.
 thesis.pdf
