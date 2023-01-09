@@ -114,7 +114,7 @@
 % 10-01-2014 adding the numbers option to natbib seems to avoid the following:
 %            'natbib error bibliography not compatible with author-year citations'
 %            thanks to http://tex.stackexchange.com/questions/54480
-\RequirePackage[square,comma,sort&compress,numbers]{natbib}
+%\RequirePackage[square,comma,sort&compress,numbers]{natbib}
 
 % 10-04-2014 added input encoding. Thanks to Merlijn van Deen
 %           This allows to use non-ascii input character, e.g. � instead of \"o

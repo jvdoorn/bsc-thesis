@@ -1,2 +1,9 @@
+% !TEX root = thesis.tex
+
+% Use siunitx to write out units and quantities, use special formatting for the units.
 \usepackage{siunitx}
 \sisetup{separate-uncertainty = true, multi-part-units = single, inter-unit-product = \ensuremath { { } \cdot { } }}
+
+% Setup bibliography (instead of relying on the way lion-msc does it using natbib).
+\usepackage[backend=biber, style=phys, biblabel=brackets]{biblatex}
+\addbibresource{sources.bib}
