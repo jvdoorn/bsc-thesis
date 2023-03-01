@@ -7,3 +7,36 @@
 % Setup bibliography (instead of relying on the way lion-msc does it using natbib).
 \usepackage[backend=biber, style=phys, biblabel=brackets]{biblatex}
 \addbibresource{sources.bib}
+
+% Use circuitikz for drawing circuits.
+\usepackage{circuitikz}
+% Define a symbol for Josephson junctions based on https://github.com/circuitikz/circuitikz/blob/ff0ccf13b25d9fd73fb8715fb3124018f0bce1e2/tex/pgfcircbipoles.tex#L6915-L6942.
+\makeatletter
+\pgfcircdeclarebipolescaled{misc}
+{}
+{\ctikzvalof{bipoles/barrier/height}}
+{josephsonjunction}
+{\ctikzvalof{bipoles/barrier/height}}
+{\ctikzvalof{bipoles/barrier/width}}
+{
+    % this is set with normal wire linewidth
+    \pgfpathmoveto{\pgfpoint{\pgf@circ@res@left}{0pt}}
+    \pgfpathlineto{\pgfpoint{0*\pgf@circ@res@left}{0pt}}
+    \pgfpathmoveto{\pgfpoint{\pgf@circ@res@right}{0pt}}
+    \pgfpathlineto{\pgfpoint{0*\pgf@circ@res@right}{0pt}}
+    \pgfusepath{draw}
+
+    % do the cross part
+    \pgf@circ@setlinewidth{bipoles}{\pgfstartlinewidth}
+
+    \pgfpathmoveto{\pgfpoint{0.35*\pgf@circ@res@left}{0.35*\pgf@circ@res@up}}
+    \pgfpathlineto{\pgfpoint{0.35*\pgf@circ@res@right}{0.35*\pgf@circ@res@down}}
+    \pgfpathmoveto{\pgfpoint{0.35*\pgf@circ@res@left}{0.35*\pgf@circ@res@down}}
+    \pgfpathlineto{\pgfpoint{0.35*\pgf@circ@res@right}{0.35*\pgf@circ@res@up}}
+
+    \pgfusepath{draw}
+}
+
+\def\pgf@circ@josephsonjunction@path#1{\pgf@circ@bipole@path{josephsonjunction}{#1}}
+\compattikzset{josephsonjunction/.style = {\circuitikzbasekey, /tikz/to path=\pgf@circ@josephsonjunction@path, label=#1}}
+\makeatother
