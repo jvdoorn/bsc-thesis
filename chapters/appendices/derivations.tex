@@ -1,0 +1,46 @@
+% !TEX root = ../../thesis.tex
+\section{Phase-flux relation}
+\label{app:phase-flux-relation}
+We can write the magnetic field $\vec{B}$ as the curl of the magnetic vector potential $\vec{A}$. This allows us to rewrite the magnetic flux through the superconducting loop containing our junction in terms $\vec{A}$.
+\begin{align}
+	\Phi = \oiint \vec{B} \cdot d\vec{a} = \oiint \left(\nabla \times \vec{A}\right) \cdot d\vec{a} = \oint \vec{A} \cdot d\vec{l}
+\end{align}
+The closed integral over $\vec{A}$ can be any path enclosing the hole in the superconductor. It consists of two pieces, namely the junction and the rest of the loop.
+\begin{align}
+	\Phi = \int_{\text{JJ}} \vec{A} \cdot d\vec{l} + \int_{\text{loop}} \vec{A} \cdot d\vec{l}
+	\label{eqn:magnetic-potential-integral}
+\end{align}
+For the integral over the junction we will use make use of the gauge-invariant phase (see Eq. \ref{eqn:gauge-invariant-phase}).
+\begin{align}
+	\gamma = \Delta\phi_{\text{JJ}} - \frac{2\pi}{\Phi_0}\int_{\text{JJ}}\vec{A} \cdot d\vec{l} \Rightarrow \int_{\text{JJ}}\vec{A} \cdot d\vec{l} = \frac{\Phi_0}{2\pi} \left(\Delta\phi_{\text{JJ}} - \gamma\right)
+\end{align}
+For the integral over the rest of the loop we will make use of the superfluid velocity\footnote{See \citetitle{tinkhamIntroductionSuperconductivity} equation 4.9, the equation has been converted to SI units.}:
+\begin{equation}
+	m^*\vec{v} = 2m_e\vec{v} = \hbar \nabla \varphi - \frac{e^*\vec{A}}{c} \stackrel{\text{SI}}{=} \hbar \nabla \varphi + 2e\vec{A}
+	\label{eqn:superfluid-velocity}
+\end{equation}
+It allows us to rewrite:
+\begin{align}
+	\vec{A} = \frac{1}{2e}\left(\hbar \nabla \phi_{\text{loop}} - 2m_e\vec{v}\right)
+\end{align}
+We can substitute $\vec{v}$ with a more useable expression in terms of the current density $\vec{J}$ and $\lambda$ using Eq. \ref{eqn:london-penetration-depth}.
+\begin{align}
+	\vec{J} = -2e|\psi|^2\vec{v} = -\frac{m_e}{\lambda^2e\mu_0}\vec{v} \Rightarrow \vec{v} = -\frac{\lambda^2e\mu_0}{m_e}\vec{J}
+\end{align}
+Combining the two equations gives us a useable expression for $\vec{A}$ in the loop:
+\begin{align}
+	\vec{A} &= \frac{1}{2e}\left(\hbar \nabla \phi_{\text{loop}} + 2\lambda^2e\mu_0\vec{J} \right) \nonumber \\
+	&= \frac{\Phi_0}{2\pi} \nabla \phi_{\text{loop}} + \lambda^2\mu_0\vec{J}
+\end{align}
+We can now go back to Eq. \ref{eqn:magnetic-potential-integral}:
+\begin{align}
+	\Phi &= \underbrace{\frac{\Phi_0}{2\pi} \left(\gamma - \Delta\phi_{\text{JJ}}\right)}_{\int_{\text{JJ}}\vec{A} \cdot d\vec{l}} \underbrace{- \frac{\Phi_0}{2\pi}\Delta \phi_{\text{loop}} - \lambda^2\mu_0 \int \vec{J}\cdot d \vec{l}}_{\int_{\text{loop}}\vec{A}\cdot d\vec{l}} \nonumber \\
+	&= \frac{\Phi_0}{2\pi} \left(\gamma - \underbrace{\left(\Delta\phi_{\text{JJ}} + \Delta\phi_{\text{loop}}\right)}_{\text{Multiple of } 2\pi} \right) - \lambda^2\mu_0 \int \vec{J}\cdot d \vec{l}
+\end{align}
+The phase must wind by a multiple of $2\pi$ to make sure that the wave function is uniquely defined at each point. Using this fact and the quantization of $\Phi$ in units of $\Phi_0$ we find:
+\begin{align}
+	\Phi &= \left(\frac{\Phi_0}{2\pi}\gamma - \lambda^2\mu_0 \int \vec{J}\cdot d \vec{l} \right) \mod \Phi_0 \\ 
+	% \Rightarrow \gamma &= -\left(\frac{2\pi\Phi}{\Phi_0} + \frac{2\pi\lambda^2\mu_0}{\Phi_0} \int \vec{J}\cdot d \vec{l} \right) \mod 2\pi \\
+	\gamma &= \frac{2\pi}{\Phi_0}\left(\Phi + \lambda^2\mu_0 \int \vec{J}\cdot d \vec{l} \right)
+	\label{eqn:phase-flux-relation}
+\end{align}

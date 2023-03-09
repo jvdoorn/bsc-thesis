@@ -40,3 +40,9 @@
 \def\pgf@circ@josephsonjunction@path#1{\pgf@circ@bipole@path{josephsonjunction}{#1}}
 \compattikzset{josephsonjunction/.style = {\circuitikzbasekey, /tikz/to path=\pgf@circ@josephsonjunction@path, label=#1}}
 \makeatother
+
+% Let footnotes use numbers instead of symbols.
+\renewcommand{\thefootnote}{\arabic{footnote}}
+
+% For double closed integrals among others.
+\usepackage{esint}

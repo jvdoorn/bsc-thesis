@@ -1,0 +1,25 @@
+% !TEX root = ../../thesis.tex
+\begin{figure}
+	\centering
+	\begin{circuitikz}
+		% Main loop with single Josephson Junction (openbarrier) and an inductor for clarity.
+		\draw (0,0) to [short, *-, i=$I_t$] (2,0)
+		to [josephsonjunction, i=$I_s$, l_=$J$] (2, -2)
+		to [short, -*, i=$I_t$] (0, -2);
+		\draw (2,0) to [short, i=$I_l$] (4, 0)
+		to [inductor, l_=$L_l$] (4, -2)
+		to [short] (2, -2);
+
+		% Secondary loop with a dc-SQUID.
+		\draw (5, 0) to [josephsonjunction] (7, 0)
+		to [short] (7, -2)
+		to [josephsonjunction] (5, -2)
+		to [inductor, l_=$L_s$] (5, 0);
+
+		% Annotate flux through the loops
+		\node[] at (3,-1) {$\Phi_l$};
+		\node[] at (6,-1) {$\Phi_s$};
+	\end{circuitikz}
+
+	\caption{Schematic depiction of the system. The left loop is inductively coupled to the dc-SQUID on the right. This is illustrated by $L_l$ and $L_s$. The current $I_t$ is controlled externally. The flux through the two loops is denoted by $\Phi_l$ and $\Phi_s$. The junction whose CPR we want to measure is part of the left loop.}
+\end{figure}
