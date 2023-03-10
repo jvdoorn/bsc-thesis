@@ -1,6 +1,6 @@
 % !TEX root = ../../thesis.tex
 \section{Phase-flux relation}
-\label{app:phase-flux-relation}
+\label{app:derivation-phase-flux-relation}
 We can write the magnetic field $\vec{B}$ as the curl of the magnetic vector potential $\vec{A}$. This allows us to rewrite the magnetic flux through the superconducting loop containing our junction in terms $\vec{A}$.
 \begin{align}
 	\Phi = \oiint \vec{B} \cdot d\vec{a} = \oiint \left(\nabla \times \vec{A}\right) \cdot d\vec{a} = \oint \vec{A} \cdot d\vec{l}
@@ -42,5 +42,21 @@ The phase must wind by a multiple of $2\pi$ to make sure that the wave function 
 	\Phi &= \left(\frac{\Phi_0}{2\pi}\gamma - \lambda^2\mu_0 \int \vec{J}\cdot d \vec{l} \right) \mod \Phi_0 \\ 
 	% \Rightarrow \gamma &= -\left(\frac{2\pi\Phi}{\Phi_0} + \frac{2\pi\lambda^2\mu_0}{\Phi_0} \int \vec{J}\cdot d \vec{l} \right) \mod 2\pi \\
 	\gamma &= \frac{2\pi}{\Phi_0}\left(\Phi + \lambda^2\mu_0 \int \vec{J}\cdot d \vec{l} \right)
-	\label{eqn:phase-flux-relation}
 \end{align}
+
+\section{Geometric factor $\tilde{j}$}
+\label{app:derivation-geometric-factor-j}
+The goal of this appendix section is to derive how to calculate $\tilde{j}$. In a rectangular thin film superconductor with thickness (height) $d$ on the order of $\lambda$ and width $w > \lambda$ such that $wd \gg \lambda$ then the current density a distance $x$ from the centre is given by\cite{rhoderickCurrentDistributionThin1962}:
+\begin{equation}
+	J(x) = \begin{cases}
+		\frac{J(0)}{\sqrt{1 - \left(\frac{2x}{w}\right)^2}} & 0 \leq x \leq \frac{\lambda^2}{2d} \\
+		\frac{J(w/2)}{\exp\left(d\frac{w/2 - x}{\lambda^2} \right)} & \frac{\lambda^2}{2d} < x \leq w/2
+	\end{cases}
+\end{equation}
+We can find the value for $J(w/2)$ by stitching the two solutions together at $x = \frac{\lambda^2}{2d}$. To find $\tilde{j}$ we take the integral from $0$ to $w/2$ over $J(x)$. Multiplying by the height $d$ gives us the current through the thin film. This is proportional to $J(0)$ and invites us to define $J(0) = \tilde{j}I$ where $I$ is the total current. 
+\begin{align}
+	I &= J(0) / \tilde{j} = 2d \int_0^{w/2} J(x)dx \nonumber \\
+	\tilde{j} &= \frac{J(0)}{2d \int_0^{w/2} J(x)dx}
+	\label{eqn:geometric-factor-j}
+\end{align}
+Since the integral is proportional to $J(0)$ the end result for $\tilde{j}$ only depends on the geometries of the sample and not the current $I$. This also means that the result for $\tilde{j}$ is valid for all currents. This integral quite possibly has an analytical solution, however we used SciPy to perform the integration numerically.

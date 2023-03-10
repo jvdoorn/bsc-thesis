@@ -1,10 +1,15 @@
 % !TEX root = ../../thesis.tex
+% Method largely based on Frolov 2004.
+% Uses a superconducting loop with a junction inductively coupled to a dc-SQUID magnetometer
+
+Our method is mostly inspired by \Citeauthor{frolovMeasurementCurrentPhaseRelation2004} \citeyear{frolovMeasurementCurrentPhaseRelation2004}. We incorporate the junction whose CPR we want to measure into a superconducting loop. This loop is then inductively coupled to a dc-SQUID magnetometer. See Fig. \ref{fig:schematic-setup} for a schematic of the setup. This chapter will outline the ideas behind the setup and provide arguments for the chosen geometries.
+
 \begin{figure}
 	\centering
 	\begin{circuitikz}
 		% Main loop with single Josephson Junction (openbarrier) and an inductor for clarity.
 		\draw (0,0) to [short, *-, i=$I_t$] (2,0)
-		to [josephsonjunction, i=$I_s$, l_=$J$] (2, -2)
+		to [josephsonjunction, i=$I_s$, l_=$JJ$] (2, -2)
 		to [short, -*, i=$I_t$] (0, -2);
 		\draw (2,0) to [short, i=$I_l$] (4, 0)
 		to [inductor, l_=$L_l$] (4, -2)
@@ -21,5 +26,50 @@
 		\node[] at (6,-1) {$\Phi_s$};
 	\end{circuitikz}
 
-	\caption{Schematic depiction of the system. The left loop is inductively coupled to the dc-SQUID on the right. This is illustrated by $L_l$ and $L_s$. The current $I_t$ is controlled externally. The flux through the two loops is denoted by $\Phi_l$ and $\Phi_s$. The junction whose CPR we want to measure is part of the left loop.}
+	\caption{Schematic depiction of the system. The left loop is inductively coupled to the dc-SQUID on the right. This is illustrated by $L_l$ and $L_s$. The junction itself has an inductance $L_{JJ}$. The current $I_t$ is controlled externally. The flux through the two loops is denoted by $\Phi_l$ and $\Phi_s$. The junction whose CPR we want to measure is part of the left loop. Please note that the 4 contacts used for the dc-SQUID readout are not shown.}
+	\label{fig:schematic-setup}
 \end{figure}
+
+\section{Relation between flux and phase}
+Using flux quantization and the gauge-invariant phase we can derive a relation between the flux $\Phi_l$ and $\gamma$. For details please see Section \ref{app:derivation-phase-flux-relation}.
+\begin{equation}
+	\gamma = \frac{2\pi}{\Phi_0}\left(\Phi_l + \lambda^2\mu_0 \int \vec{J}\cdot d \vec{l} \right)
+	\label{eqn:phase-flux-relation}
+\end{equation}
+We can express $\Phi_l$ in terms of $I_s$ and $I_l$:
+\begin{equation}
+	\Phi_l = I_sL_{JJ}  + I_lL_l
+\end{equation}
+Where $L_{JJ}$ and $L_l$ are the inductances of the Josephson junction and loop respectively\footnote{This is not the so called Josephson inductance but purely a magnetic inductance and not a kinetic inductance.}.
+
+\subsection{Figure of merit}
+In order for $\gamma$ to be proportional to $\Phi_l$ the second term must be negligible in Eq. \ref{eqn:phase-flux-relation}. We define a figure of merit $\delta$ which we require to be $\ll 1$.
+\begin{equation}
+	\delta = \frac{\lambda^2\mu_0 \int \vec{J}\cdot d \vec{l}}{\Phi_l}
+\end{equation}
+We will assume that $L_{JJ} \ll L_l$ such that $\Phi_l \approx I_lL_l$. By approximating the loop containing the junction as a perfect loop with radius $r$, thickness (height) $d$ and width $w$ the approximate inductance is given by\cite{eewebCoilInductanceCalculator}:
+\begin{equation}
+	L_l \approx \mu_0 r \left( \ln\left(\frac{16r}{w}\right) - 2\right)
+	\label{eq:loop-inductance}
+\end{equation}
+We can furthermore rewrite $\int \vec{J} \cdot d \vec{l} \approx 2\pi r I_l \tilde{j}$ with $\tilde{j} = \tilde{j}(d, w, \lambda)$ a geometric factor in \unit{\per\square\meter}. We thus obtain our final figure of merit:
+\begin{equation}
+	\delta \approx \frac{2\pi \lambda^2 \tilde{j}}{\ln\left(\frac{16r}{w}\right) - 2}
+	\label{eqn:figure-of-merit}
+\end{equation}
+The value of $\tilde{j}$ can be calculated numerically and details can be found in Section \ref{app:derivation-geometric-factor-j}.
+
+\subsection{Magnetic coupling}
+There is not a $1:1$ relation between $\Phi_l$ and $\Phi_s$. We can calculate the mutual inductance between the two numerically. To do so we calculate the magnetic field created by a current through the junction loop and determining the magnetic flux through the dc-SQUID loop. This gives us the mutual inductance $M$. We define the coupling factor $\kappa$ such that:
+\begin{equation}
+	M = \kappa \sqrt{L_lL_s}
+\end{equation}
+Here we again assume that $L_{JJ} \ll L_l$. We now see that the magnetic fluxes are connected through the following relation:
+\begin{equation}
+	\Phi_l = \kappa \sqrt{\frac{L_l}{L_s}}\Phi_s \Leftrightarrow \Phi_s = \kappa \sqrt{\frac{L_s}{L_l}}\Phi_l
+\end{equation}
+This is a naive approach that does not take into account the possibility of magnetic lensing\cite{prigozhin3DSimulationSuperconducting2018}. Thus $\kappa$ is a `minimal' coupling between the two. As long as $\kappa$ is sufficiently large enough our method should work.
+
+% Relation between flux and phase
+% Figure of merit
+% Magnetic coupling
