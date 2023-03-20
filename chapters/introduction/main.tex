@@ -1,0 +1,54 @@
+% !TEX root = ../../thesis.tex
+TODO: reference to SRO rings, explain that our method will provide the possibility to measure its CPR and thus determine which theory is correct as multiple theories say something else.
+
+\section{Superconductors}
+The most well known property of superconductors are their perfect conductivity\footnote{Discovered by H.K. Onnes in 1911.}. Later it was discovered that they are also a perfect diamagnet and expel magnetic fields\footnote{Discovered by W. Meissner and R. Ochsenfeld in 1933.}. A microscopic description of the effect is given by Bardeen, Cooper and Schieffer (BCS theory) and phenomenologically by the Ginzburg-Landau theory\cite{tinkhamIntroductionSuperconductivity}. This section will highlight the relevant parts of these theories for our research.
+
+BCS theory describes the formation of Cooper pairs. These form from an attractive interaction that overcomes the Coulomb repulsion between two electrons\cite{bardeenTheorySuperconductivity1957}. Electrons have half-integer spin, which means a Cooper pair, consisting of two electrons, has integer spin. Hence Cooper pairs are bosons.
+
+Bosons, contrary to fermions, can occupy the same quantum state. At low temperatures bosons can condense into a condensate. That  means that Cooper pairs too can form a condensate. All bosons in the condensate are described by the same wavefunction\footnote{This is by definition the case.}.
+\begin{equation}
+	\Psi = \left|\Psi\right| \exp(i\phi)
+	\label{eqn:GL-wavefunction}
+\end{equation}
+Both $\left|\Psi\right|$ and $\phi$ are functions of position. The behaviour of this wave function is described by the Ginzburg-Landau theory. In this theory we can view $|\Psi|^2$ as the density of Cooper pairs (units of \unit{\per\cubic\meter}). The gradient in $\phi$ causes a supercurrent to flow, it will become important for the current-phase relation introduced in Sec. \ref{sec:josephson-effect}.
+
+\subsection{Meissner effect}
+As mentioned before, superconductors expel magnetic fields\footnote{This is true for bulk superconductors.}. They do so by creating a screening current on the outside of the superconductor. The associated length scale for how deep those screen currents occur in the material is the so called London penetration depth\footnote{See \citetitle{tinkhamIntroductionSuperconductivity} equation 4.8, the equation has been converted to SI units, $|\psi|^2$ has units of \unit{\per\cubic\meter}.}\cite{tinkhamIntroductionSuperconductivity}:
+% - Superconductors expell magnetic field
+% - Explained by London equations
+% - Give rise to London penetration depth
+\begin{align}
+	\lambda &= \lambda (T) = \lambda(0) \left(1 - \left(\frac{T}{T_c}\right)^4\right)^{-1/2} \nonumber \\
+	\lambda(0) &= \sqrt{\frac{m^*c^2}{4\pi|\psi|^2e^{*2}}} \stackrel{\text{SI}}{=} \sqrt{\frac{m_e}{2|\psi|^2e^2\mu_0}}
+	\label{eqn:london-penetration-depth}
+\end{align}
+That means that if a superconductor is thick enough that there will be no current in the interior. This will become important later on when we integrate a current over a path enclosing a hole in a superconductor. Under the right circumstances this current (almost) vanishes and we can neglect the integral.
+
+\section{Josephson effect}
+\label{sec:josephson-effect}
+When two superconductors are separated by a (thin) barrier\footnote{This can be an insulator, normal metal, different superconductor or a constriction.} a supercurrent can flow between them. Josephson showed in 1962 that for two superconductors separated by an insulator the current is given by\cite{tinkhamIntroductionSuperconductivity}:
+\begin{equation}
+	I_s = I_c \sin(\Delta \phi)
+\end{equation}
+Where $\Delta \phi$ is the difference in phase between the two condensates as described by Ginzburg-Landau theory, see Eq. \ref{eqn:GL-wavefunction}. Furthermore $I_c$ is the critical current which is a junction property. This equation is generally known as the first Josephson equation. The relation between $I_s$ and the phase difference is the current-phase relation. In general this does not have to be purely sinusoidal\cite{golubovCurrentphaseRelationJosephson2004a}.
+
+In the more general case we first define the gauge invariant phase\footnote{See \citetitle{tinkhamIntroductionSuperconductivity} equation 6.11, this equation is valid in both Gaussian and SI units, this is because the conversion factor for $\Phi_0$ cancels with the conversion factor for $\vec{A}$.}:
+\begin{equation}
+	\gamma = \Delta \varphi - \frac{2\pi}{\Phi_0}\int \vec{A} \cdot d\vec{l}
+	\label{eqn:gauge-invariant-phase}
+\end{equation}
+We are required to do so as $\Delta \phi$ is not uniquely determined for a given physical situation whilst $I_s$ is\cite{tinkhamIntroductionSuperconductivity}. It simply transforms $I_c \sin(\Delta \phi) \to I_c \sin(\gamma)$. To now generalize our current-phase relation we write:
+\begin{equation}
+	I_s = I_c f(\gamma)
+\end{equation}
+Here we have defined $f(\gamma)$ which is the current-phase relation. In general it has the following properties\cite{golubovCurrentphaseRelationJosephson2004a}:
+\begin{equation}
+	f(\gamma) = f(\gamma + 2\pi) \quad f(\gamma) = -f(-\gamma) \quad f(2\pi n) = f(\pi m) = 0
+\end{equation}
+With $m,n \in \mathcal{N}$.
+
+\section{dc-SQUID magnetometers}
+% - Basic description of what they are
+% - Basic explanation how they can be used to measure magnetic fields
+TODO

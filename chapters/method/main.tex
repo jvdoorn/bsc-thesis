@@ -43,6 +43,7 @@ We can express $\Phi_l$ in terms of $I_s$ and $I_l$:
 Where $L_{JJ}$ and $L_l$ are the inductances of the Josephson junction and loop respectively\footnote{This is not the so called Josephson inductance but purely a magnetic inductance and not a kinetic inductance.}.
 
 \subsection{Figure of merit}
+\label{sec:figure-of-merit}
 In order for $\gamma$ to be proportional to $\Phi_l$ the second term must be negligible in Eq. \ref{eqn:phase-flux-relation}. We define a figure of merit $\delta$ which we require to be $\ll 1$.
 \begin{equation}
 	\delta = \frac{\lambda^2\mu_0 \int \vec{J}\cdot d \vec{l}}{\Phi_l}
@@ -60,6 +61,7 @@ We can furthermore rewrite $\int \vec{J} \cdot d \vec{l} \approx 2\pi r I_l \til
 The value of $\tilde{j}$ can be calculated numerically and details can be found in Section \ref{app:derivation-geometric-factor-j}.
 
 \subsection{Magnetic coupling}
+\label{sec:magnetic-coupling}
 There is not a $1:1$ relation between $\Phi_l$ and $\Phi_s$. We can calculate the mutual inductance between the two numerically. To do so we calculate the magnetic field created by a current through the junction loop and determining the magnetic flux through the dc-SQUID loop. This gives us the mutual inductance $M$. We define the coupling factor $\kappa$ such that:
 \begin{equation}
 	M = \kappa \sqrt{L_lL_s}
@@ -70,6 +72,60 @@ Here we again assume that $L_{JJ} \ll L_l$. We now see that the magnetic fluxes 
 \end{equation}
 This is a naive approach that does not take into account the possibility of magnetic lensing\cite{prigozhin3DSimulationSuperconducting2018}. Thus $\kappa$ is a `minimal' coupling between the two. As long as $\kappa$ is sufficiently large enough our method should work.
 
-% Relation between flux and phase
-% Figure of merit
-% Magnetic coupling
+\section{Sample geometries}
+Our method will make use of constriction junctions (ScS)\footnote{Also called a Dayem bridge, see \citeauthor{likharevSuperconductingWeakLinks1979} \citeyear{likharevSuperconductingWeakLinks1979}.} as these are fairly easy to construct. Following our figure of merit in Eq. \ref{eqn:figure-of-merit}, we benefit from a small London penetration depth. The size of our junction is determined by the value of $\xi$ and should be on the order of $3\xi$\cite{likharevSuperconductingWeakLinks1979} to make a single-valued CPR. Based on this and the available superconductors we have chosen for \ce{Nb}\footnote{$\lambda = \qty{39}{\nano\meter}$, $\xi = \qty{38}{\nano\meter}$ and $T_c \approx \qty{7.5}{\kelvin}$. Characteristic lengths attributed to R. Meservey and B. B. Schwartz and critical temperature based on measurements on a \ce{Nb}-thin film in our own lab.}. See Tab. \ref{tab:target-geometries} for the used geometries. For our calculations we used a thickness (height) of \qty{100}{\nano\meter} and a spacing between the two loops of \qty{200}{\nano\meter}. See Tab. \ref{tab:estimated-factors} for the results of the calculations.
+
+\begin{table}
+	\centering
+	\begin{tabular}{@{}lrr@{}}
+		\toprule
+		Loop & Inner diameter [\unit{\micro\meter}] &  Outer diameter [\unit{\micro\meter}] \\ \midrule
+		main  & 1.40  & 2.00 \\
+		dc-SQUID & 1.15 & 1.38 \\
+		\bottomrule
+	\end{tabular}
+	\caption{Geometries used in the calculation of the figure of merit and coupling factor. The geometries of the dc-SQUID are based on earlier work by \citeauthor{rogSQUIDontipMagneticMicroscopy2022} \citeyear{rogSQUIDontipMagneticMicroscopy2022}.}
+	\label{tab:target-geometries}
+\end{table}
+
+\begin{table}
+	\centering
+	\begin{tabular}{@{}lr@{}}
+		\toprule
+		Parameter & Value \\
+		\midrule
+		mutual inductance ($M$) & \qty{-6.834e-02}{\pico\henry} \\
+		main loop inductance ($L_l$) & \qty{1.938e+00}{\pico\henry} \\
+		dc-SQUID inductance ($L_s$) & \qty{1.969e+00}{\pico\henry} \\
+		coupling constant ($\kappa$) & -0.035 \\
+		figure of merit ($\delta$) & 0.00015 \\
+		\bottomrule
+	\end{tabular}
+	\caption{Estimated parameters of the system based on the geometries in Tab. \ref{tab:target-geometries} and using a thickness (height) of \qty{100}{\nano\meter} and a spacing between the two loops of \qty{200}{\nano\meter}.}
+	\label{tab:estimated-factors}
+\end{table}
+
+\subsection{Sample fabrication}
+The course structures such as contact pads are created using lithography. We use dc-sputtering to deposit a \qty{\pm 90}{\nano\meter} layer of \ce{Nb} on top of a resist coated \ce{Si} wafer. As \ce{Nb} is very sensitive to contamination we additionally cap it using dc-sputtered \qty{7}{\nano\meter} layer of \ce{Au}.
+
+The junctions and loops are created by a focussed ion beam (FIB) that etches away the layers of \ce{Nb} and \ce{Au}. The advantage of this method over creating these fine structures using lithography is the higher resolution of the FIB and less contamination of the \ce{Nb} from the resist.
+
+The junction type we use is a constriction junction. The relevant parameter is $\xi$. By choosing the width of the constriction on the order of $3\xi$ we can control the junction behaviour due to the temperature dependence of $\xi$\cite{tinkhamIntroductionSuperconductivity}. Details on the sample geometries will be given on a per sample basis in later sections as these are highly dependent on alignments and drift.
+
+\section{Analysis method}
+Our method requires little to no analysis, which immediately highlights one of the benefits of this method. This section mainly recaps how to retrieve the CPR, $f(\gamma)$, from the measured quantities $I_t$ (which is controlled in the experiment) and $\Phi_s$.
+
+Starting from our Eq. \ref{eqn:phase-flux-relation}, the expression for $\Phi_l$ and applying Ohms laws to the circuit in Fig. \ref{fig:schematic-setup} we have:
+\begin{equation}
+	\gamma = \frac{2\pi}{\Phi_0}\Phi_l \qquad \Phi_l = I_sL_{JJ} + I_lL_l \qquad I_t = I_s + I_l
+\end{equation}
+Here we have neglected the term $\lambda^2\mu_0 \int \vec{J}\cdot d \vec{l}$ assuming our figure or merit is sufficiently small as highlighted in Sec. \ref{sec:figure-of-merit}. Using these relations and recalling $I_s = I_cf(\gamma)$ we see that:
+\begin{align}
+	I_t &= I_s + \frac{1}{L_l}\left(\Phi_l - I_sL_{JJ}\right) + \frac{\Phi_l}{L_l} \nonumber \\
+	    &= I_c \left(1 - \frac{L_{JJ}}{L_l}\right)f(\gamma) + \frac{\Phi_0}{2\pi L_l}\gamma
+\end{align}
+This means that a linear trend is added on top of our CPR. Furthermore we have a final step where $\gamma$ is related to $\Phi_s$ based on Sec. \ref{sec:magnetic-coupling}.
+\begin{equation}
+	\gamma = \frac{2\pi}{\Phi_0}\Phi_l = \kappa \sqrt{\frac{L_l}{L_s}} \frac{2\pi}{\Phi_0} \Phi_s
+\end{equation}
+Since $f(\gamma)$ must be $2\pi$-periodic we can easily map these two even if $\kappa$, $L_l$ and $L_s$ are not know exactly. This is the only data manipulation we need to do based on unknown parameters.
