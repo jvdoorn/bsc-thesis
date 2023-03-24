@@ -52,3 +52,9 @@
 
 % Nicer tables.
 \usepackage{booktabs}
+
+% Used for including PGF files. Use the external package to avoid memory issues and increase compilation speed.
+\usepackage{import}
+\usepackage{pgfplots}
+\usepgfplotslibrary{external} 
+\tikzexternalize

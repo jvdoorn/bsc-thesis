@@ -18,7 +18,7 @@ jobs:
         uses: dante-ev/latex-action@latest
         with:
           root_file: thesis.tex
-          args: -pdf -shell-escape -latexoption=-file-line-error -latexoption=-interaction=nonstopmode
+          args: -lualatex -shell-escape -latexoption=-file-line-error -latexoption=-interaction=nonstopmode
       - name: versioning
         id: versioning
         uses: codacy/git-version@2.5.4

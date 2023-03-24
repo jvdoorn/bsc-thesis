@@ -120,7 +120,8 @@
 %           This allows to use non-ascii input character, e.g. � instead of \"o
 % 14-03-2017 added latin9 as option to ensure compatibility with LyX for unknown
 %           reasons. Thanks to Vasco Tenner
-\RequirePackage[utf8,latin9]{inputenc}
+% \RequirePackage[utf8,latin9]{inputenc}
+\RequirePackage{luatex85}
 
 % Font selection
 % \RequirePackage{mathptmx}
@@ -131,7 +132,7 @@
 \RequirePackage{amssymb}
 
 % insertion of graphics
-\RequirePackage[pdftex]{graphicx}
+\RequirePackage{graphicx}
 
 % styling of captions using the captions package
 % 28/03/2014 removed the small (0.5cm) margin for the figure captions
