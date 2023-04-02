@@ -1,24 +1,30 @@
 % !TEX root = ../../../thesis.tex
-\begin{figure}
+During the cool down of the Teslatron cryostat in which we measured the sample, we used a 4-point measurement to determine the resistance of the dc-SQUID. See Figure \ref{fig:CP1.1H-SQUID-RT}. We note that the sample becomes superconducting at \qty{8}{\kelvin} and has a quite sharp transition. This is above the expected transition temperature of \qty{7.5}{\kelvin} which was measured before on a thin film made from the same sputtering target. This might be explained however by the fact that the \ce{Nb} target had not been used in a while\footnote{It had last been used more than a year ago when the thin film was made.}. As such it is likely that when we sputtered the thin film that it had much more contaminations. $T_c$ for pure \ce{Nb} is \qty{9.2}{\kelvin}\cite{maxfieldSuperconductingPenetrationDepth1965}, since we use sputtering it is not surprising to find a lower $T_c$.
+
+\begin{figure}[h]
 	\centering
 	\import{figures/samples/CP1}{CP1.2H_critical_temperature.pgf}
 	\caption{Resistance over temperature between \qtyrange{2}{300}{\kelvin} for the dc-SQUID. The inset provides a detailed view of the superconducting transition.}
+	\label{fig:CP1.1H-SQUID-RT}
 \end{figure}
 
-\begin{figure}
-	\centering
-	\import{figures/samples/CP1}{CP1.2H_voltage_drift.pgf}
-	\caption{DC voltage measured by a shorted Keithley 2182A Nanovoltmeter. The RMS noise is \qty{15.90}{\nano\volt}, which is just above the \qty{15}{\nano\volt} as stated in the datasheet\cite{keithleyKeithley2182ANanovoltmeter}. The sampling rate was \qty{0.55\pm0.01}{\hertz}. The Fourier transform used to determine the PSD assumes a constant sampling rate.}
-\end{figure}
+Additionally we determined the temperature dependence of the critical current, see Figure \ref{fig:CP1.1H-SQUID-critical-current-temperature-dependence}. We note that, similar to what we see in Figure \ref{fig:CP1.1H-SQUID-RT}, that there are two transitions. The obvious one is a very sharp transition but there is a second much more subtle transition. For example at \qty{7.6}{\kelvin} (inset of Figure \ref{fig:CP1.1H-SQUID-critical-current-temperature-dependence}) we note the sharp transition around \qty{170}{\micro\ampere} and the subtle transition near \qty{50}{\micro\ampere}. The sharp transition is for the bulk of the superconductor (leads, contact pads, etc.) whilst the more subtle one is from the dc-SQUID's junctions. This defines the range in which we should measure our dc-SQUID when using it as a magnetometer at certain temperatures.
 
-\begin{figure}
+\begin{figure}[h]
 	\centering
 	\import{figures/samples/CP1}{CP1.2H_critical_current.pgf}
-	\caption{title}
+	\caption{Temperature dependence of the critical current of the dc-SQUID. The left image shows voltage and its inset the IV-curve at \qty{7.6}{\kelvin}. The right image shows resistance, calculated by taking $dV/dI$. The plot uses linear interpolation.}
+	\label{fig:CP1.1H-SQUID-critical-current-temperature-dependence}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h]
 	\centering
 	\import{figures/samples/CP1}{CP1.2H_SQUID_B_field_sweep.pgf}
 	\caption{}
 \end{figure}
+
+% \begin{figure}[h]
+% 	\centering
+% 	\import{figures/samples/CP1}{CP1.2H_voltage_drift.pgf}
+% 	\caption{DC voltage measured by a shorted Keithley 2182A Nanovoltmeter. The RMS noise is \qty{15.90}{\nano\volt}, which is just above the \qty{15}{\nano\volt} as stated in the datasheet\cite{keithleyKeithley2182ANanovoltmeter}. The sampling rate was \qty{0.55\pm0.01}{\hertz}. The Fourier transform used to determine the PSD assumes a constant sampling rate.}
+% \end{figure}
