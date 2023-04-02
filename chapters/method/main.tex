@@ -106,6 +106,7 @@ Our method will make use of constriction junctions (ScS)\footnote{Also called a 
 \end{table}
 
 \subsection{Sample fabrication}
+\label{sec:method-sample-fabrication}
 The course structures such as contact pads are created using lithography. We use dc-sputtering to deposit a \qty{\pm 90}{\nano\meter} layer of \ce{Nb} on top of a resist coated \ce{Si} wafer. As \ce{Nb} is very sensitive to contamination we additionally cap it using dc-sputtered \qty{7}{\nano\meter} layer of \ce{Au}.
 
 The junctions and loops are created by a focussed ion beam (FIB) that etches away the layers of \ce{Nb} and \ce{Au}. The advantage of this method over creating these fine structures using lithography is the higher resolution of the FIB and less contamination of the \ce{Nb} from the resist.
@@ -128,4 +129,11 @@ This means that a linear trend is added on top of our CPR. Furthermore we have a
 \begin{equation}
 	\gamma = \frac{2\pi}{\Phi_0}\Phi_l = \kappa \sqrt{\frac{L_l}{L_s}} \frac{2\pi}{\Phi_0} \Phi_s
 \end{equation}
-Since $f(\gamma)$ must be $2\pi$-periodic we can easily map these two even if $\kappa$, $L_l$ and $L_s$ are not know exactly. This is the only data manipulation we need to do based on unknown parameters.
+Since $f(\gamma)$ must be $2\pi$-periodic we can easily map these two even if $\kappa$, $L_l$ and $L_s$ are not know exactly. This is the only data analysis we need to do based on unknown parameters. For a simulation of $\Phi_l$ for a given current $I_t$ please see Figure \ref{fig:loop-flux-simulation}.
+
+\begin{figure}
+	\centering
+	\import{figures/simulations}{loop_flux.pgf}
+	\caption{Prediction of $\Phi_l$ (blue line) based on the parameters in Table \ref{tab:estimated-factors}. The simulation assumes the most basic CPR given by $I_s=I_c\sin(\gamma)$. The simulation shows a range where $\gamma$ winds from $0$ to $4\pi$. The dashed green line shows how the increase in phase would change the flux if there was no junction. We furthermore neglect $L_{JJ}$.}
+	\ref{fig:loop-flux-simulation}
+\end{figure}
