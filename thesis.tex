@@ -1,4 +1,4 @@
-\documentclass[draft,twoside,single]{lion-msc}
+\documentclass[twoside,single]{lion-msc}
 
 \input{preamble}
 
@@ -17,20 +17,20 @@
 	\tableofcontents
 
 	\chapter*{Conventions}
-	\input{chapters/conventions/main}
+	\import{chapters/conventions}{main}
 	
 	\chapter{Introduction}
-	\input{chapters/introduction/main}
+	\import{chapters/introduction}{main}
 
 	\chapter{Method}
-	\input{chapters/method/main}
+	\import{chapters/method}{main}
 
 	\chapter{Samples}
-	\input{chapters/samples/main}
+	\import{chapters/samples}{main}
 
 	\appendix
 	\chapter{Derivations}
-	\input{chapters/appendices/derivations}
+	\import{chapters/appendices}{derivations}
 
 	\printbibliography
 \end{document}
