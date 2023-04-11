@@ -1,5 +1,8 @@
 % !TEX root = thesis.tex
 
+% Fixes things like bold font.
+\usepackage[tuenc]{fontspec}
+
 % Use siunitx to write out units and quantities, use special formatting for the units.
 \usepackage{siunitx}
 \sisetup{separate-uncertainty = true, multi-part-units = single, inter-unit-product = \ensuremath { { } \cdot { } }}
@@ -59,5 +62,4 @@
 \usepgfplotslibrary{external} 
 \tikzexternalize
 % Used for subfigures/captions.
-\usepackage{caption}
 \usepackage{subcaption}
