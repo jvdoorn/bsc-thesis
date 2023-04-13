@@ -125,7 +125,7 @@
 
 % Font selection
 % \RequirePackage{mathptmx}
-\RequirePackage{mathpazo}   % Just to make it look less like a Word document
+% \RequirePackage{mathpazo}   % Just to make it look less like a Word document
 
 % Special AMS symbols for displaying math
 \RequirePackage{amsmath}
