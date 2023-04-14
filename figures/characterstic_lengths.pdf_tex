@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{368.17201291bp}%
+    \setlength{\unitlength}{331.22540091bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,17 +50,18 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.32192913)%
+  \begin{picture}(1,0.35783876)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{characterstic_lengths.pdf}}%
-    \put(0.00000129,0.28430672){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$|\Psi(x)|^2$\end{tabular}}}}%
-    \put(0.21825483,0.16961343){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\xi(T)$\end{tabular}}}}%
-    \put(0.48271917,0.09415429){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\lambda(T)$\end{tabular}}}}%
-    \put(0.86669248,0.01159968){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x$\end{tabular}}}}%
-    \put(0.83115272,0.28430672){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$H(x)$\end{tabular}}}}%
-    \put(0.08111837,0.07255472){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}S\end{tabular}}}}%
-    \put(0.7908344,0.07255472){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}N\end{tabular}}}}%
+    \put(0.00000144,0.31601975){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$|\Psi(x)|^2$\end{tabular}}}}%
+    \put(0.24260011,0.18853298){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\xi(T)$\end{tabular}}}}%
+    \put(0.53656419,0.10465672){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\lambda(T)$\end{tabular}}}}%
+    \put(0.96336788,0.01289354){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x$\end{tabular}}}}%
+    \put(0.92386384,0.31601975){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$H(x)$\end{tabular}}}}%
+    \put(0.09016674,0.08064783){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}S\end{tabular}}}}%
+    \put(0.8790482,0.08064783){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}N\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{characterstic_lengths.pdf}}%
+    \put(0.4521518,0.27520648){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\hfill aa\end{tabular}}}}%
   \end{picture}%
 \endgroup%
