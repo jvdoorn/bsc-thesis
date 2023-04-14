@@ -1,29 +1,21 @@
 % !TEX root = ../../thesis.tex
-TODO: reference to SRO rings, explain that our method will provide the possibility to measure its CPR and thus determine which theory is correct as multiple theories say something else.
+Recent work by Lahabi \textit{et al.} provides evidence for the existence of chiral domain walls in rings of \ce{Sr2RuO4}\cite{lahabiSpintripletSupercurrentsOdd2018}. Due to these domain walls, homogenous \ce{Sr2Ru04} rings show dc-SQUID like behaviour without Josephson junctions\footnote{There are no constrictions or different materials in the ring, hence it is homogenous. In this case the hypothesis is that the domain wall acts as a Josephson junction.}. More definitive proof for chiral domain walls could be found by measuring the Josephson energy. A prerequisite to determining the Josephson energy is measuring the current-phase relation\footnote{The phase here refers to the phase order parameter in Ginzburg-Landau theory.}.
+
+This thesis presents a method based on \citeauthor{frolovMeasurementCurrentPhaseRelation2004} (\citeyear{frolovMeasurementCurrentPhaseRelation2004}). We explore a method to measure the current-phase relation of a single Josephson junction which, if successful, can be extended in later studies to measure the current-phase relation of a \ce{Sr2RuO4} ring.
+
+In this chapter we will present relevant theory for our experiment. In the next chapter we will apply this theory and explain our methods.
 
 \section{Superconductors}
 The most well known property of superconductors are their perfect conductivity\footnote{Discovered by H.K. Onnes in 1911.}. Later it was discovered that they are also a perfect diamagnet and expel magnetic fields\footnote{Discovered by W. Meissner and R. Ochsenfeld in 1933.}. A microscopic description of the effect is given by Bardeen, Cooper and Schieffer (BCS theory) and phenomenologically by the Ginzburg-Landau theory\cite{tinkhamIntroductionSuperconductivity}. This section will highlight the relevant parts of these theories for our research.
 
 BCS theory describes the formation of Cooper pairs. These form from an attractive interaction that overcomes the Coulomb repulsion between two electrons\cite{bardeenTheorySuperconductivity1957}. Electrons have half-integer spin, which means a Cooper pair, consisting of two electrons, has integer spin. Hence Cooper pairs are bosons.
 
-Bosons, contrary to fermions, can occupy the same quantum state. At low temperatures bosons can condense into a condensate. That  means that Cooper pairs too can form a condensate. All bosons in the condensate are described by the same wavefunction\footnote{This is by definition the case.}.
+Bosons, contrary to fermions, can occupy the same quantum state. At low temperatures bosons can condense into a condensate. That  means that Cooper pairs too can form a condensate. All bosons in the condensate are described by the same wavefunction\footnote{This is by definition of a `condensate' the case.}.
 \begin{equation}
 	\Psi = \left|\Psi\right| \exp(i\phi)
 	\label{eqn:GL-wavefunction}
 \end{equation}
 Both $\left|\Psi\right|$ and $\phi$ are functions of position. The behaviour of this wave function is described by the Ginzburg-Landau theory. In this theory we can view $|\Psi|^2$ as the density of Cooper pairs (units of \unit{\per\cubic\meter}). The gradient in $\phi$ causes a supercurrent to flow, it will become important for the current-phase relation introduced in Sec. \ref{sec:josephson-effect}.
-
-\subsection{Meissner effect}
-As mentioned before, superconductors expel magnetic fields\footnote{This is true for bulk superconductors.}. They do so by creating a screening current on the outside of the superconductor. The associated length scale for how deep those screen currents occur in the material is the so called London penetration depth\footnote{See \citetitle{tinkhamIntroductionSuperconductivity} equation 4.8, the equation has been converted to SI units, $|\psi|^2$ has units of \unit{\per\cubic\meter}.}\cite{tinkhamIntroductionSuperconductivity}:
-% - Superconductors expell magnetic field
-% - Explained by London equations
-% - Give rise to London penetration depth
-\begin{align}
-	\lambda &= \lambda (T) = \lambda(0) \left(1 - \left(\frac{T}{T_c}\right)^4\right)^{-1/2} \nonumber \\
-	\lambda(0) &= \sqrt{\frac{m^*c^2}{4\pi|\psi|^2e^{*2}}} \stackrel{\text{SI}}{=} \sqrt{\frac{m_e}{2|\psi|^2e^2\mu_0}}
-	\label{eqn:london-penetration-depth}
-\end{align}
-That means that if a superconductor is thick enough that there will be no current in the interior. This will become important later on when we integrate a current over a path enclosing a hole in a superconductor. Under the right circumstances this current (almost) vanishes and we can neglect the integral.
 
 \section{Josephson effect}
 \label{sec:josephson-effect}
@@ -48,15 +40,56 @@ Here we have defined $f(\gamma)$ which is the current-phase relation. In general
 \end{equation}
 With $m,n \in \mathcal{N}$.
 
-\subsection{Coherence length}
-The length scale associated with the Josephson effect is the so called coherence length\footnote{See \citetitle{tinkhamIntroductionSuperconductivity} equation 4.17, this equation is valid in both Gaussian and SI units.}\cite{tinkhamIntroductionSuperconductivity}:
+\subsection{Characteristic length scales}
+\label{sec:characteristic-length-scales}
+There are two important length scales for superconductors. We will focus on these length scales mainly in relation to the Ginzburg-Landau theory. See Figure \ref{fig:characteristic-lengths} for a schematic depiction.
+
+\begin{figure}[h]
+	\centering
+	\def\svgwidth{\textwidth}
+	\import{figures}{characterstic_lengths.pdf_tex}
+	\caption{Schematic depiction of the characteristic lengths $\xi$ and $\lambda$. The Cooper-pair density $|\Psi(x)|^2$, also referred to as $n_s$, falls off on a scale $\xi$. The magnetic field gets shielded by the superconductor using a shielding current and falls off on a scale $\lambda$. The S and N denote the `superconducting' and `normal' regimes respectively.}
+	\label{fig:characteristic-lengths}
+\end{figure}
+
+The first is the scale over which the Cooper-pair density $|\Psi|^2$ can change. This is the so called coherence length. In the Ginzburg-Landau theory it is given by\cite{tinkhamIntroductionSuperconductivity}:
+\begin{equation}
+	\xi(T) = \frac{\hbar}{|4m_e\alpha(T)|^{1/2}}
+\end{equation}
+With $\alpha \propto 1 - T/T_c$. The coherence length plays an important role in constriction junctions.
+
+The second length scale determines how deep the magnetic field penetrates into the superconductor. We denote this penetration depth using $\lambda$. The expulsion of magnetic fields is called the Meissner effect\cite{tinkhamIntroductionSuperconductivity}. The penetration depth in Ginzburg-Landau theory at \qty{0}{\kelvin} is given by\footnote{See \citetitle{tinkhamIntroductionSuperconductivity} equation 4.8, the equation has been converted to SI units, $|\psi|^2$ has units of \unit{\per\cubic\meter}.}:
 \begin{align}
-	\xi &= \xi(T) = \xi(0)\alpha(T)^{-1/2} \nonumber \\
-	\xi(0) &= \sqrt{\frac{\hbar^2}{2m^*}} = \sqrt{\frac{\hbar^2}{4m_e}}
+	\lambda(0) &= \sqrt{\frac{m^*c^2}{4\pi|\psi|^2e^{*2}}} \stackrel{\text{SI}}{=} \sqrt{\frac{m_e}{2|\psi|^2e^2\mu_0}}
+	\label{eqn:london-penetration-depth}
 \end{align}
-With $\alpha(T) \propto 1 - \left(\frac{T}{T_c}\right)$. The coherence length is a property of the junction material, not the superconductors.
+Furthermore $\lambda(T) = \lambda(0) (1-(T/T_c)^4)^{-1/2}$\cite{tinkhamIntroductionSuperconductivity}. The penetration depth is indirectly also a measure for how deep the screening current occur in the superconductor. For a sufficiently thick superconductor this means that there is no screen current on the inside, similar to surface charge on a normal conductor. This will become important later on for certain assumptions in our method.
 
 \section{dc-SQUID magnetometers}
 % - Basic description of what they are
 % - Basic explanation how they can be used to measure magnetic fields
-TODO
+A dc-SQUID magnetometer consists of a superconducting loop with two Josephson junctions. See Figure \ref{fig:schematic-dc-SQUID}. The basic idea behind a dc-SQUID is to run a bias-current $I_B$ through it. This causes a voltage $V_s$ across the device which also depends on the flux $\Phi_s$\cite{rogSQUIDontipMagneticMicroscopy2022}. $I_B$ is typically just above $2I_c$ where $I_c$ is the critical current of a single junction.
+
+\begin{figure}
+	\centering
+	\begin{circuitikz}
+		% Loop with a dc-SQUID.
+		\draw (0, 0) to [josephsonjunction, i=$I_1$] (2, 0)
+		to [short] (2, -2)
+		to [josephsonjunction, i=$I_2$] (0, -2)
+		to [short] (0, 0);
+		% Wires to the sides of the dc-SQUID.
+		\draw (-1, -1) to [short, *-, i=$I_s$] (0, -1);
+		\draw (2, -1) to [short, -*, i=$I_s$] (3, -1);
+
+		% Annotate flux through the loop
+		\node[] at (1,-1) {$\Phi_s$};
+		% Annotate V+ and V-
+		\node[] at (-1, -1.4) {$V_+$};
+		\node[] at (3, -1.4) {$V_-$};
+	\end{circuitikz}
+
+	\caption{Schematic depiction of a dc-SQUID. The loop contains two Josephson junctions (denoted with the crosses). The total current $I_B = I_1 - I_2$ and a voltage $V_s = V_+ - V_-$ can be measured between the two contacts.}
+	\label{fig:schematic-dc-SQUID}
+\end{figure}
+
