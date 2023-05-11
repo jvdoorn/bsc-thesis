@@ -5,7 +5,8 @@
 
 % Use siunitx to write out units and quantities, use special formatting for the units.
 \usepackage{siunitx}
-\sisetup{separate-uncertainty = true, multi-part-units = single, inter-unit-product = \ensuremath { { } \cdot { } }}
+\sisetup{separate-uncertainty = true, multi-part-units = single, inter-unit-product = \ensuremath { { } \cdot { } }, range-units = single, list-units = single}
+\DeclareSIUnit\fluxquantum{\text{\ensuremath{\Phi_0}}}
 
 % Setup bibliography (instead of relying on the way lion-msc does it using natbib).
 \usepackage[backend=biber, style=phys, biblabel=brackets]{biblatex}
@@ -63,3 +64,6 @@
 \tikzexternalize
 % Used for subfigures/captions.
 \usepackage{subcaption}
+
+% Used for debugging such as printing the value of \textwidth (\printinunitsof{in}\prntlen{\textwidth})
+\usepackage{layouts}
