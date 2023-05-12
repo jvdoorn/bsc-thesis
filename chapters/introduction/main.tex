@@ -1,9 +1,9 @@
 % !TEX root = ../../thesis.tex
-Recent work by Lahabi \textit{et al.} provides evidence for the existence of chiral domain walls in rings of \ce{Sr2RuO4}\cite{lahabiSpintripletSupercurrentsOdd2018}. Due to these domain walls, homogenous \ce{Sr2Ru04} rings show dc-SQUID like behaviour without Josephson junctions\footnote{There are no constrictions or different materials in the ring, hence it is homogenous. In this case the hypothesis is that the domain wall acts as a Josephson junction.}. More definitive proof for chiral domain walls could be found by measuring the Josephson energy. A prerequisite to determining the Josephson energy is measuring the current-phase relation\footnote{The phase here refers to the phase order parameter in Ginzburg-Landau theory.}.
+Recent work by Lahabi \textit{et al.} provides evidence for the existence of chiral domain walls in rings of \ce{Sr2RuO4}\cite{lahabiSpintripletSupercurrentsOdd2018} that act as Josephson junctions. Due to this effect, homogenous \ce{Sr2RuO4} rings show dc-SQUID like behaviour without the presence of constrictions, grain boundaries or an interface with a different material. More definitive proof for chiral domain walls could be found by measuring the Josephson energy\cite{lahabiSpintripletSupercurrentsOdd2018}. A prerequisite to determining the Josephson energy is measuring the current-phase relation\footnote{The phase here refers to the phase order parameter in Ginzburg-Landau theory.}.
 
-This thesis presents a method based on \citeauthor{frolovMeasurementCurrentPhaseRelation2004} (\citeyear{frolovMeasurementCurrentPhaseRelation2004}). We explore a method to measure the current-phase relation of a single Josephson junction which, if successful, can be extended in later studies to measure the current-phase relation of a \ce{Sr2RuO4} ring.
+This thesis presents a method based on \citeauthor{frolovMeasurementCurrentPhaseRelation2004} \citeyear{frolovMeasurementCurrentPhaseRelation2004}. We explore a method to measure the current-phase relation of a single Josephson junction which, if successful, can be extended in later studies to measure the current-phase relation of \ce{Sr2RuO4} rings.
 
-In this chapter we will present relevant theory for our experiment. In the next chapter we will apply this theory and explain our methods.
+In this chapter we will present relevant theory for our experiment and present an expectation for our data. In the next chapter we will apply this theory and explain our methods in more detail.
 
 \section{Superconductors}
 The most well known property of superconductors are their perfect conductivity\footnote{Discovered by H.K. Onnes in 1911.}. Later it was discovered that they are also a perfect diamagnet and expel magnetic fields\footnote{Discovered by W. Meissner and R. Ochsenfeld in 1933.}. A microscopic description of the effect is given by Bardeen, Cooper and Schieffer (BCS theory) and phenomenologically by the Ginzburg-Landau theory\cite{tinkhamIntroductionSuperconductivity}. This section will highlight the relevant parts of these theories for our research.
@@ -63,12 +63,12 @@ The second length scale determines how deep the magnetic field penetrates into t
 	\lambda(0) &= \sqrt{\frac{m^*c^2}{4\pi|\psi|^2e^{*2}}} \stackrel{\text{SI}}{=} \sqrt{\frac{m_e}{2|\psi|^2e^2\mu_0}}
 	\label{eqn:london-penetration-depth}
 \end{align}
-Furthermore $\lambda(T) = \lambda(0) (1-(T/T_c)^4)^{-1/2}$\cite{tinkhamIntroductionSuperconductivity}. The penetration depth is indirectly also a measure for how deep the screening current occur in the superconductor. For a sufficiently thick superconductor this means that there is no screen current on the inside, similar to surface charge on a normal conductor. This will become important later on for certain assumptions in our method.
+Furthermore $\lambda(T) = \lambda(0) (1-(T/T_c)^4)^{-1/2}$\cite{tinkhamIntroductionSuperconductivity}. The penetration depth is indirectly also a measure for how deep the screening currents occur in the superconductor. For a sufficiently thick superconductor this means that there is no screening current on the inside, similar to surface charges on a normal conductor. This will become important later on for certain assumptions in our method.
 
 \section{dc-SQUID magnetometers}
 % - Basic description of what they are
 % - Basic explanation how they can be used to measure magnetic fields
-A dc-SQUID magnetometer consists of a superconducting loop with two Josephson junctions. See Figure \ref{fig:schematic-dc-SQUID}. The basic idea behind a dc-SQUID is to run a bias-current $I_B$ through it. This causes a voltage $V_s$ across the device which also depends on the flux $\Phi_s$\cite{rogSQUIDontipMagneticMicroscopy2022}. $I_B$ is typically just above $2I_c$ where $I_c$ is the critical current of a single junction.
+A dc-SQUID magnetometer consists of a superconducting loop with two Josephson junctions. See Figure \ref{fig:schematic-dc-SQUID}. The basic idea behind a dc-SQUID is to run a bias-current $I_B$ through it. When $I_B$ is high enough, this causes a voltage $V_s$ across the device which also depends on the flux $\Phi_s$\cite{rogSQUIDontipMagneticMicroscopy2022,clarkeSQUIDHandbook2004}. $I_B$ is typically chosen just above $2I_c$ where $I_c$ is the critical current of a single junction.
 
 \begin{figure}
 	\centering

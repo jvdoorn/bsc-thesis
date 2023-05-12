@@ -40,7 +40,10 @@ We can express $\Phi_l$ in terms of $I_s$ and $I_l$:
 \begin{equation}
 	\Phi_l = I_sL_{JJ}  + I_lL_l
 \end{equation}
-Where $L_{JJ}$ and $L_l$ are the inductances of the Josephson junction and loop respectively\footnote{This is not the so called Josephson inductance but purely a magnetic inductance and not a kinetic inductance.}.
+Where $L_{JJ}$ and $L_l$ are the inductances of the Josephson junction and loop respectively\footnote{This is not the so called Josephson inductance but purely a magnetic inductance and not a kinetic inductance.}. We will assume that $L_{JJ} \ll L_l$, this is also done by \citeauthor{frolovMeasurementCurrentPhaseRelation2004} (see \cite{frolovCurrentphaseRelationsJosephson2005,frolovMeasurementCurrentPhaseRelation2004}) and often in literature when discussing dc-SQUIDs (see par example \cite{clarkeSQUIDHandbook2004}). This means our final equation for the loop flux becomes:
+\begin{equation}
+	\Phi_l = I_lL_l
+\end{equation}
 
 \subsection{Figure of merit}
 \label{sec:figure-of-merit}
@@ -48,7 +51,7 @@ In order for $\gamma$ to be proportional to $\Phi_l$ the second term must be neg
 \begin{equation}
 	\delta = \frac{\lambda^2\mu_0 \int \vec{J}\cdot d \vec{l}}{\Phi_l}
 \end{equation}
-We will assume that $L_{JJ} \ll L_l$ such that $\Phi_l \approx I_lL_l$. By approximating the loop containing the junction as a perfect loop with radius $r$, thickness (height) $d$ and width $w$ the approximate inductance is given by\cite{eewebCoilInductanceCalculator}:
+By approximating the loop containing the junction as a perfect loop with radius $r$, thickness (height) $d$ and width $w$ the approximate inductance is given by\cite{eewebCoilInductanceCalculator}:
 \begin{equation}
 	L_l \approx \mu_0 r \left( \ln\left(\frac{16r}{w}\right) - 2\right)
 	\label{eq:loop-inductance}
@@ -118,12 +121,12 @@ Our method requires little to no analysis, which immediately highlights one of t
 
 Starting from our Eq. \ref{eqn:phase-flux-relation}, the expression for $\Phi_l$ and applying Ohms laws to the circuit in Fig. \ref{fig:schematic-setup} we have:
 \begin{equation}
-	\gamma = \frac{2\pi}{\Phi_0}\Phi_l \qquad \Phi_l = I_sL_{JJ} + I_lL_l \qquad I_t = I_s + I_l
+	\gamma = \frac{2\pi}{\Phi_0}\Phi_l \qquad \Phi_l = I_lL_l \qquad I_t = I_s + I_l
 \end{equation}
 Here we have neglected the term $\lambda^2\mu_0 \int \vec{J}\cdot d \vec{l}$ assuming our figure or merit is sufficiently small as highlighted in Sec. \ref{sec:figure-of-merit}. Using these relations and recalling $I_s = I_cf(\gamma)$ we see that:
 \begin{align}
-	I_t &= I_s + \frac{1}{L_l}\left(\Phi_l - I_sL_{JJ}\right) + \frac{\Phi_l}{L_l} \nonumber \\
-	    &= I_c \left(1 - \frac{L_{JJ}}{L_l}\right)f(\gamma) + \frac{\Phi_0}{2\pi L_l}\gamma
+	I_t &= I_s + \frac{\Phi_l}{L_l} \nonumber \\
+	    &= I_c f(\gamma) + \frac{\Phi_0}{2\pi L_l}\gamma
 \end{align}
 This means that a linear trend is added on top of our CPR. Furthermore we have a final step where $\gamma$ is related to $\Phi_s$ based on Sec. \ref{sec:magnetic-coupling}.
 
@@ -137,7 +140,7 @@ A loop with a single junction is sometimes called an rf-SQUID\cite{clarkeSQUIDHa
 \begin{equation}
 	\beta_{\text{rf}} = \frac{2\pi I_c L_l}{\Phi_0}
 \end{equation}
-where $I_c$ refers to the critical current of the junction, must be less than one for a non-hysteric $I_s\Phi_l$-curve\cite{clarkeSQUIDHandbook2004,frolovMeasurementCurrentPhaseRelation2004}. This gives a maximum value for the critical current, $I{c,\text{max}}$ given $L_l$. We note however, based on an numerical calculation, that for an SNS-junction $\beta_{\text{rf}} < 0.9$ is a more trustworthy criterium, see Figure~\ref{fig:CPR-hysteresis}. This is because the CPR is not perfectly sinusoidal\cite{vermeerSTMbasedScanningSQUID2021,likharevSuperconductingWeakLinks1979}.
+where $I_c$ refers to the critical current of the junction, must be less than one for a non-hysteric $I_s\Phi_l$-curve\cite{clarkeSQUIDHandbook2004,frolovMeasurementCurrentPhaseRelation2004}. This gives a maximum value for the critical current, $I_{c,\text{max}}$ given $L_l$. We note however, based on an numerical calculation, that for an SNS-junction $\beta_{\text{rf}} < 0.9$ is a more trustworthy criterium, see Figure~\ref{fig:CPR-hysteresis}. This is because the CPR is not perfectly sinusoidal\cite{vermeerSTMbasedScanningSQUID2021,likharevSuperconductingWeakLinks1979}.
 
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.45\textwidth}
