@@ -62,6 +62,5 @@
     \put(0.09016674,0.08064783){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}S\end{tabular}}}}%
     \put(0.8790482,0.08064783){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}N\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{characterstic_lengths.pdf}}%
-    \put(0.4521518,0.27520648){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\hfill aa\end{tabular}}}}%
   \end{picture}%
 \endgroup%
