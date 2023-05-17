@@ -21,3 +21,24 @@
 % There is a change in `phase' as if there is a varying residual background field.
 % The two 380uA curves do not agree with each other
 
+\begin{figure}[h]
+	\centering
+	\input{figures/samples/CP2/CP2.6B_super_current_over_loop_flux.pgf}
+	\caption{Supper current through the junction loop over junction loop flux. We note that there is a linear background and that the size of the steps in the flux direction are roughly all $\Phi_0$.}
+	\label{fig:CP2.6B_super_current_over_loop_flux}
+\end{figure}
+
+% Conversion was done using the second 380uA calibration. Both calibrations give (within std) the same coupling between SQUID and junction loop which also matches the simulation.
+% Loop flux conversion was done by using the fact that it must be Phi0 periodic, only assumption we make.
+% Linear background gets extracted using a linear fit.
+
+\begin{figure}[h]
+	\centering
+	\input{figures/samples/CP2/CP2.6B_super_current_over_phase_no_linear_background.pgf}
+	\caption{Supper current through the junction loop over junction loop flux. Compared to Figure~\ref{fig:CP2.6B_super_current_over_loop_flux} we subtracted the linear background. We note that the oscillations have a periodicity of roughly \qty{60}{\micro\ampere}.}
+	\label{fig:CP2.6B_super_current_over_phase_no_linear_background}
+\end{figure}
+
+% Linear background was extracted, yerr comes from STD in the fit.
+% Pattern is quite noisy, definately not useable as a result.
+% 60uA is too big to get a non hysteric measurement.
