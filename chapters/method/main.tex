@@ -51,17 +51,25 @@ In order for $\gamma$ to be proportional to $\Phi_l$ the second term must be neg
 \begin{equation}
 	\delta = \frac{\lambda^2\mu_0 \int \vec{J}\cdot d \vec{l}}{\Phi_l}
 \end{equation}
-By approximating the loop containing the junction as a perfect loop with radius $r$, thickness (height) $d$ and width $w$ the approximate inductance is given by\cite{eewebCoilInductanceCalculator}:
+For a square and round geometry we can rewrite the integral part in the following way:
 \begin{equation}
-	L_l \approx \mu_0 r \left( \ln\left(\frac{16r}{w}\right) - 2\right)
-	\label{eq:loop-inductance}
+	\int \vec{J}\cdot d \vec{l} = \begin{cases}
+		2\pi r \tilde{j} I_l, &\text{round} \\
+		8r \tilde{j} I_l, &\text{square}
+	\end{cases}
 \end{equation}
-We can furthermore rewrite $\int \vec{J} \cdot d \vec{l} \approx 2\pi r I_l \tilde{j}$ with $\tilde{j} = \tilde{j}(d, w, \lambda)$ a geometric factor in \unit{\per\square\meter}. We thus obtain our final figure of merit:
+Here $r$ is the radius (half the diameter) and $\tilde{j} = \tilde{j}(d, w, \lambda)$ a geometric factor in \unit{\per\square\meter}. The value of $\tilde{j}$ can be calculated numerically and details can be found in Section \ref{app:derivation-geometric-factor-j}.
+
+The loop flux can simply be rewritten as $\Phi_l = I_lL_l$, this allows us to rewrite the figure of merit as:
 \begin{equation}
-	\delta \approx \frac{2\pi \lambda^2 \tilde{j}}{\ln\left(\frac{16r}{w}\right) - 2}
+	\delta = \frac{\lambda^2\mu_0\tilde{j}}{L_l} \cdot \begin{cases}
+		2\pi r, &\text{round} \\
+		8r, &\text{square}
+	\end{cases}
 	\label{eqn:figure-of-merit}
 \end{equation}
-The value of $\tilde{j}$ can be calculated numerically and details can be found in Section \ref{app:derivation-geometric-factor-j}.
+
+It is important to note that the figure of merit is independent of the amount of current ($I_l$) passed through the loop, as such it is always valid. The inductance of the loop can be determined using a simulation done in SuperScreen\cite{bishop-vanhornSuperScreenOpensourcePackage2022}.
 
 \subsection{Magnetic coupling}
 \label{sec:magnetic-coupling}
