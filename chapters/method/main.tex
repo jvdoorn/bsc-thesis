@@ -1,7 +1,6 @@
 % !TEX root = ../../thesis.tex
 % Method largely based on Frolov 2004.
 % Uses a superconducting loop with a junction inductively coupled to a dc-SQUID magnetometer
-
 Our method is mostly inspired by \Citeauthor{frolovMeasurementCurrentPhaseRelation2004} \citeyear{frolovMeasurementCurrentPhaseRelation2004}. We incorporate the junction whose CPR we want to measure into a superconducting loop. This loop is then inductively coupled to a dc-SQUID magnetometer. See Fig. \ref{fig:schematic-setup} for a schematic of the setup. This chapter will outline the ideas behind the setup and provide arguments for the chosen geometries.
 
 \begin{figure}
@@ -142,32 +141,3 @@ This means that a linear trend is added on top of our CPR. Furthermore we have a
 	\gamma = \frac{2\pi}{\Phi_0}\Phi_l = \kappa \sqrt{\frac{L_l}{L_s}} \frac{2\pi}{\Phi_0} \Phi_s
 \end{equation}
 Since $f(\gamma)$ must be $2\pi$-periodic we can easily map these two even if $\kappa$, $L_l$ and $L_s$ are not know exactly. This is the only data analysis we need to do based on unknown parameters. See Figure~\ref{fig:analytical-prediction} for an expectation curve.
-
-\subsection{Hysteresis}
-A loop with a single junction is sometimes called an rf-SQUID\cite{clarkeSQUIDHandbook2004}. The screening parameter\footnote{Normally when referring to the screening parameter we mean $\beta_l = 2LI_c/\Phi_0$. However, this is for a `normal' dc-SQUID and not an rf-SQUID.},
-\begin{equation}
-	\beta_{\text{rf}} = \frac{2\pi I_c L_l}{\Phi_0}
-\end{equation}
-where $I_c$ refers to the critical current of the junction, must be less than one for a non-hysteric $I_s\Phi_l$-curve\cite{clarkeSQUIDHandbook2004,frolovMeasurementCurrentPhaseRelation2004}. This gives a maximum value for the critical current, $I_{c,\text{max}}$ given $L_l$. We note however, based on an numerical calculation, that for an SNS-junction $\beta_{\text{rf}} < 0.9$ is a more trustworthy criterium, see Figure~\ref{fig:CPR-hysteresis}. This is because the CPR is not perfectly sinusoidal\cite{vermeerSTMbasedScanningSQUID2021,likharevSuperconductingWeakLinks1979}.
-
-\begin{figure}[ht]
-	\begin{subfigure}[t]{0.45\textwidth}
-		\centering
-		\input{figures/simulations/CPR_prediction.pgf}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[t]{0.45\textwidth}
-		\centering
-		\input{figures/simulations/measurement_prediction.pgf}
-	\end{subfigure}
-
-	\caption{Expectation values for the CPR of an SNS junction. The calculations where done for $I_c=\qty{25}{\micro\ampere}$, $L_l=\qty{11}{\pico\henry}$ and $\Delta(T)$ estimated at \qty{1}{\milli\electronvolt}. We note that the current through the loop creates a linear background that gets modulated by the CPR of the junction.}
-	\label{fig:analytical-prediction}
-\end{figure}
-
-\begin{figure}
-	\centering
-	\import{figures/simulations}{CPR_hysteresis.pgf}
-	\caption{Data produced based on the same parameters as Figure~\ref{fig:analytical-prediction}. This time however we modulated $I_c$ between $0.5I_{c,\text{max}}$ (blue) and $1.5I_{c,\text{max}}$ (red) in steps of $0.1I_{c,\text{max}}$. The black line highlights $I_c=I_{c,\text{max}}$. The black line is still slightly hysteric, the reason for this is given in the main text.}
-	\label{fig:CPR-hysteresis}
-\end{figure}
