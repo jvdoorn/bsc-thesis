@@ -6,22 +6,55 @@ In order to make SNS junctions we first sputtered \qty{1}{\nano\meter} of \ce{Cu
 	\begin{subfigure}[t]{0.3\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{figures/samples/CP2/CP2.6B_SEM_overview.jpg}
-		\subcaption{Overview of the device. The top loop shows the dc-SQUID and the bottom is the junction loop. In-between the arms extending down from the junction loop is the actual Josephson junction under study. The inner and outer diameter of the junction loop are \qty{1.3}{\micro\meter} and \qty{2}{\micro\meter} respectively.}
+		\subcaption{Overview of the device. The top loop shows the dc-SQUID and the bottom is the junction loop.}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.3\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{figures/samples/CP2/CP2.6B_SEM_junction.jpg}
-		\subcaption{The Josephson junction under study. The width of the junction is around \qty{12}{\nano\meter}.}
+		\subcaption{Zoomed in view of the junction, the width of the junction is \qty{12}{\nano\meter}.}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[t]{0.3\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{figures/samples/CP2/CP2.6B_SEM_SQUID.jpg}
-		\subcaption{The dc-SQUID, its inner and outer diameter are \qty{1.0}{\micro\meter} and \qty{1.4}{\micro\meter} respectively. The width of the junctions is \qty{22}{\nano\meter}.}
+		\subcaption{Zoomed in view of the dc-SQUID. The width of the junctions is \qty{22}{\nano\meter}.}
 	\end{subfigure}
 
-	% TODO: fix values.
-	\caption{SEM images of sample CP2.6B.}
+	\caption{Fine structures of sample CP2.6B after the FIB. See Table~\ref{tab:CP2.6B-geometries} for the exact geometries of the sample.}
 	\label{fig:CP2.6B-SEM-images}
 \end{figure}
+
+\begin{table}
+	\begin{subtable}{.5\linewidth}
+		\centering
+		\begin{tabular}{@{}lrr@{}}
+			\toprule
+			Parameter & Value \\ \midrule
+			Junction loop $\diameter_{\text{outer}}$ & \qty{1.9}{\micro\meter} \\
+			Junction loop $\diameter_{\text{inner}}$ & \qty{1.2}{\micro\meter} \\
+			dc-SQUID $\diameter_{\text{outer}}$ & \qty{1.6}{\micro\meter} \\
+			dc-SQUID $\diameter_{\text{inner}}$ & \qty{1.1}{\micro\meter} \\
+			spacing & \qty{0.1}{\micro\meter} \\
+			$d_{\ce{Cu}}$ & \qty{25}{\nano\meter} \\
+			$d_{\ce{Nb}}$ & \qty{70}{\nano\meter} \\
+			$d_{\ce{Au}}$ & \qty{7}{\nano\meter} \\
+			\bottomrule
+		\end{tabular}
+    \end{subtable}
+    \begin{subtable}{.5\linewidth}
+    	\centering
+    	\begin{tabular}{@{}lrr@{}}
+    		\toprule
+    		Parameter & Value \\ \midrule
+    		$L_{l}$ & \qty{3.0}{\pico\henry} \\
+			$L_{s}$ & \qty{3.0}{\pico\henry} \\
+			$M$ & \qty{-0.2}{\pico\henry} \\
+			$\delta$ & \num{0.001} \\
+			$\kappa$ & \num{-0.058} \\
+    		\bottomrule
+    	\end{tabular}
+    \end{subtable}
+    \caption{The \textbf{left} table provides an overview of the geometries of CP2.6B as determined by SEM imaging and sputtering rates. The \textbf{right} table gives an overview of parameters found using a simulation based on the geometries. The geometries are based on sample CP1.2H.}
+    \label{tab:CP2.6B-geometries}
+\end{table}
