@@ -83,50 +83,26 @@ Here we again assume that $L_{JJ} \ll L_l$. We now see that the magnetic fluxes 
 This is a naive approach that does not take into account the possibility of magnetic lensing\cite{prigozhin3DSimulationSuperconducting2018}. Thus $\kappa$ is a `minimal' coupling between the two. As long as $\kappa$ is sufficiently large enough our method should work.
 
 \section{Sample geometries}
-Our method will make use of constriction junctions (ScS)\footnote{Also called a Dayem bridge, see \citeauthor{likharevSuperconductingWeakLinks1979} \citeyear{likharevSuperconductingWeakLinks1979}.} as these are fairly easy to construct. Following our figure of merit in Eq. \ref{eqn:figure-of-merit}, we benefit from a small London penetration depth. The size of our junction is determined by the value of $\xi$ and should be on the order of $3\xi$\cite{likharevSuperconductingWeakLinks1979} to make a single-valued CPR. Based on this and the available superconductors we have chosen for \ce{Nb}\footnote{$\lambda = \qty{39}{\nano\meter}$, $\xi = \qty{38}{\nano\meter}$ and $T_c \approx \qty{7.5}{\kelvin}$. Characteristic lengths attributed to R. Meservey and B. B. Schwartz and critical temperature based on measurements on a \ce{Nb}-thin film in our own lab.}. See Tab. \ref{tab:target-geometries} for the used geometries. For our calculations we used a thickness (height) of \qty{100}{\nano\meter} and a spacing between the two loops of \qty{200}{\nano\meter}. See Tab. \ref{tab:estimated-factors} for the results of the calculations.
-
-\begin{table}
-	\centering
-	\begin{tabular}{@{}lrr@{}}
-		\toprule
-		Loop & Inner diameter [\unit{\micro\meter}] &  Outer diameter [\unit{\micro\meter}] \\ \midrule
-		main  & 1.40  & 2.00 \\
-		dc-SQUID & 1.15 & 1.38 \\
-		\bottomrule
-	\end{tabular}
-	\caption{Geometries used in the calculation of the figure of merit and coupling factor. The geometries of the dc-SQUID are based on earlier work by \citeauthor{rogSQUIDontipMagneticMicroscopy2022} \citeyear{rogSQUIDontipMagneticMicroscopy2022}.}
-	\label{tab:target-geometries}
-\end{table}
-
-\begin{table}
-	\centering
-	\begin{tabular}{@{}lr@{}}
-		\toprule
-		Parameter & Value \\
-		\midrule
-		mutual inductance ($M$) & \qty{-6.834e-02}{\pico\henry} \\
-		main loop inductance ($L_l$) & \qty{1.938e+00}{\pico\henry} \\
-		dc-SQUID inductance ($L_s$) & \qty{1.969e+00}{\pico\henry} \\
-		coupling constant ($\kappa$) & -0.035 \\
-		figure of merit ($\delta$) & 0.00015 \\
-		\bottomrule
-	\end{tabular}
-	\caption{Estimated parameters of the system based on the geometries in Tab. \ref{tab:target-geometries} and using a thickness (height) of \qty{100}{\nano\meter} and a spacing between the two loops of \qty{200}{\nano\meter}.}
-	\label{tab:estimated-factors}
-\end{table} 
+The diameter of the dc-SQUID is chosen such that the periodicity of the SQUID interference pattern is on the order of a few \unit{\milli\tesla}. This means the effective diameter should be around \qtyrange{1}{2}{\micro\meter}. Furthermore, the width of the loop together with the thickness of the superconductor determine the geometric factor $\tilde{j}$, they are chosen such that the figure of merit is sufficiently small. In practice this means that the width is around \qty{0.3}{\micro\meter} and the thickness around \qty{100}{\nano\meter}. Details on this can be found on a per sample basis later as well as details on the type of junction.
 
 \subsection{Sample fabrication}
 \label{sec:method-sample-fabrication}
-The course structures such as contact pads are created using lithography. We use dc-sputtering to deposit a \qty{\pm 90}{\nano\meter} layer of \ce{Nb} on top of a resist coated \ce{Si} wafer. As \ce{Nb} is very sensitive to contamination we additionally cap it using dc-sputtered \qty{7}{\nano\meter} layer of \ce{Au}.
+We use \ce{Si} wafer of approximately \qty{1}{\square\centi\meter}. The wafer is cleaned by dusting it off using a pressurised nitrogen gas and rinsed for \qty{30}{\minute} in acetone in an ultrasonic bath. To get rid of acetone residue we finally rinse it using IPA for \qty{5}{\minute} in ultrasonic bath. The wafer then spin coated with PMMA 600K, baked at \qty{180}{\celsius} for 5 minutes, coated with PMMA 950K and then baked again. We then use electron beam lithography to etch our patterns. The PMMA is a negative resist, so exposed regions can later be removed. After this process we use dc-sputtering to deposit around \qty{100}{\nano\meter} of \ce{Nb} and cap it using \qty{7}{\nano\meter} of \ce{Au}. The remaining PMMA is finally removed using acetone in an ultrasonic bath and rinsed with IPA. See Figure~\ref{fig:lithography}. Using this process we create all the coarse structures, these include the contact pads, leads to the contact pad and a central square in which we will make our fine geometries.
 
-The junctions and loops are created by a focussed ion beam (FIB) that etches away the layers of \ce{Nb} and \ce{Au}. The advantage of this method over creating these fine structures using lithography is the higher resolution of the FIB and less contamination of the \ce{Nb} from the resist.
+\begin{figure}[ht!]
+	\centering
+	\def\svgwidth{\textwidth}
+	\import{figures}{lithography.pdf_tex}
+	\caption{Schematic depiction of the lithography and sputtering process. \textbf{a)} We start with a \ce{Si} wafer (dark grey) with a layer of PMMA 600K (\qty{0.4}{\micro\meter}) and on top of that PMMA 950K (\qty{0.4}{\micro\meter}) (yellow) and expose it to an electron beam. \textbf{b)} After exposure, we can remove the exposed regions using MIBK / IPA (1:3). \textbf{c)} We sputter the \ce{Nb} and \ce{Au} capping layer (light grey) on top the sample. \textbf{d)} In the final step we use acetone to remove the left-over PMMA leaving us with just the \ce{Nb} and \ce{Au} on top of the wafer in the desired pattern. The figure is not to scale.}
+	\label{fig:lithography}
+\end{figure}
 
-The junction type we use is a constriction junction. The relevant parameter is $\xi$. By choosing the width of the constriction on the order of $3\xi$ we can control the junction behaviour due to the temperature dependence of $\xi$\cite{tinkhamIntroductionSuperconductivity}. Details on the sample geometries will be given on a per sample basis in later sections as these are highly dependent on alignments and drift.
+The finer geometries in the central square are created using a beam of \ce{Ga+} (focussed ion beam (FIB)). They are used to cut away the \ce{Nb} and \ce{Au}, leaving just the wafer. The advantage of use the FIB is that we can achieve a higher resolution compared to lithography which is important for our junctions.
 
 \section{Analysis method}
 Our method requires little to no analysis, which immediately highlights one of the benefits of this method. This section mainly recaps how to retrieve the CPR, $f(\gamma)$, from the measured quantities $I_t$ (which is controlled in the experiment) and $\Phi_s$.
 
-Starting from our Eq. \ref{eqn:phase-flux-relation}, the expression for $\Phi_l$ and applying Ohms laws to the circuit in Fig. \ref{fig:schematic-setup} we have:
+Starting from our Equation~\ref{eqn:phase-flux-relation}, the expression for $\Phi_l$ and applying Ohms laws to the circuit in Figure~\ref{fig:schematic-setup} we have:
 \begin{equation}
 	\gamma = \frac{2\pi}{\Phi_0}\Phi_l \qquad \Phi_l = I_lL_l \qquad I_t = I_s + I_l
 \end{equation}
@@ -140,4 +116,4 @@ This means that a linear trend is added on top of our CPR. Furthermore we have a
 \begin{equation}
 	\gamma = \frac{2\pi}{\Phi_0}\Phi_l = \kappa \sqrt{\frac{L_l}{L_s}} \frac{2\pi}{\Phi_0} \Phi_s
 \end{equation}
-Since $f(\gamma)$ must be $2\pi$-periodic we can easily map these two even if $\kappa$, $L_l$ and $L_s$ are not know exactly. This is the only data analysis we need to do based on unknown parameters. See Figure~\ref{fig:analytical-prediction} for an expectation curve.
+Since $f(\gamma)$ must be $2\pi$-periodic we can easily map these two even if $\kappa$, $L_l$ and $L_s$ are not know exactly. This is the only data analysis we need to do based on unknown parameters.
