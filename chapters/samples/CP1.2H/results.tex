@@ -1,7 +1,7 @@
 % !TEX root = ../../../thesis.tex
 During the cool down of the Teslatron cryostat in which we measured the sample, we used a 4-point measurement to determine the resistance of the dc-SQUID. See Figure \ref{fig:CP1.1H-SQUID-RT}. We note that the sample becomes superconducting at \qty{8}{\kelvin} and has a quite sharp transition. This is above the expected transition temperature of \qty{7.5}{\kelvin} which was measured before on a thin film made from the same sputtering target. This might be explained however by the fact that the \ce{Nb} target had not been used in a while\footnote{It had last been used more than a year ago when the thin film was made.}. As such it is likely that when we sputtered the thin film that it had much more contaminations. $T_c$ for pure \ce{Nb} is \qty{9.2}{\kelvin}\cite{maxfieldSuperconductingPenetrationDepth1965}, since we use sputtering it is not surprising to find a lower $T_c$.
 
-\begin{figure}[ht]
+\begin{figure}[ht!]
 	\centering
 	\import{figures/samples/CP1}{CP1.2H_critical_temperature.pgf}
 	\caption{
@@ -12,7 +12,7 @@ During the cool down of the Teslatron cryostat in which we measured the sample, 
 
 Additionally we determined the temperature dependence of the critical current, see Figure \ref{fig:CP1.1H-SQUID-critical-current-temperature-dependence}. We note that, similar to what we see in Figure \ref{fig:CP1.1H-SQUID-RT}, that there are two transitions starting from \qty{7.2}{\kelvin}. The obvious one is a very sharp transition but there is a second much more subtle transition. The sharp transition is for the bulk of the superconductor (leads, contact pads, etc.) whilst the more subtle one is from the dc-SQUID's junctions. This defines the range in which we can measure our dc-SQUID when using it as a magnetometer at certain temperatures. The temperature dependence of the junction behaviour is attributed to the temperature dependence of the coherence length, see Section~\ref{sec:characteristic-length-scales}.
 
-\begin{figure}[ht]
+\begin{figure}[ht!]
 	\centering
 	\import{figures/samples/CP1}{CP1.2H_critical_current.pgf}
 	\caption{Temperature dependence of the critical current of the dc-SQUID. We note that near \qty{7.2}{\kelvin} an additional region becomes visible before the big transition where the resistance spikes up to above \qty{15}{\ohm}.}
@@ -21,7 +21,7 @@ Additionally we determined the temperature dependence of the critical current, s
 
 We measured the interference pattern of the dc-SQUID at \qty{7.6}{\kelvin}, see Figure~\ref{fig:CP1.1H-SQUID-SQI}. The periodicity of the interference pattern is between \qtyrange{3}{3.5}{\milli\tesla}. This means the effective area of our dc-SQUID should be between \qtyrange{0.6}{0.7}{\square\micro\meter} which corresponds to a diameter between \qtyrange{0.87}{0.94}{\micro\meter}. However, we know from the SEM images (see Figure~\ref{fig:CP1.2H-SEM-images}) that the diameter of our effective area must be between \qtyrange{1.2}{1.6}{\micro\meter} (a periodicity between \qtyrange{1}{1.8}{\milli\tesla}). This means the measured period is almost twice the expected period which seems to indicate that either our effective area or the field was much smaller by a factor two.
 
-\begin{figure}[ht]
+\begin{figure}[ht!]
 	\centering
 	\import{figures/samples/CP1}{CP1.2H_SQI.pgf}
 	\caption{The interference pattern measured over the dc-SQUID at \qty{7.6}{\kelvin}. The black lines are equipotential lines spaced \qty{5}{\micro\volt} apart.}
