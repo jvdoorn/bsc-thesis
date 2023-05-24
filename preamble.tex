@@ -3,6 +3,9 @@
 % Fixes things like bold font.
 \usepackage[tuenc]{fontspec}
 
+% Recommended by babel.
+\usepackage{csquotes}
+
 % Use siunitx to write out units and quantities, use special formatting for the units.
 \usepackage{siunitx}
 \sisetup{separate-uncertainty = true, multi-part-units = single, inter-unit-product = \ensuremath { { } \cdot { } }, range-units = single, list-units = single}
@@ -62,7 +65,8 @@
 % Used for including PGF files. Use the external package to avoid memory issues and increase compilation speed.
 \usepackage{import}
 \usepackage{pgfplots}
-\usepgfplotslibrary{external} 
+\pgfplotsset{compat=1.18}
+\usepgfplotslibrary{external}
 \tikzexternalize
 % Used for subfigures/captions.
 \usepackage{subcaption}
