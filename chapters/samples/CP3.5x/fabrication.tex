@@ -1,4 +1,4 @@
-% !TEX root = ../../thesis.tex
+% !TEX root = ../../../thesis.tex
 A loop with a single junction is sometimes called an rf-SQUID\cite{clarkeSQUIDHandbook2004}. The screening parameter\footnote{Normally when referring to the screening parameter we mean $\beta_l = 2LI_c/\Phi_0$. However, this is for a `normal' dc-SQUID and not an rf-SQUID.},
 \begin{equation}
 	\beta_{\text{rf}} = \frac{2\pi I_c L_l}{\Phi_0}
@@ -26,3 +26,37 @@ where $I_c$ refers to the critical current of the junction, must be less than on
 	\caption{Data produced based on the same parameters as Figure~\ref{fig:analytical-prediction}. This time however we modulated $I_c$ between $0.5I_{c,\text{max}}$ (blue) and $1.5I_{c,\text{max}}$ (red) in steps of $0.1I_{c,\text{max}}$. The black line highlights $I_c=I_{c,\text{max}}$. The black line is still slightly hysteric, the reason for this is given in the main text.}
 	\label{fig:CPR-hysteresis}
 \end{figure}
+
+\begin{table}
+	\begin{subtable}{.5\linewidth}
+		\centering
+		\begin{tabular}{@{}lrr@{}}
+			\toprule
+			Parameter & Value \\ \midrule
+			Junction loop $\diameter_{\text{outer}}$ & \qty{0.9}{\micro\meter} \\
+			Junction loop $\diameter_{\text{inner}}$ & \qty{0.2}{\micro\meter} \\
+			dc-SQUID $\diameter_{\text{outer}}$ & \qty{1.6}{\micro\meter} \\
+			dc-SQUID $\diameter_{\text{inner}}$ & \qty{1.1}{\micro\meter} \\
+			spacing & \qty{0.1}{\micro\meter} \\
+			$d_{\ce{Cu}}$ & \qty{25}{\nano\meter} \\
+			$d_{\ce{Nb}}$ & \qty{70}{\nano\meter} \\
+			$d_{\ce{Au}}$ & \qty{7}{\nano\meter} \\
+			\bottomrule
+		\end{tabular}
+    \end{subtable}
+    \begin{subtable}{.5\linewidth}
+    	\centering
+    	\begin{tabular}{@{}lrr@{}}
+    		\toprule
+    		Parameter & Value \\ \midrule
+    		$L_{l}$ & \qty{0.7}{\pico\henry} \\
+			$L_{s}$ & \qty{3.2}{\pico\henry} \\
+			$M$ & \qty{-0.1}{\pico\henry} \\
+			$\delta$ & \num{0.025} \\
+			$\kappa$ & \num{-0.035} \\
+    		\bottomrule
+    	\end{tabular}
+    \end{subtable}
+    \caption{The \textbf{left} table provides an overview of the geometries of CP3.5x as determined by SEM imaging and sputtering rates. The \textbf{right} table gives an overview of parameters found using a simulation based on the geometries. The geometries are based on sample CP1.2H.}
+    \label{tab:CP3.5x-geometries}
+\end{table}
