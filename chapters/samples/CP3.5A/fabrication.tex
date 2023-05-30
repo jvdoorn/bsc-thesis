@@ -6,17 +6,14 @@ A loop with a single junction is sometimes called an rf-SQUID\cite{clarkeSQUIDHa
 where $I_c$ refers to the critical current of the junction, must be less than one for a non-hysteric $I_s\Phi_l$-curve\cite{clarkeSQUIDHandbook2004,frolovMeasurementCurrentPhaseRelation2004}. This gives a maximum value for the critical current, $I_{c,\text{max}}$ given $L_l$. We note however, based on an numerical calculation, that for an SNS-junction $\beta_{\text{rf}} < 0.9$ is a more trustworthy criterium, see Figure~\ref{fig:CPR-hysteresis}. This is because the CPR is not perfectly sinusoidal\cite{vermeerSTMbasedScanningSQUID2021,likharevSuperconductingWeakLinks1979}.
 
 \begin{figure}[ht!]
-	\begin{subfigure}[t]{0.45\textwidth}
-		\centering
-		\input{figures/simulations/CPR_prediction.pgf}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[t]{0.45\textwidth}
-		\centering
-		\input{figures/simulations/measurement_prediction.pgf}
-	\end{subfigure}
+	\input{figures/simulations/CPR_prediction.pgf}
+	% \hfill
+	% \begin{subfigure}[t]{0.45\textwidth}
+	% 	\centering
+	% 	\input{figures/simulations/measurement_prediction.pgf}
+	% \end{subfigure}
 
-	\caption{Expectation values for the CPR of an SNS junction. The calculations where done for $I_c=\qty{25}{\micro\ampere}$, $L_l=\qty{11}{\pico\henry}$ and $\Delta(T)$ estimated at \qty{1}{\milli\electronvolt}. We note that the current through the loop creates a linear background that gets modulated by the CPR of the junction.}
+	\caption{Expectation values for the CPR of an SNS junction. The calculations where done for $I_c=\qty{25}{\micro\ampere}$, $L_l=\qty{11}{\pico\henry}$ and $\Delta(T)$ estimated at \qty{1}{\milli\electronvolt}. We note that the current through the loop creates a linear background that gets modulated by the CPR of the junction. The calculation is done for a short ballistic junction using Equation~2.13 in \cite{vermeerSTMbasedScanningSQUID2021}.}
 	\label{fig:analytical-prediction}
 \end{figure}
 
@@ -55,6 +52,6 @@ where $I_c$ refers to the critical current of the junction, must be less than on
     		\bottomrule
     	\end{tabular}
     \end{subtable}
-    \caption{The \textbf{left} table provides an overview of the geometries of CP3.5x as determined by SEM imaging and sputtering rates. The \textbf{right} table gives an overview of parameters found using a simulation based on the geometries. The geometries are based on sample CP1.2H.}
-    \label{tab:CP3.5x-geometries}
+    \caption{The \textbf{left} table provides an overview of the geometries of CP3.5A as determined by SEM imaging and sputtering rates. The \textbf{right} table gives an overview of parameters found using a simulation based on the geometries. The geometries are based on sample CP1.2H.}
+    \label{tab:CP3.5A-geometries}
 \end{table}
