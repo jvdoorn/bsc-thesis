@@ -3,32 +3,32 @@ The steep slopes in Figure~\ref{fig:CP2.6B_super_current_over_loop_flux} might b
 \begin{equation}
 	\beta_{\text{rf}} = \frac{2\pi I_c L_l}{\Phi_0}
 \end{equation}
-where $I_c$ refers to the critical current of the junction, must be less than one for a non-hysteric $I_s\Phi_l$-curve\cite{clarkeSQUIDHandbook2004,frolovMeasurementCurrentPhaseRelation2004}. This gives a maximum value for the critical current, $I_{c,\text{max}}$ given $L_l$. We note however, based on an numerical calculation, that for an SNS-junction $\beta_{\text{rf}} < 0.9$ is a more trustworthy criterium, see Figure~\ref{fig:CPR-hysteresis}. This is because the CPR is not perfectly sinusoidal\cite{vermeerSTMbasedScanningSQUID2021,likharevSuperconductingWeakLinks1979}.
+where $I_c$ refers to the critical current of the junction, must be less than one for a non-hysteric $I_s\Phi_l$-curve\cite{clarkeSQUIDHandbook2004,frolovMeasurementCurrentPhaseRelation2004}. This gives a maximum value for the critical current, $I_{c,\text{max}}$ given $L_l$. We note however, based on an numerical calculation, that for an SNS-junction $\beta_{\text{rf}} < 0.9$ is a more trustworthy criterium, see Figure~\ref{fig:CPR-hysteresis}. This is because the CPR is not perfectly sinusoidal\cite{vermeerSTMbasedScanningSQUID2021,likharevSuperconductingWeakLinks1979}. A prediction has been plotted in Figure~\ref{fig:CP3.5A-analytical-prediction}. Here we have used twice the estimated value for the inductance because in the previous sample we noted that the experimental value was twice the simulated value.
 
 \begin{figure}[ht!]
 	\input{figures/simulations/CPR_prediction.pgf}
-	% \hfill
-	% \begin{subfigure}[t]{0.45\textwidth}
-	% 	\centering
-	% 	\input{figures/simulations/measurement_prediction.pgf}
-	% \end{subfigure}
-
-	\caption{Expectation values for the CPR of an SNS junction. The calculations where done for $I_c=\qty{25}{\micro\ampere}$, $L_l=\qty{11}{\pico\henry}$ and $\Delta(T)$ estimated at \qty{1}{\milli\electronvolt}. We note that the current through the loop creates a linear background that gets modulated by the CPR of the junction. The calculation is done for a short ballistic junction using Equation~2.13 in \cite{vermeerSTMbasedScanningSQUID2021}.}
-	\label{fig:analytical-prediction}
+	\caption{Expectation values for the CPR of an SNS junction. The calculations where done for $I_c=\qty{100}{\micro\ampere}$, $L_l=2 \cdot \qty{0.8}{\pico\henry}$ and $\Delta(T)$ estimated at \qty{1}{\milli\electronvolt}. We note that the current through the loop creates a linear background that gets modulated by the CPR of the junction. The calculation is done for a short ballistic junction using Equation~2.13 in \cite{vermeerSTMbasedScanningSQUID2021}.}
+	\label{fig:CP3.5A-analytical-prediction}
 \end{figure}
 
 \begin{figure}
 	\centering
 	\import{figures/simulations}{CPR_hysteresis.pgf}
-	\caption{Data produced based on the same parameters as Figure~\ref{fig:analytical-prediction}. This time however we modulated $I_c$ between $0.5I_{c,\text{max}}$ (blue) and $1.5I_{c,\text{max}}$ (red) in steps of $0.1I_{c,\text{max}}$. The black line highlights $I_c=I_{c,\text{max}}$. The black line is still slightly hysteric, the reason for this is given in the main text.}
+	\caption{Data produced based on the same parameters as Figure~\ref{fig:CP3.5A-analytical-prediction}. This time however we modulated $I_c$ between $0.5I_{c,\text{max}}$ (blue) and $1.5I_{c,\text{max}}$ (red) in steps of $0.1I_{c,\text{max}}$. The black line highlights $I_c=I_{c,\text{max}}$. The black line is still slightly hysteric, the reason for this is given in the main text.}
 	\label{fig:CPR-hysteresis}
 \end{figure}
 
 In order to get a $\beta_{\text{rf}} < 0.9$ we decided to lower the inductance. Alternatively we could have lowered the critical current. To do so we could have created a less wide (difference between inner and outer diameter) loop. Consequently this also would have increased our FOM. To decrease the inductance we shrink the outer diameter of the junction loop whilst keeping the width the same.
 
-Additionally, in order to more accurately control the flux through the dc-SQUID we add a modulation line. This allows us to bias the dc-SQUID in the linear regime without the need for an external field. Furthermore it also enables the use for a flux-locked loop (FLL). The implementation of the modulation line is based on \cite{linYBaCuNano2020}.
+Additionally, in order to more accurately control the flux through the dc-SQUID we add a modulation line. This allows us to bias the dc-SQUID in the linear regime without the need for an external field. Furthermore it also enables the use for a flux-locked loop (FLL). The implementation of the modulation line is based on~\cite{linYBaCuNano2020}.
 
 As an alternative we considered making a third loop identical to the junction loop without a junction. We could then pass a current through it in order to bias the dc-SQUID and use a FLL. The advantage of this method would be that we can directly determine the mutual inductance between this loop and the dc-SQUID. This would by extension give us the mutual inductance between the dc-SQUID and junction loop. However, this method was deemed impossible because a current of $\qty{10}{\milli\ampere} \gg I_c$ would be required in order to bias the dc-SQUID to a half $\Phi_0$.
+
+We implement the FLL digitally. We use proportional and integral (PI) feedback. A deviation $\delta V_s = V_s - V_{s,\text{setpoint}}$ is measured and the modulation current adjusted accordingly. The deviation is caused by the current through the junction loop as well as noise. By measuring a specific $I_t$ for a longer period we can accurately determine the (average) modulation current required to compensate $\delta V_s$. Because the deviation caused by noise should average out, we are left with the contribution of just the junction loop coupling. We can thus use this averaged value to determine the deviation form the setpoint giving us $\Phi_s$.
+
+Digital feedback can be tuned more easily than analogue feedback. Due to time constraints this currently is an important factor. Future project should consider using analogue feedback as it can be done more accurately. As a reference please see Section~4.2.2 in \citetitle{zhangSQUIDReadoutElectronics2020}\cite{zhangSQUIDReadoutElectronics2020}.
+
+We used a triangular geometry for our dc-SQUID to improve the coupling to the junction loop.
 
 \begin{table}
 	\begin{subtable}{.6\linewidth}
