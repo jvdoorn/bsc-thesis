@@ -1,5 +1,5 @@
 % !TEX root = ../../../thesis.tex
-A loop with a single junction is sometimes called an rf-SQUID\cite{clarkeSQUIDHandbook2004}. The screening parameter\footnote{Normally when referring to the screening parameter we mean $\beta_l = 2LI_c/\Phi_0$. However, this is for a `normal' dc-SQUID and not an rf-SQUID.},
+The steep slopes in Figure~\ref{fig:CP2.6B_super_current_over_loop_flux} might be explained by hysteresis. Our junction loop can be seen as an rf-SQUID\cite{clarkeSQUIDHandbook2004}. The screening parameter\footnote{Normally when referring to the screening parameter we mean $\beta_l = 2LI_c/\Phi_0$. However, this is for a `normal' dc-SQUID and not an rf-SQUID.},
 \begin{equation}
 	\beta_{\text{rf}} = \frac{2\pi I_c L_l}{\Phi_0}
 \end{equation}
@@ -24,13 +24,20 @@ where $I_c$ refers to the critical current of the junction, must be less than on
 	\label{fig:CPR-hysteresis}
 \end{figure}
 
+In order to get a $\beta_{\text{rf}} < 0.9$ we decided to lower the inductance. Alternatively we could have lowered the critical current. To do so we could have created a less wide (difference between inner and outer diameter) loop. Consequently this also would have increased our FOM. To decrease the inductance we shrink the outer diameter of the junction loop whilst keeping the width the same.
+
+Additionally, in order to more accurately control the flux through the dc-SQUID we add a modulation line. This allows us to bias the dc-SQUID in the linear regime without the need for an external field. Furthermore it also enables the use for a flux-locked loop (FLL). The implementation of the modulation line is based on \cite{linYBaCuNano2020}.
+
+As an alternative we considered making a third loop identical to the junction loop without a junction. We could then pass a current through it in order to bias the dc-SQUID and use a FLL. The advantage of this method would be that we can directly determine the mutual inductance between this loop and the dc-SQUID. This would by extension give us the mutual inductance between the dc-SQUID and junction loop. However, this method was deemed impossible because a current of $\qty{10}{\milli\ampere} \gg I_c$ would be required in order to bias the dc-SQUID to a half $\Phi_0$.
+
 \begin{table}
 	\begin{subtable}{.6\linewidth}
 		\begin{tabular}[t]{@{}lrr@{}}
 			\toprule
 			Parameter & Value \\ \midrule
-			Junction loop $\diameter_{\text{outer/inner}}$ & \qty{0.9}{\micro\meter} / \qty{0.2}{\micro\meter} \\
-			dc-SQUID $\diameter_{\text{outer/inner}}$ & \qty{1.6}{\micro\meter} / \qty{1.1}{\micro\meter} \\
+			Junction loop $\diameter_{\text{outer}}$ / $\diameter_{\text{inner}}$ & \qty{1.0}{\micro\meter} / \qty{0.3}{\micro\meter} \\
+			dc-SQUID $\diameter_{\text{outer}}$ / $\diameter_{\text{inner}}$ & \qty{2.0}{\micro\meter} / \qty{1.4}{\micro\meter} \\
+			                                                                 & \qty{1.3}{\micro\meter} / \qty{0.7}{\micro\meter} \\
 			spacing & \qty{0.1}{\micro\meter} \\
 			$d_{\ce{Cu}}$ & \qty{25}{\nano\meter} \\
 			$d_{\ce{Nb}}$ & \qty{70}{\nano\meter} \\
@@ -44,11 +51,11 @@ where $I_c$ refers to the critical current of the junction, must be less than on
     	\begin{tabular}[t]{@{}lrr@{}}
     		\toprule
     		Parameter & Value \\ \midrule
-    		$L_{l}$ & \qty{0.7}{\pico\henry} \\
-			$L_{s}$ & \qty{3.2}{\pico\henry} \\
+    		$L_{l}$ & \qty{0.8}{\pico\henry} \\
+			$L_{s}$ & \qty{2.8}{\pico\henry} \\
 			$M$ & \qty{-0.1}{\pico\henry} \\
-			$\delta$ & \num{0.025} \\
-			$\kappa$ & \num{-0.035} \\
+			$L_{l} / M$ & \num{-15.3} \\
+			$\delta$ & \num{0.023} \\
     		\bottomrule
     	\end{tabular}
     \end{subtable}
