@@ -35,13 +35,7 @@ As an alternative we considered making a third loop identical to the junction lo
 		\begin{tabular}[t]{@{}lrr@{}}
 			\toprule
 			Parameter & Value \\ \midrule
-			Junction loop $\diameter_{\text{outer}}$ / $\diameter_{\text{inner}}$ & \qty{1.0}{\micro\meter} / \qty{0.3}{\micro\meter} \\
-			dc-SQUID $\diameter_{\text{outer}}$ / $\diameter_{\text{inner}}$ & \qty{2.0}{\micro\meter} / \qty{1.4}{\micro\meter} \\
-			                                                                 & \qty{1.3}{\micro\meter} / \qty{0.7}{\micro\meter} \\
-			spacing & \qty{0.1}{\micro\meter} \\
-			$d_{\ce{Cu}}$ & \qty{25}{\nano\meter} \\
-			$d_{\ce{Nb}}$ & \qty{70}{\nano\meter} \\
-			$d_{\ce{Au}}$ & \qty{10}{\nano\meter} \\
+			\expandableinput tables/geometries/CP3.5A.tex
 			\bottomrule
 		\end{tabular}
     \end{subtable}
@@ -51,14 +45,10 @@ As an alternative we considered making a third loop identical to the junction lo
     	\begin{tabular}[t]{@{}lrr@{}}
     		\toprule
     		Parameter & Value \\ \midrule
-    		$L_{l}$ & \qty{0.8}{\pico\henry} \\
-			$L_{s}$ & \qty{2.8}{\pico\henry} \\
-			$M$ & \qty{-0.1}{\pico\henry} \\
-			$L_{l} / M$ & \num{-15.3} \\
-			$\delta$ & \num{0.023} \\
+    		\expandableinput tables/parameters/CP3.5A.tex
     		\bottomrule
     	\end{tabular}
     \end{subtable}
-    \caption{The \textbf{left} table provides an overview of the geometries of CP3.5A as determined by SEM imaging and sputtering rates. The \textbf{right} table gives an overview of parameters found using a simulation based on the geometries. The geometries are based on sample CP1.2H.}
+    \caption{The \textbf{left} table provides an overview of the geometries of CP3.5A as determined by SEM imaging and sputtering rates. The \textbf{right} table gives an overview of parameters found using a simulation based on the geometries. For the dc-SQUID two diameters are shown as it is slightly rectangular.}
     \label{tab:CP3.5A-geometries}
 \end{table}
