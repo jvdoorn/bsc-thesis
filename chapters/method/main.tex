@@ -3,12 +3,12 @@
 \label{chapter:method}
 % Method largely based on Frolov 2004.
 % Uses a superconducting loop with a junction inductively coupled to a dc-SQUID magnetometer
-Our method is mostly inspired by \Citeauthor{frolovMeasurementCurrentPhaseRelation2004} \citeyear{frolovMeasurementCurrentPhaseRelation2004}. We incorporate the junction whose CPR we want to measure into a superconducting loop. This loop is then inductively coupled to a dc-SQUID magnetometer. See Fig. \ref{fig:schematic-setup} for a schematic of the setup. This chapter will outline the ideas behind the setup and provide arguments for the chosen geometries.
+We use a method based on \citeauthor{frolovMeasurementCurrentPhaseRelation2004}\cite{frolovMeasurementCurrentPhaseRelation2004,frolovCurrentphaseRelationsJosephson2005}. We incorporate the junction under study into a superconducting loop. This loop is then inductively coupled to a dc-SQUID magnetometer. Figure~\ref{fig:schematic-setup} shows a schematic of the setup. By passing a current through the junction loop it causes a flux proportional to the phase. We can measure the flux using the inductively coupled dc-SQUID. It also allows us to determine the current through the junction. This means we have all the information we need in order to reconstruct the CPR. This chapter first walks through the analysis method and provides arguments for the used assumptions and relations. Subsequently we provide experimental details about the production process of our samples.
 
 \begin{figure}
 	\centering
 	\begin{circuitikz}
-		% Main loop with single Josephson Junction (openbarrier) and an inductor for clarity.
+		% Main loop with single Josephson Junction and an inductor for clarity.
 		\draw (0,0) to [short, *-, i=$I_t$] (2,0)
 		to [josephsonjunction, i=$I_s$, l_=$JJ$] (2, -2)
 		to [short, -*, i=$I_t$] (0, -2);
@@ -27,12 +27,39 @@ Our method is mostly inspired by \Citeauthor{frolovMeasurementCurrentPhaseRelati
 		\node[] at (6,-1) {$\Phi_s$};
 	\end{circuitikz}
 
-	\caption{Schematic depiction of the system. The left loop is inductively coupled to the dc-SQUID on the right. This is illustrated by $L_l$ and $L_s$. The junction itself has an inductance $L_{JJ}$. The current $I_t$ is controlled externally. The flux through the two loops is denoted by $\Phi_l$ and $\Phi_s$. The junction whose CPR we want to measure is part of the left loop. Please note that the 4 contacts used for the dc-SQUID readout are not shown.}
+	\caption{Schematic depiction of the system. The left loop is inductively coupled to the dc-SQUID on the right. This is illustrated by $L_l$ and $L_s$. The junction itself has an inductance $L_{JJ}$. The current $I_t$ is controlled externally. The flux through the two loops is denoted by $\Phi_l$ and $\Phi_s$. The junction whose CPR we want to measure is part of the left loop. Please note that the four contacts used for the dc-SQUID readout are not shown.}
 	\label{fig:schematic-setup}
 \end{figure}
 
-\section{Relation between flux and phase}
-Using flux quantization and the gauge-invariant phase we can derive a relation between the flux $\Phi_l$ and $\gamma$. For details please see Section \ref{app:derivation-phase-flux-relation}.
+\section{Analysis method}
+Our method requires little to no analysis, which immediately highlights one of the benefits of this method. The measurements are performed by passing a current through the junction loop $I_t$. Constrained by flux quantization and the CPR of the junction it will distribute the current between the loop and the junction:
+\begin{equation}
+	I_t = I_s + I_l
+\end{equation}
+This can be seen by applying Ohm's law to the circuit in Figure~\ref{fig:schematic-setup}. By simultaneously measuring $V_s$ we are able to determine $\Phi_s$. Using the dc-SQUID's flux we can determine both $\gamma$ and $\Phi_l$. More details on this can be found in Section~\ref{sec:flux-phase-relation} and Section~\ref{sec:magnetic-coupling}.
+\begin{equation}
+	I_l = \frac{\Phi_s}{M} \qquad \Phi_l = \frac{L_l}{M}\Phi_s
+\end{equation}
+Assuming $\gamma$ to be proportional to $\Phi_l$ we find the phase:
+\begin{equation}
+	\gamma = \frac{2\pi}{\Phi_0}\Phi_l = \frac{2\pi}{\Phi_0}\frac{L_l}{M}\Phi_s
+\end{equation}
+Arguments for the proportionality between $\gamma$ and $\Phi_l$ are provided in Section~\ref{sec:figure-of-merit}. Since we control $I_t$ and indirectly measured $I_s$ we can see that:
+\begin{equation}
+	I_s = I_t - I_l = I_t - \frac{\Phi_s}{M}
+\end{equation}
+The value for $L_l$ can be determined numerically. However, as this might not match the true value it is also possible to extract $L_l$ from the data. We can do so by exploiting the fact that the current-phase relation must be $2\pi$ periodic, see Section~\ref{sec:josephson-effect}. Similarly the value for the mutual inductance can be measured indirectly by determining the linear trend we see between $\Phi_s$ and $I_t$. Figure~\ref{fig:sinusoidal-CPR-prediction} shows an example of what the data looks like for a perfectly sinusoidal CPR. 
+
+\begin{figure}[ht!]
+	\centering
+	\input{figures/simulations/CPR_sinusoidal_prediction.pgf}
+	\caption{Analytical example showing the super current, loop and total current over loop flux. We used a purely sinusoidal current-phase relation with $I_c=\qty{300}{\micro\ampere}$ and a loop inductance of \qty{1}{\pico\ampere}.}
+	\label{fig:sinusoidal-CPR-prediction}
+\end{figure}
+
+\subsection{Relation between flux and phase}
+\label{sec:flux-phase-relation}
+Using flux quantization and the gauge-invariant phase we can derive a relation between the flux $\Phi_l$ and $\gamma$. For details please see Appendix~\ref{app:derivation-phase-flux-relation}.
 \begin{equation}
 	\gamma = \frac{2\pi}{\Phi_0}\left(\Phi_l + \lambda^2\mu_0 \int \vec{J}\cdot d \vec{l} \right)
 	\label{eqn:phase-flux-relation}
@@ -41,14 +68,18 @@ We can express $\Phi_l$ in terms of $I_s$ and $I_l$:
 \begin{equation}
 	\Phi_l = I_sL_{JJ}  + I_lL_l
 \end{equation}
-Where $L_{JJ}$ and $L_l$ are the inductances of the Josephson junction and loop respectively\footnote{This is not the so called Josephson inductance but purely a magnetic inductance and not a kinetic inductance.}. We will assume that $L_{JJ} \ll L_l$, this is also done by \citeauthor{frolovMeasurementCurrentPhaseRelation2004} (see \cite{frolovCurrentphaseRelationsJosephson2005,frolovMeasurementCurrentPhaseRelation2004}) and often in literature when discussing dc-SQUIDs (see par example \cite{clarkeSQUIDHandbook2004}). This means our final equation for the loop flux becomes:
+Where $L_{JJ}$ and $L_l$ are the inductances of the Josephson junction and loop respectively\footnote{This is not the so called Josephson inductance but purely a magnetic inductance and not a kinetic inductance.}. Strictly speaking $L_{JJ}$ is more of mutual inductance between the loop and the junction. However, in practice it does not matter. We will assume that $L_{JJ} \ll L_l$. This is also done by \citeauthor{frolovMeasurementCurrentPhaseRelation2004} (see \cite{frolovCurrentphaseRelationsJosephson2005,frolovMeasurementCurrentPhaseRelation2004}) and often in literature when discussing dc-SQUIDs (see par example \cite{clarkeSQUIDHandbook2004}). This means our final equation for the loop flux becomes:
 \begin{equation}
 	\Phi_l = I_lL_l
 \end{equation}
 
-\subsection{Figure of merit}
+\subsection{Proportionality between $\gamma$ and $\Phi_l$}
 \label{sec:figure-of-merit}
-In order for $\gamma$ to be proportional to $\Phi_l$ the second term must be negligible in Eq. \ref{eqn:phase-flux-relation}. We define a figure of merit $\delta$ which we require to be $\ll 1$.
+We want to determine $\gamma$ by measuring $\Phi_l$. The two are only proportional however if the integral term in Equation~\ref{eqn:phase-flux-relation} is negligible. As such we have the requirement that:
+\begin{equation*}
+	\lambda^2\mu_0 \int \vec{J}\cdot d \vec{l} \ll \Phi_l
+\end{equation*}
+We define a figure of merit, $\delta$, that weighs the two terms. The requirement that $\gamma \propto \Phi_l$ is satisfied when $|\delta| \ll 1$.
 \begin{equation}
 	\delta = \frac{\lambda^2\mu_0 \int \vec{J}\cdot d \vec{l}}{\Phi_l}
 \end{equation}
@@ -59,9 +90,7 @@ For a square and round geometry we can rewrite the integral part in the followin
 		8r \tilde{j} I_l, &\text{square}
 	\end{cases}
 \end{equation}
-Here $r$ is the radius (half the diameter) and $\tilde{j} = \tilde{j}(d, w, \lambda)$ a geometric factor in \unit{\per\square\meter}. The value of $\tilde{j}$ can be calculated numerically and details can be found in Section \ref{app:derivation-geometric-factor-j}.
-
-The loop flux can simply be rewritten as $\Phi_l = I_lL_l$, this allows us to rewrite the figure of merit as:
+Here $r$ is the radius (half the diameter) and $\tilde{j} = \tilde{j}(d, w, \lambda)$ a geometric factor in \unit{\per\square\meter}. The value of $\tilde{j}$ can be calculated numerically and details can be found in Appendix~\ref{app:derivation-geometric-factor-j}. The loop flux can be expressed as $\Phi_l = I_lL_l$, this allows us to rewrite the figure of merit as:
 \begin{equation}
 	\delta = \frac{\lambda^2\mu_0\tilde{j}}{L_l} \cdot \begin{cases}
 		2\pi r, &\text{round} \\
@@ -70,37 +99,39 @@ The loop flux can simply be rewritten as $\Phi_l = I_lL_l$, this allows us to re
 	\label{eqn:figure-of-merit}
 \end{equation}
 
-It is important to note that the figure of merit is independent of the amount of current ($I_l$) passed through the loop, as such it is always valid. The inductance of the loop can be determined using a simulation done in SuperScreen\cite{bishop-vanhornSuperScreenOpensourcePackage2022}.
+It is important to note that the figure of merit only depends on the device geometry and is independent of experimental parameters such as $I_l$. The inductance of the loop can be determined numerically using SuperScreen\cite{bishop-vanhornSuperScreenOpensourcePackage2022}.
 
 \subsection{Magnetic coupling}
 \label{sec:magnetic-coupling}
-There is not a $1:1$ relation between $\Phi_l$ and $\Phi_s$. Since we are passing a current through the junction loop, we can use the mutual inductance to determine the flux it causes in the dc-SQUID loop. We can simulate the value for the mutual inductance using SuperScreen\cite{bishop-vanhornSuperScreenOpensourcePackage2022}. In the experiment the mutual inductance can be measured indirectly by determining the linear trend we see in $\Phi_s$. Using this mutual inductance we can determine the junction loop current:
+The dc-SQUID is inductively coupled to the junction loop. This means that by measuring $\Phi_s$ we can determine $\Phi_l$ which is then used to determine $\gamma$ and $I_l$. In the experiment we pass a current through the junction loop. Using the mutual inductance we obtain a relation between $I_l$ and $\Phi_s$:
 \begin{equation}
 	I_l = \frac{\Phi_s}{M}
 \end{equation}
-We can then use the inductance of the junction loop to find the junction loop flux:
+Using the inductance of the junction loop we then also find $\Phi_s$:
 \begin{equation}
 	\Phi_l = I_lL_l = \frac{L_l}{M}\Phi_s
 \end{equation}
 
-This is a naive approach that does not take into account the possibility of magnetic lensing\cite{prigozhin3DSimulationSuperconducting2018}. As such the mutual inductance might be larger in practice, meaning that the dc-SQUID reacts more sensitively to change in the junction loop.
+The (mutual) inductance can be determined numerically in SuperScreen\cite{bishop-vanhornSuperScreenOpensourcePackage2022}. The numerical simulation does not take into account the possibility of magnetic lensing\cite{prigozhin3DSimulationSuperconducting2018}. As such the mutual inductance might be larger in practice. This means that the dc-SQUID might react more sensitively to changes in the junction loop.
 
 \section{Sample geometries}
 The diameter of the dc-SQUID is chosen such that the periodicity of the SQUID interference pattern is on the order of a few \unit{\milli\tesla}. This means the effective diameter should be around \qtyrange{1}{2}{\micro\meter}. Furthermore, the width of the loop together with the thickness of the superconductor determine the geometric factor $\tilde{j}$, they are chosen such that the figure of merit is sufficiently small. In practice this means that the width is around \qty{0.3}{\micro\meter} and the thickness around \qty{100}{\nano\meter}. Details on this can be found on a per sample basis later as well as details on the type of junction.
 
-\subsection{Sample fabrication}
+\section{Sample fabrication}
 \label{sec:method-sample-fabrication}
-We use \ce{Si} wafer of approximately \qty{1}{\square\centi\meter}. The wafer is cleaned by dusting it off using a pressurised nitrogen gas and rinsed for \qty{30}{\minute} in acetone in an ultrasonic bath. To get rid of acetone residue we finally rinse it using IPA for \qty{5}{\minute} in ultrasonic bath. The wafer then spin coated with PMMA 600K, baked at \qty{180}{\celsius} for 5 minutes, coated with PMMA 950K and then baked again. We then use electron beam lithography to etch our patterns. The PMMA is a negative resist, so exposed regions can later be removed. After this process we use dc-sputtering to deposit around \qty{100}{\nano\meter} of \ce{Nb} and cap it using \qty{7}{\nano\meter} of \ce{Au}. The remaining PMMA is finally removed using acetone in an ultrasonic bath and rinsed with IPA. See Figure~\ref{fig:lithography}. Using this process we create all the coarse structures, these include the contact pads, leads to the contact pad and a central square in which we will make our fine geometries.
+We use \ce{Si} wafer of approximately \qty{1}{\square\centi\meter}. The wafer is cleaned by dusting it off using a pressurised nitrogen gas and rinsed for \qty{30}{\minute} in acetone in an ultrasonic cleaner. To get rid of acetone residue we rinse it using IPA for \qty{5}{\minute} in the ultrasonic cleaner. We spin coat the wafer with a layer of PMMA 600K followed by a layer of PMMA 950K. After this we pattern the sample using electron-beam lithography. Due to the double PMMA layers, development leaves an undercut.
+
+After this process we use dc-sputtering to deposit the required normal metal and superconductor layers and cap it using \qty{7}{\nano\meter} of \ce{Au}. The \ce{Nb} is sputtered in a ultra-high vacuum magnetron sputtering setup. It has a base pressure of \qty{\leq1E-9}{\milli\bar} and a argon deposition pressure of \qty{4e-3}{\milli\bar}. Lift-off is done using acetone. A final rinsing is done using IPA to remove any residues. Using this process we create all the coarse structures. These include the contact pads, leads to the contact pad and a central square in which we will make our fine geometries. Figure~\ref{fig:lithography} schematically shows the lithography and sputtering process.
 
 \begin{figure}[ht!]
 	\centering
 	\def\svgwidth{\textwidth}
 	\import{figures}{lithography.pdf_tex}
-	\caption{Schematic depiction of the lithography and sputtering process. \textbf{a)} We start with a \ce{Si} wafer (dark grey) with a layer of PMMA 600K (\qty{0.4}{\micro\meter}) and on top of that PMMA 950K (\qty{0.4}{\micro\meter}) (yellow) and expose it to an electron beam. \textbf{b)} After exposure, we can remove the exposed regions using MIBK / IPA (1:3). \textbf{c)} We sputter the \ce{Nb} and \ce{Au} capping layer (light grey) on top the sample. \textbf{d)} In the final step we use acetone to remove the left-over PMMA leaving us with just the \ce{Nb} and \ce{Au} on top of the wafer in the desired pattern. The figure is not to scale.}
+	\caption{Schematic depiction of the lithography and sputtering process. \textbf{a)} We start with a \ce{Si} wafer (dark grey) with a layer of PMMA 600K (\qty{0.4}{\micro\meter}) and on top of that PMMA 950K (\qty{0.4}{\micro\meter}) (yellow) and expose it to an electron beam. \textbf{b)} After exposure, we can remove the exposed regions using MIBK / IPA (1:3). \textbf{c)} We sputter the normal metal and superconductor layers (light grey) on top of the sample. \textbf{d)} In the final step we use acetone for lift-off leaving us with the coarse structures on top of the wafer. The figure is not to scale.}
 	\label{fig:lithography}
 \end{figure}
 
-The finer geometries in the central square are created using a beam of \ce{Ga+} (focussed ion beam (FIB)). They are used to cut away the \ce{Nb} and \ce{Au}, leaving just the wafer. The advantage of use the FIB is that we can achieve a higher resolution compared to lithography which is important for our junctions. See Figure~\ref{fig:FIB}.
+The finer geometries in the central square are created using focussed ion beam (FIB). They are used to cut away the \ce{Nb} and \ce{Au}, leaving just the wafer. The advantage of use the FIB is that we can achieve a higher resolution compared to lithography which is important for our junctions. Figure~\ref{fig:FIB} schematically shows the FIB process.
 
 \begin{figure}[ht!]
 	\centering
@@ -108,26 +139,4 @@ The finer geometries in the central square are created using a beam of \ce{Ga+} 
 	\import{figures}{FIB.pdf_tex}
 	\caption{Schematic depiction of the FIB. \textbf{a)} We start with a \ce{Si} wafer (dark grey) with layer of \ce{Nb} and \ce{Au} on top. This was deposited using sputtering. We use a beam of \ce{Ga+} to etch away small pieces of material. \textbf{b)} The regions that have been exposed to the \ce{Ga+} beam are gone. The figure is not to scale.}
 	\label{fig:FIB}
-\end{figure}
-
-\section{Analysis method}
-Our method requires little to no analysis, which immediately highlights one of the benefits of this method. This section mainly recaps how to retrieve the CPR, $f(\gamma)$, from the measured quantities $I_t$ (which is controlled in the experiment) and $\Phi_s$. By determining the linear trend in $\Phi_s$, as outlined in Section~\ref{sec:magnetic-coupling}, we can determine the current through the junction loop as well as the flux of the junction loop:
-\begin{align}
-	I_l = \frac{\Phi_s}{M} \qquad \Phi_l = I_lL_l = \frac{L_l}{M}\Phi_s
-\end{align}
-By applying Ohms laws to the circuit in Figure~\ref{fig:schematic-setup} we see $I_t = I_s + I_l$, allowing us to determine the current through the junction:
-\begin{equation}
-	I_s = I_t - I_l = I_t - \frac{\Phi_s}{M}
-\end{equation}
-
-As a final step we use Equation~\ref{eqn:phase-flux-relation} and find:
-\begin{equation}
-	\gamma = \frac{2\pi}{\Phi_0}\Phi_l = \frac{2\pi}{\Phi_0}\frac{L_l}{M}\Phi_s
-\end{equation}
-Here we have neglected the term $\lambda^2\mu_0 \int \vec{J}\cdot d \vec{l}$ assuming our figure or merit is sufficiently small as highlighted in Sec. \ref{sec:figure-of-merit}. The value for $L_l$ can be determined numerically. However, as this might not match the true value it is also possible to extract $L_l$ from the data. We can do so by exploiting the fact that the current-phase relation must be periodic in $\Phi_0$, see Section~\ref{sec:josephson-effect}. 
-
-\begin{figure}[ht!]
-	\centering
-	\input{figures/simulations/CPR_sinusoidal_prediction.pgf}
-	\caption{Analytical example showing the super current, loop and total current over loop flux. We used a purely sinusoidal current-phase relation with $I_c=\qty{300}{\micro\ampere}$ and a loop inductance of \qty{1}{\pico\ampere}.}
 \end{figure}
