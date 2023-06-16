@@ -1,0 +1,15 @@
+% !TEX root = ../../../thesis.tex
+The sample had not been permanently stored in a desiccator. An important check was thus if the sample had degraded. The RT-curve of the dc-SQUID showed no significant changes. As such it is unlikely that the sample degraded significantly. It also confirmed that all the contacts are still good.
+
+Previously the CPR was measured at \qty{3}{\kelvin}. An increase in temperature degrades the sensitivity of our dc-SQUID and the critical current of the junction loop. We note that our measurement was approximately \qty{200}{\micro\ampere} periodic. In order to seem multiple periods it is preferable to have a critical junction around \qty{400}{\micro\ampere}. This allows us to see around 4 to 5 periods. Through trial and error we found the highest usable temperature to be \qty{3.4}{\kelvin}.
+
+Similarly to last time we then measured SQIs for several bias currents. We found the optimal bias current to be \qty{300}{\micro\ampere}. We measured the SQIs for \qtylist{3.0;3.2;3.4}{\kelvin}. They are shown in Figure~\ref{fig:CP2.6B_revisited_SQIs}. The curved background might be attributed to a crossover between dc-SQUID oscillations and the Little-Parks effect\cite{sharonCurrentinducedSQUIDBehavior2016}.
+
+\begin{figure}[ht!]
+	\centering
+	\input{figures/samples/CP2/CP2.6B_revisited_SQIs.pgf}
+	\caption{SQIs at \qtylist{3.0;3.2;3.4}{\kelvin} of sample CP2.6B. We note that they appear to have a slightly curved background. We used a bias current of \qty{300}{\micro\ampere}. Near zero field the patterns seem quite stable but further out become more noisy.}
+	\label{fig:CP2.6B_revisited_SQIs}
+\end{figure}
+
+Whilst the SQIs are far from perfect, they are usable. Near zero field the periodicity as well as the horizontal offset is reproducible. The amplitude of the oscillations is stable as well. Since the junction loop will only create a small flux this should be sufficient. Around zero field we can approximate the oscillations as sinusoidal. After fitting it gives a sensitivity of \qtylist{8.16;24.97;79.35}{\micro\volt\per\fluxquantum} for \qtylist{3.0;3.2;3.4}{\kelvin} respectively. These are significantly lower than what we achieved earlier. This is expected however since the temperatures are higher and the bias current is lower.

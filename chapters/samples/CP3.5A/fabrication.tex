@@ -6,6 +6,7 @@ The steep slopes in Figure~\ref{fig:CP2.6B_super_current_over_loop_flux} might b
 where $I_c$ refers to the critical current of the junction, must be less than one for a non-hysteric $I_s\Phi_l$-curve\cite{clarkeSQUIDHandbook2004,frolovMeasurementCurrentPhaseRelation2004}. This gives a maximum value for the critical current, $I_{c,\text{max}}$ given $L_l$. We note however, based on an numerical calculation, that for an SNS-junction $\beta_{\text{rf}} < 0.9$ is a more trustworthy criterium, see Figure~\ref{fig:CPR-hysteresis}. This is because the CPR is not perfectly sinusoidal\cite{vermeerSTMbasedScanningSQUID2021,likharevSuperconductingWeakLinks1979}. A prediction has been plotted in Figure~\ref{fig:CP3.5A-analytical-prediction}. Here we have used twice the estimated value for the inductance because in the previous sample we noted that the experimental value was twice the simulated value.
 
 \begin{figure}[ht!]
+	\centering
 	\input{figures/simulations/CPR_prediction.pgf}
 	\caption{Expectation values for the CPR of an SNS junction. The calculations where done for $I_c=\qty{100}{\micro\ampere}$, $L_l=2 \cdot \qty{0.8}{\pico\henry}$ and $\Delta(T)$ estimated at \qty{1}{\milli\electronvolt}. We note that the current through the loop creates a linear background that gets modulated by the CPR of the junction. The calculation is done for a short ballistic junction using Equation~2.13 in \cite{vermeerSTMbasedScanningSQUID2021}.}
 	\label{fig:CP3.5A-analytical-prediction}
@@ -31,6 +32,7 @@ Digital feedback can be tuned more easily than analogue feedback. Due to time co
 We used a triangular geometry for our dc-SQUID to improve the coupling to the junction loop.
 
 \begin{table}
+	\centering
 	\begin{subtable}{.6\linewidth}
 		\begin{tabular}[t]{@{}lrr@{}}
 			\toprule
