@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Texpad 1.7 Build script to build with latexmk
+
+echo -lualatex -shell-escape -latexoption=-file-line-error -latexoption=-interaction=nonstopmode "$TEXPAD_ROOTFILE"
+latexmk -lualatex -shell-escape -latexoption=-file-line-error -latexoption=-interaction=nonstopmode "$TEXPAD_ROOTFILE"
