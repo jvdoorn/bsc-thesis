@@ -12,7 +12,7 @@ Bosons, contrary to fermions, can occupy the same quantum state. At low temperat
 \end{equation}
 Both $\left|\Psi\right|$ and $\varphi$ are functions of position. The behaviour of this wave function is described by the Ginzburg-Landau theory. In this theory, $|\Psi|^2$ is a measure for the density of Cooper pairs (units of \unit{\per\cubic\meter}). The super current density (\unit{\ampere\per\square\meter}) is given by\footnote{See \citetitle{tinkhamIntroductionSuperconductivity} equation 4.14a.}:
 \begin{equation}
-	\vec{J_s} = e^* |\psi|^2 \vec{v_s} = \frac{e^*}{m^*} |\psi|^2 \left(\hbar \nabla \varphi-\frac{e^*}{c} \vec{A}\right) \stackrel{\text{SI}}{=} \frac{e}{m_e} |\psi|^2 \left(\hbar \nabla \varphi + 2e \vec{A}\right)
+	\vec{J_s} = e^* |\Psi|^2 \vec{v_s} = \frac{e^*}{m^*} |\Psi|^2 \left(\hbar \nabla \varphi-\frac{e^*}{c} \vec{A}\right) \stackrel{\text{SI}}{=} \frac{e}{m_e} |\Psi|^2 \left(\hbar \nabla \varphi + 2e \vec{A}\right)
 	\label{eqn:super-current}
 \end{equation}
 
@@ -32,7 +32,7 @@ The first is the scale over which the Cooper-pair density $|\Psi|^2$ can change.
 
 The second length scale is the penetration depth $\lambda$. It is a measure for the `stiffness' of the phase. A small $\lambda$ means $\varphi$ can change easily. This means larger super currents are possible. The currents can screen magnetic fields which penetrate roughly on the same length scale. The penetration depth in Ginzburg-Landau theory at \qty{0}{\kelvin} is given by\footnote{See \citetitle{tinkhamIntroductionSuperconductivity} equation 4.8.}:
 \begin{align}
-	\lambda(0) &= \sqrt{\frac{m^*c^2}{4\pi|\psi|^2e^{*2}}} \stackrel{\text{SI}}{=} \sqrt{\frac{m_e}{2|\psi|^2e^2\mu_0}}
+	\lambda(0) &= \sqrt{\frac{m^*c^2}{4\pi|\Psi|^2e^{*2}}} \stackrel{\text{SI}}{=} \sqrt{\frac{m_e}{2|\Psi|^2e^2\mu_0}}
 	\label{eqn:london-penetration-depth}
 \end{align}
 The penetration depth too is dependent on temperature and decreases for higher temperatures. For more information on length scales the reader is referred to \citetitle{tinkhamIntroductionSuperconductivity} by \citeauthor{tinkhamIntroductionSuperconductivity}.
@@ -102,7 +102,7 @@ When two junctions are used parallel to each other in a loop (Figure~\ref{fig:sc
 	\label{fig:schematic-dc-SQUID}
 \end{figure}
 
-This behaviour gives rise to the `dc-SQUID interference pattern' (SQI). Such a pattern is shown in Figure~\ref{example-SQI}. Most importantly, this pattern is exactly $\Phi_0$ periodic independent of any device geometries. As such it is very easy to calibrate. Two parameters are important for the sensitivity and hysteresis\cite{clarkeSQUIDHandbook2004}:
+This behaviour gives rise to the `dc-SQUID interference pattern' (SQI). Such a pattern is shown in Figure~\ref{fig:example-SQI}. Most importantly, this pattern is exactly $\Phi_0$ periodic independent of any device geometries. As such it is very easy to calibrate. Two parameters are important for the sensitivity and hysteresis\cite{clarkeSQUIDHandbook2004}:
 \begin{equation}
 	\beta_c = \frac{2\pi}{\Phi_0}I_cR^2C
 	\tag{Stewart-McCumber parameter}
