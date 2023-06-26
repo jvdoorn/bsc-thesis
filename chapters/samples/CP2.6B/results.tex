@@ -1,5 +1,5 @@
 % !TEX root = ../../../thesis.tex
-Figure~\ref{fig:CP2.6B_RT_curves} shows the RT-curves for the junction loop and dc-SQUID. We note that the critical temperature for the bulk of the sample is lower (\qty{7}{\kelvin}) compared to the first sample (\qty{8}{\kelvin}). This can be explained by the proximity effect due to the interface between the \ce{Cu} and \ce{Nb}.\cite{cirilloSuperconductingProximityEffect2005} The longer `tail' is characteristic for SNS junctions as the normal metal slowly proximises.
+Figure~\ref{fig:CP2.6B_RT_curves} shows the RT-curves for the junction loop and dc-SQUID. The critical temperature for the bulk of the sample is lower (\qty{7}{\kelvin}) compared to the first sample (\qty{8}{\kelvin}). This can be explained by the proximity effect due to the interface between the \ce{Cu} and \ce{Nb}.\cite{cirilloSuperconductingProximityEffect2005} The longer `tail' is characteristic for SNS junctions as the normal metal slowly proximises.
 
 \begin{figure}[ht!]
 	\centering
@@ -8,7 +8,7 @@ Figure~\ref{fig:CP2.6B_RT_curves} shows the RT-curves for the junction loop and 
 	\label{fig:CP2.6B_RT_curves}
 \end{figure}
 
-Figure~\ref{fig:CP2.6B_SQUID_calibration_curves} shows the interference pattern of the dc-SQUID for several bias currents. We note that the periodicity in the the data is roughly \qty{1}{\milli\tesla}. This matches the expected period. We furthermore note that the sensitivity in the linear regime increased by a factor 3 compared to the previous sample. The comparison is a bit unfair as this is at a bias current that is also 3 times larger. In the previous sample however, such a large bias current was simply not possible. We note two issues in these curves. First off, the period of the pattern does not seem to be constant. Secondly, the offset (in the field axis) varies a lot between curves whilst they should all be zero. Both these issues can be explained by vortices getting trapped in the magnet or sample. 
+Figure~\ref{fig:CP2.6B_SQUID_calibration_curves} shows the interference pattern of the dc-SQUID for several bias currents. The periodicity in the the data is roughly \qty{1}{\milli\tesla}. This matches the expected period. Furthermore, the sensitivity in the linear regime increased by a factor 3 compared to the previous sample. The comparison is a bit unfair as this is at a bias current that is also 3 times larger. In the previous sample however, such a large bias current was simply not possible. We note two issues in these curves. First off, the period of the pattern does not seem to be constant. Secondly, the offset (in the field axis) varies a lot between curves whilst they should all be zero. Both these issues can be explained by vortices getting trapped in the magnet or sample. 
 
 \begin{figure}[ht!]
 	\centering
@@ -26,7 +26,7 @@ When we attempted to measure the CPR we noted weird spikes in the IV-curves. We 
 	\label{fig:CP2.6B_PPMS_magnetic_field_drift}
 \end{figure}
 
-In an attempt to fix the `noise' caused by the feedback loop, we turned off the magnet. Unfortunately, it never turned back on as the magnet controller was broken. A downside of this, is that we were also no longer able to read out the value of the field. We decided to perform a CPR measurement again by using a constant bias of \qty{380}{\micro\ampere} for the dc-SQUID, sweeping a current through the junction loop and then measuring the voltage over the dc-SQUID. It should be mentioned that during these measurements there appeared to be a lot of drift causing measurement to differ widely. We suspect that an external magnetic field was responsible for this. 
+In an attempt to fix the `noise' caused by the feedback loop, the magnet was turned off. Unfortunately, it never turned back on as the magnet controller was broken. A downside of this, is that we were also no longer able to read out the value of the field. We decided to perform a CPR measurement again by using a constant bias of \qty{380}{\micro\ampere} for the dc-SQUID, sweeping a current through the junction loop and then measuring the voltage over the dc-SQUID. It should be mentioned that during these measurements there appeared to be a lot of drift causing measurement to differ widely. We suspect that an external magnetic field was responsible for this. 
 
 Figure~\ref{fig:CP2.6B_SQUID_voltage_over_total_current} shows the raw data from one of the CPR measurements. We note a clear periodicity in the signal of around \qty{200}{\micro\ampere} and a somewhat linear trend on top of that. We present this specific measurement because it has no jumps in the dc-SQUID voltage, has a sufficiently small sample spacing, covers a wide enough range to see several periods and measured both positive and negative currents. Different sample spacings did not affect measured periodicity.
 
@@ -46,6 +46,6 @@ Using the second calibration curve for \qty{380}{\micro\ampere} bias current we 
 	\label{fig:CP2.6B_super_current_over_loop_flux}
 \end{figure}
 
-We note that the amplitude of the oscillations is around \qty{60}{\micro\ampere} and the pattern contains quite steep slopes. We furthermore note that the pattern `dips' down a bit and does not oscillate around the same mean. Since the pattern does seem somewhat symmetric around \qty{0}{\micro\ampere} this is probably an artefact from the fact we set the horizontal offset to 0.
+The amplitude of the oscillations is around \qty{60}{\micro\ampere} and the pattern contains quite steep slopes. Furthermore, the pattern `dips' down a bit and does not oscillate around the same mean. Since the pattern does seem somewhat symmetric around \qty{0}{\micro\ampere} this is probably an artefact from the fact we set the horizontal offset to 0.
 
-It is clear that two major issues with this result is the lack of resolution. Future measurements should take much smaller steps. Furthermore, because it was not possible to keep the dc-SQUID in the linear response region we achieved a suboptimal sensitivity and calibration.
+It is clear that two major issues with this result are the lack of resolution and the calibration. Future measurements should take much smaller steps. Furthermore, because it was not possible to keep the dc-SQUID in the linear response region we achieved a suboptimal sensitivity and calibration.

@@ -3,7 +3,7 @@
 \label{chapter:method}
 % Method largely based on Frolov 2004.
 % Uses a superconducting loop with a junction inductively coupled to a dc-SQUID magnetometer
-We use a method based on \citeauthor{frolovMeasurementCurrentPhaseRelation2004}\cite{frolovMeasurementCurrentPhaseRelation2004,frolovCurrentphaseRelationsJosephson2005}. We incorporate the junction under study into a superconducting loop. This loop is then inductively coupled to a dc-SQUID magnetometer. Figure~\ref{fig:schematic-setup} shows a schematic of the setup. By passing a current through the junction loop it causes a flux proportional to the phase. We can measure the flux using the inductively coupled dc-SQUID. It also allows us to determine the current through the junction. This means we have all the information we need in order to reconstruct the CPR. This chapter first walks through the analysis method and provides arguments for the used assumptions and relations. Subsequently we provide experimental details about the production process of our samples.
+Our method is based on \citeauthor{frolovMeasurementCurrentPhaseRelation2004}\cite{frolovMeasurementCurrentPhaseRelation2004,frolovCurrentphaseRelationsJosephson2005}. The junction under study is incorporated into a superconducting loop. This loop is then inductively coupled to a dc-SQUID magnetometer. Figure~\ref{fig:schematic-setup} shows a schematic of the setup. By passing a current through the junction loop it causes a flux proportional to the phase. The flux can be measured using the inductively coupled dc-SQUID. It also allows us to determine the current through the junction. This means we have all the information we need in order to reconstruct the CPR. This chapter first walks through the analysis method and provides arguments for the used assumptions and relations. Subsequently we provide experimental details about the production process of our samples.
 
 \begin{figure}
 	\centering
@@ -27,12 +27,12 @@ We use a method based on \citeauthor{frolovMeasurementCurrentPhaseRelation2004}\
 		\node[] at (6,-1) {$\Phi_s$};
 	\end{circuitikz}
 
-	\caption{Schematic depiction of the system. The left loop is inductively coupled to the dc-SQUID on the right. This is illustrated by $L_l$ and $L_s$. The junction itself has an inductance $L_{JJ}$. The current $I_t$ is controlled externally. The flux through the two loops is denoted by $\Phi_l$ and $\Phi_s$. The junction whose CPR we want to measure is part of the left loop. Please note that the four contacts used for the dc-SQUID readout are not shown.}
+	\caption{Schematic depiction of the system. The left loop is inductively coupled to the dc-SQUID on the right. This is illustrated by $L_l$ and $L_s$. The junction itself has an inductance $L_{JJ}$. The current $I_t$ is controlled externally. The flux through the two loops is denoted by $\Phi_l$ and $\Phi_s$. The junction under study is part of the left loop. Please note that the four contacts used for the dc-SQUID readout are not shown.}
 	\label{fig:schematic-setup}
 \end{figure}
 
 \section{Analysis method}
-Our method requires little to no analysis, which immediately highlights one of the benefits of this method. The measurements are performed by passing a current through the junction loop $I_t$. Constrained by flux quantization and the CPR of the junction it will distribute the current between the loop and the junction:
+Our method requires little to no analysis, which immediately highlights one of the key benefits of this method. The measurements are performed by passing a current through the junction loop $I_t$. Constrained by flux quantization and the CPR of the junction it will distribute the current between the loop and the junction:
 \begin{equation}
 	I_t = I_s + I_l
 \end{equation}
@@ -48,7 +48,7 @@ Arguments for the proportionality between $\gamma$ and $\Phi_l$ are provided in 
 \begin{equation}
 	I_s = I_t - I_l = I_t - \frac{\Phi_s}{M}
 \end{equation}
-The value for $L_l$ can be determined numerically. However, as this might not match the true value it is also possible to extract $L_l$ from the data. We can do so by exploiting the fact that the current-phase relation must be $2\pi$ periodic, see Section~\ref{sec:josephson-effect}. Similarly the value for the mutual inductance can be measured indirectly by determining the linear trend we see between $\Phi_s$ and $I_t$. Figure~\ref{fig:sinusoidal-CPR-prediction} shows an example of what the data looks like for a perfectly sinusoidal CPR. 
+The value for $L_l$ can be determined numerically. However, as this might not match the true value it is also possible to extract $L_l$ from the data by exploiting the fact that the current-phase relation must be $2\pi$ periodic, see Section~\ref{sec:josephson-effect}. Similarly the value for the mutual inductance can be measured indirectly by determining the linear trend we see between $\Phi_s$ and $I_t$. Figure~\ref{fig:sinusoidal-CPR-prediction} shows an example of what the data looks like for a perfectly sinusoidal CPR. 
 
 \begin{figure}[ht!]
 	\centering
@@ -68,14 +68,14 @@ We can express $\Phi_l$ in terms of $I_s$ and $I_l$:
 \begin{equation}
 	\Phi_l = I_sL_{JJ}  + I_lL_l
 \end{equation}
-Where $L_{JJ}$ and $L_l$ are the inductances of the Josephson junction and loop respectively\footnote{This is not the so called Josephson inductance but purely a magnetic inductance and not a kinetic inductance.}. Strictly speaking $L_{JJ}$ is more of mutual inductance between the loop and the junction. However, in practice it does not matter. We will assume that $L_{JJ} \ll L_l$. This is also done by \citeauthor{frolovMeasurementCurrentPhaseRelation2004} (see \cite{frolovCurrentphaseRelationsJosephson2005,frolovMeasurementCurrentPhaseRelation2004}) and often in literature when discussing dc-SQUIDs (see par example \cite{clarkeSQUIDHandbook2004}). This means our final equation for the loop flux becomes:
+Where $L_{JJ}$ and $L_l$ are the inductances of the Josephson junction and loop respectively\footnote{This is not the so called Josephson inductance but purely a magnetic inductance and not a kinetic inductance.}. Strictly speaking $L_{JJ}$ is more of mutual inductance between the loop and the junction. However, in practice it does not matter. We will assume that $L_{JJ} \ll L_l$. This is also done by \citeauthor{frolovMeasurementCurrentPhaseRelation2004} (see~\cite{frolovCurrentphaseRelationsJosephson2005,frolovMeasurementCurrentPhaseRelation2004}) and often in literature when discussing dc-SQUIDs (see par example~\cite{clarkeSQUIDHandbook2004}). This means our final equation for the loop flux becomes:
 \begin{equation}
 	\Phi_l = I_lL_l
 \end{equation}
 
 \subsection{Proportionality between $\gamma$ and $\Phi_l$}
 \label{sec:figure-of-merit}
-We want to determine $\gamma$ by measuring $\Phi_l$. The two are only proportional however if the integral term in Equation~\ref{eqn:phase-flux-relation} is negligible. As such we have the requirement that:
+The goal is to determine $\gamma$ by measuring $\Phi_l$. The two are only proportional however if the integral term in Equation~\ref{eqn:phase-flux-relation} is negligible. As such we have the requirement that:
 \begin{equation*}
 	\lambda^2\mu_0 \int \vec{J}\cdot d \vec{l} \ll \Phi_l
 \end{equation*}
@@ -83,7 +83,7 @@ We define a figure of merit, $\delta$, that weighs the two terms. The requiremen
 \begin{equation}
 	\delta = \frac{\lambda^2\mu_0 \int \vec{J}\cdot d \vec{l}}{\Phi_l}
 \end{equation}
-For a square and round geometry we can rewrite the integral part in the following way:
+For a square and round geometry the integral part can be rewritten as:
 \begin{equation}
 	\int \vec{J}\cdot d \vec{l} = \begin{cases}
 		2\pi r \tilde{j} I_l, &\text{round} \\
@@ -103,7 +103,7 @@ It is important to note that the figure of merit only depends on the device geom
 
 \subsection{Magnetic coupling}
 \label{sec:magnetic-coupling}
-The dc-SQUID is inductively coupled to the junction loop. This means that by measuring $\Phi_s$ we can determine $\Phi_l$ which is then used to determine $\gamma$ and $I_l$. In the experiment we pass a current through the junction loop. Using the mutual inductance we obtain a relation between $I_l$ and $\Phi_s$:
+The dc-SQUID is inductively coupled to the junction loop. This means that by measuring $\Phi_s$ we can determine $\Phi_l$ which is then used to determine $\gamma$ and $I_l$. In the experiment a current is passed through the junction loop. Using the mutual inductance we obtain a relation between $I_l$ and $\Phi_s$:
 \begin{equation}
 	I_l = \frac{\Phi_s}{M}
 \end{equation}

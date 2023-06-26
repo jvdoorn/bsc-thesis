@@ -3,14 +3,14 @@
 \section{Superconductors}
 The most well known property of superconductors are their perfect conductivity\footnote{Discovered by H.K. Onnes in 1911.} and their perfect diamagnetism\footnote{Discovered by W. Meissner and R. Ochsenfeld in 1933.}. A microscopic description of the effect is given by Bardeen, Cooper and Schieffer (BCS theory) and phenomenologically by the Ginzburg-Landau theory.\cite{tinkhamIntroductionSuperconductivity} This section will highlight the relevant parts of these theories for our research.
 
-BCS theory shows that superconductivity, on the atomic scale, is a result of the creation of paired electrons. We call these Cooper pairs. The Cooper pairs form from an phonon-mediated attractive interaction that overcomes the Coulomb repulsion between two electrons.\cite{bardeenTheorySuperconductivity1957} Electrons have half-integer spin, which means a Cooper pair, consisting of two electrons, has integer spin. As such Cooper pairs are bosons.
+BCS theory shows that superconductivity, on the atomic scale, is a result of the creation of paired electrons. These are called Cooper pairs. The Cooper pairs form from an phonon-mediated attractive interaction that overcomes the Coulomb repulsion between two electrons.\cite{bardeenTheorySuperconductivity1957} Electrons have half-integer spin, which means a Cooper pair, consisting of two electrons, has integer spin. As such Cooper pairs are bosons.
 
 Bosons, contrary to fermions, can occupy the same quantum state. At low temperatures bosons form a condensate. All Cooper pairs in the condensate occupy the same macroscopic wavefunction\footnote{This is by definition of a `condensate' the case.}.
 \begin{equation}
 	\Psi = \left|\Psi\right| \exp(i\varphi)
 	\label{eqn:GL-wavefunction}
 \end{equation}
-Both $\left|\Psi\right|$ and $\varphi$ are functions of position. The behaviour of this wave function is described by the Ginzburg-Landau theory. In this theory we can view $|\Psi|^2$ as the density of Cooper pairs (units of \unit{\per\cubic\meter}). The super current density (\unit{\ampere\per\square\meter}) is given by\footnote{See \citetitle{tinkhamIntroductionSuperconductivity} equation 4.14a.}:
+Both $\left|\Psi\right|$ and $\varphi$ are functions of position. The behaviour of this wave function is described by the Ginzburg-Landau theory. In this theory, $|\Psi|^2$ is a measure for the density of Cooper pairs (units of \unit{\per\cubic\meter}). The super current density (\unit{\ampere\per\square\meter}) is given by\footnote{See \citetitle{tinkhamIntroductionSuperconductivity} equation 4.14a.}:
 \begin{equation}
 	\vec{J_s} = e^* |\psi|^2 \vec{v_s} = \frac{e^*}{m^*} |\psi|^2 \left(\hbar \nabla \varphi-\frac{e^*}{c} \vec{A}\right) \stackrel{\text{SI}}{=} \frac{e}{m_e} |\psi|^2 \left(\hbar \nabla \varphi + 2e \vec{A}\right)
 	\label{eqn:super-current}
@@ -55,7 +55,7 @@ We are required to do so as $\Delta \varphi$ is not uniquely determined for a gi
 \begin{equation}
 	I_s = I_c f(\gamma)
 \end{equation}
-Here we have defined $f(\gamma)$ which is the current-phase relation. In general it has the following properties\cite{golubovCurrentphaseRelationJosephson2004a}:
+Here we defined $f(\gamma)$ which is the current-phase relation. In general it has the following properties\cite{golubovCurrentphaseRelationJosephson2004a}:
 \begin{equation}
 	f(\gamma) = f(\gamma + 2\pi) \quad f(\gamma) = -f(-\gamma) \quad f(2\pi n) = f(\pi m) = 0
 \end{equation}
