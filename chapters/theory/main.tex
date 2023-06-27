@@ -1,16 +1,16 @@
 % !TEX root = ../../thesis.tex
 \chapter{Theory}
 \section{Superconductors}
-The most well known property of superconductors are their perfect conductivity\footnote{Discovered by H.K. Onnes in 1911.} and their perfect diamagnetism\footnote{Discovered by W. Meissner and R. Ochsenfeld in 1933.}. A microscopic description of the effect is given by Bardeen, Cooper and Schieffer (BCS theory) and phenomenologically by the Ginzburg-Landau theory.\cite{tinkhamIntroductionSuperconductivity} This section will highlight the relevant parts of these theories for our research.
+The most well known properties of superconductors are their perfect conductivity\footnote{Discovered by H.K. Onnes in 1911.} and diamagnetism\footnote{Discovered by W. Meissner and R. Ochsenfeld in 1933.}. A microscopic description of the effect is given by Bardeen, Cooper and Schieffer (BCS theory) and phenomenologically by the Ginzburg-Landau theory.\cite{tinkhamIntroductionSuperconductivity} This section will highlight the relevant parts of these theories for our research.
 
-BCS theory shows that superconductivity, on the atomic scale, is a result of the creation of paired electrons. These are called Cooper pairs. The Cooper pairs form from an phonon-mediated attractive interaction that overcomes the Coulomb repulsion between two electrons.\cite{bardeenTheorySuperconductivity1957} Electrons have half-integer spin, which means a Cooper pair, consisting of two electrons, has integer spin. As such Cooper pairs are bosons.
+BCS theory shows that superconductivity, on the atomic scale, is a result of the creation of paired electrons called Cooper pairs. The Cooper pairs form from an phonon-mediated attractive interaction that overcomes the Coulomb repulsion between two electrons.\cite{bardeenTheorySuperconductivity1957} Electrons have half-integer spin. This means a Cooper pair, consisting of two electrons, has integer spin. As such Cooper pairs are bosons.
 
-Bosons, contrary to fermions, can occupy the same quantum state. At low temperatures bosons form a condensate. All Cooper pairs in the condensate occupy the same macroscopic wavefunction\footnote{This is by definition of a `condensate' the case.}.
+Bosons, contrary to fermions, can occupy the same quantum state. Below the critical temperature bosons form a condensate. All Cooper pairs in the condensate occupy the same macroscopic wavefunction\footnote{This is by definition of a `condensate' the case.}.
 \begin{equation}
 	\Psi = \left|\Psi\right| \exp(i\varphi)
 	\label{eqn:GL-wavefunction}
 \end{equation}
-Both $\left|\Psi\right|$ and $\varphi$ are functions of position. The behaviour of this wave function is described by the Ginzburg-Landau theory. In this theory, $|\Psi|^2$ is a measure for the density of Cooper pairs (units of \unit{\per\cubic\meter}). The super current density (\unit{\ampere\per\square\meter}) is given by\footnote{See \citetitle{tinkhamIntroductionSuperconductivity} equation 4.14a.}:
+Both $\left|\Psi\right|$ and $\varphi$ are functions of position. The behaviour of this wave function is described by the Ginzburg-Landau theory. In this theory, $|\Psi|^2$ is a measure for the density of Cooper pairs (units of \unit{\per\cubic\meter}). The super current density(\unit{\ampere\per\square\meter}) in a superconductor is governed by $\phi$ (and $\vec{A}$)\footnote{See \citetitle{tinkhamIntroductionSuperconductivity} equation 4.14a.}:
 \begin{equation}
 	\vec{J_s} = e^* |\Psi|^2 \vec{v_s} = \frac{e^*}{m^*} |\Psi|^2 \left(\hbar \nabla \varphi-\frac{e^*}{c} \vec{A}\right) \stackrel{\text{SI}}{=} \frac{e}{m_e} |\Psi|^2 \left(\hbar \nabla \varphi + 2e \vec{A}\right)
 	\label{eqn:super-current}
@@ -28,7 +28,7 @@ There are two important length scales for superconductors. We will focus on thes
 	\label{fig:characteristic-lengths}
 \end{figure}
 
-The first is the scale over which the Cooper-pair density $|\Psi|^2$ can change. This is the so called coherence length, $\xi(T)$. $\xi$ decreases when the temperature increases.\cite{tinkhamIntroductionSuperconductivity}
+The first is the scale over which the Cooper-pair density can change. This is the so called coherence length, $\xi(T)$. $\xi$ decreases when the temperature increases.\cite{tinkhamIntroductionSuperconductivity}
 
 The second length scale is the penetration depth $\lambda$. It is a measure for the `stiffness' of the phase. A small $\lambda$ means $\varphi$ can change easily. This means larger super currents are possible. The currents can screen magnetic fields which penetrate roughly on the same length scale. The penetration depth in Ginzburg-Landau theory at \qty{0}{\kelvin} is given by\footnote{See \citetitle{tinkhamIntroductionSuperconductivity} equation 4.8.}:
 \begin{align}

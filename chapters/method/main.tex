@@ -99,7 +99,7 @@ Here $r$ is the radius (half the diameter) and $\tilde{j} = \tilde{j}(d, w, \lam
 	\label{eqn:figure-of-merit}
 \end{equation}
 
-It is important to note that the figure of merit only depends on the device geometry and is independent of experimental parameters such as $I_l$. The inductance of the loop can be determined numerically using SuperScreen\cite{bishop-vanhornSuperScreenOpensourcePackage2022}.
+It is important to note that the figure of merit only depends on the device geometry and is independent of experimental parameters such as $I_l$. The inductance of the loop can be estimated numerically using SuperScreen.\cite{bishop-vanhornSuperScreenOpensourcePackage2022}
 
 \subsection{Magnetic coupling}
 \label{sec:magnetic-coupling}
@@ -107,12 +107,12 @@ The dc-SQUID is inductively coupled to the junction loop. This means that by mea
 \begin{equation}
 	I_l = \frac{\Phi_s}{M}
 \end{equation}
-Using the inductance of the junction loop we then also find $\Phi_s$:
+Using the inductance of the junction loop we then also find $\Phi_l$:
 \begin{equation}
 	\Phi_l = I_lL_l = \frac{L_l}{M}\Phi_s
 \end{equation}
 
-The (mutual) inductance can be determined numerically in SuperScreen.\cite{bishop-vanhornSuperScreenOpensourcePackage2022} The numerical simulation does not take into account the possibility of magnetic lensing.\cite{prigozhin3DSimulationSuperconducting2018} As such the mutual inductance might be larger in practice. This means that the dc-SQUID might react more sensitively to changes in the junction loop.
+Again the (mutual) inductance can be estimated numerically in SuperScreen.\cite{bishop-vanhornSuperScreenOpensourcePackage2022} The numerical simulation does not take into account the possibility of magnetic lensing.\cite{prigozhin3DSimulationSuperconducting2018} As such the mutual inductance might be larger in practice. This means that the dc-SQUID might react more sensitively to changes in the junction loop.
 
 \section{Sample geometries}
 The diameter of the dc-SQUID is chosen such that the periodicity of the SQUID interference pattern is on the order of a few \unit{\milli\tesla}. This means the effective diameter should be around \qtyrange{1}{2}{\micro\meter}. Furthermore, the width of the loop together with the thickness of the superconductor determine the geometric factor $\tilde{j}$, they are chosen such that the figure of merit is sufficiently small. In practice this means that the width is around \qty{0.3}{\micro\meter} and the thickness around \qty{100}{\nano\meter}. Details on this can be found on a per sample basis later as well as details on the type of junction.
@@ -131,7 +131,7 @@ After this process we use dc-sputtering to deposit the required normal metal and
 	\label{fig:lithography}
 \end{figure}
 
-The finer geometries in the central square are created using focussed ion beam (FIB). They are used to cut away the \ce{Nb} and \ce{Au}, leaving just the wafer. The advantage of use the FIB is that we can achieve a higher resolution compared to lithography which is important for our junctions. Figure~\ref{fig:FIB} schematically shows the FIB process.
+The finer geometries in the central square are created using focussed ion beam (FIB). They are used to cut away the \ce{Nb} and \ce{Au}, leaving just the wafer. The advantage of using the FIB is less PMMA poisoning in our \ce{Nb}. Figure~\ref{fig:FIB} schematically shows the FIB process.
 
 \begin{figure}[ht!]
 	\centering

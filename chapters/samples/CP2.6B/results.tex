@@ -8,7 +8,7 @@ Figure~\ref{fig:CP2.6B_RT_curves} shows the RT-curves for the junction loop and 
 	\label{fig:CP2.6B_RT_curves}
 \end{figure}
 
-Figure~\ref{fig:CP2.6B_SQUID_calibration_curves} shows the interference pattern of the dc-SQUID for several bias currents. The periodicity in the the data is roughly \qty{1}{\milli\tesla}. This matches the expected period. Furthermore, the sensitivity in the linear regime increased by a factor 3 compared to the previous sample. The comparison is a bit unfair as this is at a bias current that is also 3 times larger. In the previous sample however, such a large bias current was simply not possible. We note two issues in these curves. First off, the period of the pattern does not seem to be constant. Secondly, the offset (in the field axis) varies a lot between curves whilst they should all be zero. Both these issues can be explained by vortices getting trapped in the magnet or sample. 
+Figure~\ref{fig:CP2.6B_SQUID_calibration_curves} shows the interference pattern of the dc-SQUID for several bias currents. The periodicity in the the data is roughly \qty{1}{\milli\tesla}. This matches the expected period. Furthermore, the sensitivity in the linear regime increased by a factor 3 compared to the previous sample. The comparison is a bit unfair as the bias current is also 3 times larger. In the previous sample however, such a large bias current was simply not possible. There are two issues with this result. First off, the period of the pattern does not seem to be constant. Secondly, the offset (in the field axis) varies a lot between curves whilst they should all be zero. Both these issues can be explained by vortices getting trapped in the magnet or sample. 
 
 \begin{figure}[ht!]
 	\centering
@@ -17,7 +17,7 @@ Figure~\ref{fig:CP2.6B_SQUID_calibration_curves} shows the interference pattern 
 	\label{fig:CP2.6B_SQUID_calibration_curves}
 \end{figure}
 
-When we attempted to measure the CPR we noted weird spikes in the IV-curves. We initially attributed this to vortex trapping. However, upon closer inspection these jumps are highly correlated with the actual magnetic field produced by the magnet. Figure~\ref{fig:CP2.6B_PPMS_magnetic_field_drift} shows a clear correlation between the dc-SQUID voltage and the magnetic field as measured by the magnet. Even though we have a constant setpoint of \qty{0}{\milli\tesla} we see quite some drift. This is because the magnet does not have a persistent mode but instead uses a feedback loop. This feedback loop has a dead band of \qty{50}{\micro\tesla}. Changing the setpoint of the field or the rate of change did not affect the effect significantly.
+During an attempt to measure the CPR, the IV-curves showed anomalous spikes. Initially we attributed this to vortex trapping. However, upon closer inspection these jumps are highly correlated with the actual magnetic field produced by the magnet. Figure~\ref{fig:CP2.6B_PPMS_magnetic_field_drift} shows a clear correlation between the dc-SQUID voltage and the magnetic field as measured by the magnet. Even though a constant setpoint of \qty{0}{\milli\tesla} was used, there is quite some drift. This is because the magnet does not have a persistent mode but instead uses a feedback loop. This feedback loop has a dead band of \qty{50}{\micro\tesla}. Changing the setpoint of the field or the rate of change did not have a significant effect.
 
 \begin{figure}[ht!]
 	\centering
@@ -26,9 +26,9 @@ When we attempted to measure the CPR we noted weird spikes in the IV-curves. We 
 	\label{fig:CP2.6B_PPMS_magnetic_field_drift}
 \end{figure}
 
-In an attempt to fix the `noise' caused by the feedback loop, the magnet was turned off. Unfortunately, it never turned back on as the magnet controller was broken. A downside of this, is that we were also no longer able to read out the value of the field. We decided to perform a CPR measurement again by using a constant bias of \qty{380}{\micro\ampere} for the dc-SQUID, sweeping a current through the junction loop and then measuring the voltage over the dc-SQUID. It should be mentioned that during these measurements there appeared to be a lot of drift causing measurement to differ widely. We suspect that an external magnetic field was responsible for this. 
+In an attempt to fix the `noise' caused by the feedback loop, the magnet was turned off. Unfortunately, it never turned back on as the magnet controller was broken. A downside of this, is that it was no longer possible to read out the value of the field. An attempt was made to measure the CPR again by using a constant bias current of \qty{380}{\micro\ampere} for the dc-SQUID. It should be mentioned that during these measurements there appeared to be a lot of drift causing measurements to differ widely. An external magnetic field was likely responsible for this. Possibly this was still caused by the magnet controller as, later on when it was replaced, this did not seem to be an issue anymore.
 
-Figure~\ref{fig:CP2.6B_SQUID_voltage_over_total_current} shows the raw data from one of the CPR measurements. We note a clear periodicity in the signal of around \qty{200}{\micro\ampere} and a somewhat linear trend on top of that. We present this specific measurement because it has no jumps in the dc-SQUID voltage, has a sufficiently small sample spacing, covers a wide enough range to see several periods and measured both positive and negative currents. Different sample spacings did not affect measured periodicity.
+Figure~\ref{fig:CP2.6B_SQUID_voltage_over_total_current} shows the raw data from one of the CPR measurements. There is a clear periodicity in the signal of around \qty{200}{\micro\ampere} and a somewhat linear trend on top of that. This specific measurement is presented because it has no unexpected jumps in the dc-SQUID voltage; has a sufficiently small sample spacing; covers a wide enough range to see several periods; and measured both positive and negative currents. Using different sample spacings did not affect the measured periodicity.
 
 \begin{figure}[ht!]
 	\centering
@@ -37,15 +37,15 @@ Figure~\ref{fig:CP2.6B_SQUID_voltage_over_total_current} shows the raw data from
 	\label{fig:CP2.6B_SQUID_voltage_over_total_current}
 \end{figure}
 
-Using the second calibration curve for \qty{380}{\micro\ampere} bias current we converted the dc-SQUID voltage to a flux. We have chosen to set the horizontal offset of this calibration to zero as there should be barely any background field. The difference in the two calibration curves also highlights that the horizontal offset was difficult to reproduce. The linear trend in the dc-SQUID's flux is the mutual inductance. A linear fit determined the the mutual inductance to be \qty{-0.339\pm0.005}{\pico\henry}. This value is almost twice as large as the simulated value found in Table~\ref{tab:CP2.6B-geometries}. Similarly, we can determine the junction loop inductance by exploiting the fact that the periodicity must be $\Phi_0$ periodic. We find the inductance of the junction loop to be \qty{6\pm1}{\pico\henry}. This is twice the simulated value found in Table~\ref{tab:CP2.6B-geometries}.
+Using the second calibration curve for \qty{380}{\micro\ampere} bias current we converted the dc-SQUID voltage to a flux. A linear fit is used to determine the mutual inductance to be $\qty{-0.339\pm0.005}{\pico\henry}$. This is almost twice as large as the simulated value in Table~\ref{tab:CP2.6B-geometries}. Similarly, by exploiting the $\Phi_0$-periodicity of the CPR, the junction's loop's inductance was found to be \qty{6\pm1}{\pico\henry}. Again this is almost twice the as large as the simulated value in Table~\ref{tab:CP2.6B-geometries}. Using the proportionality between $\Phi_l$ and $\gamma$ the flux was converted to a phase. Figure~\ref{fig:CP2.6B_super_current_over_phase} shows the result of this analysis.
 
 \begin{figure}[ht!]
 	\centering
-	\input{figures/samples/CP2/CP2.6B_super_current_over_loop_flux.pgf}
+	\input{figures/samples/CP2/CP2.6B_super_current_over_phase.pgf}
 	\caption{Supper current through the junction loop over junction loop flux. See main text for details on how this result was obtained. The dashed line is to improve visual clarity.}
-	\label{fig:CP2.6B_super_current_over_loop_flux}
+	\label{fig:CP2.6B_super_current_over_phase}
 \end{figure}
 
-The amplitude of the oscillations is around \qty{60}{\micro\ampere} and the pattern contains quite steep slopes. Furthermore, the pattern `dips' down a bit and does not oscillate around the same mean. Since the pattern does seem somewhat symmetric around \qty{0}{\micro\ampere} this is probably an artefact from the fact we set the horizontal offset to 0.
+The amplitude of the oscillations is around \qty{60}{\micro\ampere} and the pattern contains quite steep slopes. Furthermore, the pattern `dips' down a bit and does not oscillate around the same mean. Most likely this is because the dc-SQUID is not biased in its linear regime and thus a measurement artefact.
 
-It is clear that two major issues with this result are the lack of resolution and the calibration. Future measurements should take much smaller steps. Furthermore, because it was not possible to keep the dc-SQUID in the linear response region we achieved a suboptimal sensitivity and calibration.
+It is clear that two major issues with this result are the lack of resolution and the calibration. Future measurements should take much smaller steps. Furthermore, because it was not possible to keep the dc-SQUID in the linear response region the sensitivity and calibration were suboptimal. 
