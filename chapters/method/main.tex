@@ -3,7 +3,7 @@
 \label{chapter:method}
 % Method largely based on Frolov 2004.
 % Uses a superconducting loop with a junction inductively coupled to a dc-SQUID magnetometer
-Our method is based on \citeauthor{frolovMeasurementCurrentPhaseRelation2004}\cite{frolovMeasurementCurrentPhaseRelation2004,frolovCurrentphaseRelationsJosephson2005}. The junction under study is incorporated into a superconducting loop. This loop is then inductively coupled to a dc-SQUID magnetometer. Figure~\ref{fig:schematic-setup} shows a schematic of the setup. By passing a current through the junction loop it causes a flux proportional to the phase. The flux can be measured using the inductively coupled dc-SQUID. It also allows us to determine the current through the junction. This means we have all the information we need in order to reconstruct the CPR. This chapter first walks through the analysis method and provides arguments for the used assumptions and relations. Subsequently we provide experimental details about the production process of our samples.
+Our method is based on \citeauthor{frolovMeasurementCurrentPhaseRelation2004}\cite{frolovMeasurementCurrentPhaseRelation2004,frolovCurrentphaseRelationsJosephson2005}. The junction under study is incorporated into a superconducting loop. This loop is then inductively coupled to a dc-SQUID magnetometer. Figure~\ref{fig:schematic-setup} shows a schematic of the setup. By passing a current through the junction's loop it causes a flux proportional to the phase. The flux can be measured using the inductively coupled dc-SQUID. It also allows us to determine the current through the junction. This means we have all the information we need in order to reconstruct the CPR. This chapter first walks through the analysis method and provides arguments for the used assumptions and relations. Subsequently we provide experimental details about the production process of our samples.
 
 \begin{figure}
 	\centering
@@ -32,7 +32,7 @@ Our method is based on \citeauthor{frolovMeasurementCurrentPhaseRelation2004}\ci
 \end{figure}
 
 \section{Analysis method}
-Our method requires little to no analysis, which immediately highlights one of the key benefits of this method. The measurements are performed by passing a current through the junction loop $I_t$. Constrained by flux quantization and the CPR of the junction it will distribute the current between the loop and the junction:
+Our method requires little to no analysis, which immediately highlights one of the key benefits of this method. The measurements are performed by passing a current through the junction's loop $I_t$. Constrained by flux quantization and the CPR of the junction it will distribute the current between the loop and the junction:
 \begin{equation}
 	I_t = I_s + I_l
 \end{equation}
@@ -103,16 +103,16 @@ It is important to note that the figure of merit only depends on the device geom
 
 \subsection{Magnetic coupling}
 \label{sec:magnetic-coupling}
-The dc-SQUID is inductively coupled to the junction loop. This means that by measuring $\Phi_s$ we can determine $\Phi_l$ which is then used to determine $\gamma$ and $I_l$. In the experiment a current is passed through the junction loop. Using the mutual inductance we obtain a relation between $I_l$ and $\Phi_s$:
+The dc-SQUID is inductively coupled to the junction's loop. This means that by measuring $\Phi_s$ we can determine $\Phi_l$ which is then used to determine $\gamma$ and $I_l$. In the experiment a current is passed through the junction's loop. Using the mutual inductance we obtain a relation between $I_l$ and $\Phi_s$:
 \begin{equation}
 	I_l = \frac{\Phi_s}{M}
 \end{equation}
-Using the inductance of the junction loop we then also find $\Phi_l$:
+Using the inductance of the junction's loop we then also find $\Phi_l$:
 \begin{equation}
 	\Phi_l = I_lL_l = \frac{L_l}{M}\Phi_s
 \end{equation}
 
-Again the (mutual) inductance can be estimated numerically in SuperScreen.\cite{bishop-vanhornSuperScreenOpensourcePackage2022} The numerical simulation does not take into account the possibility of magnetic lensing.\cite{prigozhin3DSimulationSuperconducting2018} As such the mutual inductance might be larger in practice. This means that the dc-SQUID might react more sensitively to changes in the junction loop.
+Again the (mutual) inductance can be estimated numerically in SuperScreen.\cite{bishop-vanhornSuperScreenOpensourcePackage2022} The numerical simulation does not take into account the possibility of magnetic lensing.\cite{prigozhin3DSimulationSuperconducting2018} As such the mutual inductance might be larger in practice. This means that the dc-SQUID might react more sensitively to changes in the junction's loop.
 
 \section{Sample geometries}
 The diameter of the dc-SQUID is chosen such that the periodicity of the SQUID interference pattern is on the order of a few \unit{\milli\tesla}. This means the effective diameter should be around \qtyrange{1}{2}{\micro\meter}. Furthermore, the width of the loop together with the thickness of the superconductor determine the geometric factor $\tilde{j}$, they are chosen such that the figure of merit is sufficiently small. In practice this means that the width is around \qty{0.3}{\micro\meter} and the thickness around \qty{100}{\nano\meter}. Details on this can be found on a per sample basis later as well as details on the type of junction.

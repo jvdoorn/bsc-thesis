@@ -2220,7 +2220,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.888867in,y=1.956244in,left,base]{\color{textcolor}\rmfamily\fontsize{10.000000}{12.000000}\selectfont junction loop}%
+\pgftext[x=0.888867in,y=1.956244in,left,base]{\color{textcolor}\rmfamily\fontsize{10.000000}{12.000000}\selectfont junction's loop}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
