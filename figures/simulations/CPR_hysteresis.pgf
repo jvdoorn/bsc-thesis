@@ -1814,7 +1814,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.201367in,y=1.298825in,,bottom,rotate=90.000000]{\color{textcolor}\rmfamily\fontsize{12.000000}{14.400000}\selectfont \(\displaystyle \Phi_l\) (\unit{\Phi_0})}%
+\pgftext[x=0.201367in,y=1.298825in,,bottom,rotate=90.000000]{\color{textcolor}\rmfamily\fontsize{12.000000}{14.400000}\selectfont \(\displaystyle \Phi_l\) (\(\displaystyle \Phi_0\))}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfpathrectangle{\pgfqpoint{0.483003in}{0.451911in}}{\pgfqpoint{4.069987in}{1.693829in}}%

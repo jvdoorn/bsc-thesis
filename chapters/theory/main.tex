@@ -3,9 +3,9 @@
 \section{Superconductors}
 The most well known properties of superconductors are their perfect conductivity\footnote{Discovered by H.K. Onnes in 1911.} and diamagnetism\footnote{Discovered by W. Meissner and R. Ochsenfeld in 1933.}. A microscopic description of the effect is given by Bardeen, Cooper and Schieffer (BCS theory) and phenomenologically by the Ginzburg-Landau theory.\cite{tinkhamIntroductionSuperconductivity} This section will highlight the relevant parts of these theories for our research.
 
-BCS theory shows that superconductivity, on the atomic scale, is a result of the creation of paired electrons called Cooper pairs. The Cooper pairs form from an phonon-mediated attractive interaction that overcomes the Coulomb repulsion between two electrons.\cite{bardeenTheorySuperconductivity1957} Electrons have half-integer spin. This means a Cooper pair, consisting of two electrons, has integer spin. As such Cooper pairs are bosons.
+BCS theory shows that superconductivity, on the atomic scale, is a result of the creation of paired electrons called Cooper pairs. Cooper pairs form from an phonon-mediated attractive interaction that overcomes the Coulomb repulsion between two electrons.\cite{bardeenTheorySuperconductivity1957} Electrons have half-integer spin. This means a Cooper pair, consisting of two electrons, has integer spin. As such Cooper pairs are bosons.
 
-Bosons, contrary to fermions, can occupy the same quantum state. Below the critical temperature bosons form a condensate. All Cooper pairs in the condensate occupy the same macroscopic wavefunction\footnote{This is by definition of a `condensate' the case.}.
+Bosons, contrary to fermions, can occupy the same quantum state. Below their critical temperature bosons form a condensate. All Cooper pairs in the condensate occupy the same macroscopic wavefunction\footnote{This is by definition of a `condensate' the case.}.
 \begin{equation}
 	\Psi = \left|\Psi\right| \exp(i\varphi)
 	\label{eqn:GL-wavefunction}
@@ -28,9 +28,9 @@ There are two important length scales for superconductors. We will focus on thes
 	\label{fig:characteristic-lengths}
 \end{figure}
 
-The first is the scale over which the Cooper-pair density can change. This is the so called coherence length, $\xi(T)$. $\xi$ decreases when the temperature increases.\cite{tinkhamIntroductionSuperconductivity}
+The first is the scale over which the Cooper-pair density can change. This is the so called coherence length, $\xi = \xi(T)$. $\xi$ decreases when the temperature increases.\cite{tinkhamIntroductionSuperconductivity}
 
-The second length scale is the penetration depth $\lambda$. It is a measure for the `stiffness' of the phase. A small $\lambda$ means $\varphi$ can change easily. This means larger super currents are possible. The currents can screen magnetic fields which penetrate roughly on the same length scale. The penetration depth in Ginzburg-Landau theory at \qty{0}{\kelvin} is given by\footnote{See \citetitle{tinkhamIntroductionSuperconductivity} equation 4.8.}:
+The second length scale is the penetration depth $\lambda=\lambda(T)$. It is a measure for the `stiffness' of the phase. A small $\lambda$ means $\varphi$ can change easily. This means larger super currents are possible. The currents can screen magnetic fields which penetrate roughly on the same length scale. The penetration depth in Ginzburg-Landau theory at \qty{0}{\kelvin} is given by\footnote{See \citetitle{tinkhamIntroductionSuperconductivity} equation 4.8.}:
 \begin{align}
 	\lambda(0) &= \sqrt{\frac{m^*c^2}{4\pi|\Psi|^2e^{*2}}} \stackrel{\text{SI}}{=} \sqrt{\frac{m_e}{2|\Psi|^2e^2\mu_0}}
 	\label{eqn:london-penetration-depth}
@@ -44,18 +44,18 @@ When two superconductors are separated by a weak link\footnote{This can be an in
 	I_s = I_c \sin(\Delta \varphi)
 	\label{eqn:1st-josephson-relation}
 \end{equation}
-Where $\Delta \varphi$ is the difference in phase between the two condensates as described by Ginzburg-Landau theory (Equation~\ref{eqn:GL-wavefunction}). Furthermore $I_c$ is the critical current which is a junction property. This equation is generally known as the first Josephson equation. The relation between $I_s$ and the phase difference is the current-phase relation. In general this does not have to be purely sinusoidal.\cite{golubovCurrentphaseRelationJosephson2004a}
+Where $\Delta \varphi = \varphi_2 - \varphi_1$ is the difference in phase between the two condensates as described by Ginzburg-Landau theory (Equation~\ref{eqn:GL-wavefunction}). Furthermore $I_c$ is the critical current of the junction. This equation is generally known as the first Josephson equation. The relation between $I_s$ and $\Delta \varphi$ is the CPR. In general this does not have to be purely sinusoidal.\cite{golubovCurrentphaseRelationJosephson2004a}
 
-In the more general case we first define the gauge invariant phase\footnote{See \citetitle{tinkhamIntroductionSuperconductivity} equation 6.11. The equation is valid in both Gaussian and SI units.}:
+In the more general case the gauge invariant phase\footnote{See \citetitle{tinkhamIntroductionSuperconductivity} equation 6.11. The equation is valid in both Gaussian and SI units.} is used:
 \begin{equation}
 	\gamma = \Delta \varphi - \frac{2\pi}{\Phi_0}\int \vec{A} \cdot d\vec{l}
 	\label{eqn:gauge-invariant-phase}
 \end{equation}
-We are required to do so as $\Delta \varphi$ is not uniquely determined for a given physical situation whilst $I_s$ is.\cite{tinkhamIntroductionSuperconductivity} It simply transforms $I_c \sin(\Delta \varphi) \to I_c \sin(\gamma)$. To now generalize our current-phase relation we write:
+We are required to do so as $\Delta \varphi$ is not uniquely determined for a given physical situation whilst $I_s$ is.\cite{tinkhamIntroductionSuperconductivity} It transforms $I_c \sin(\Delta \varphi) \to I_c \sin(\gamma)$. Furthermore we can extend to the case where the CPR is not purely sinusoidal by replacing $\sin(\gamma) \to f(\gamma)$:
 \begin{equation}
 	I_s = I_c f(\gamma)
 \end{equation}
-Here we defined $f(\gamma)$ which is the current-phase relation. In general it has the following properties\cite{golubovCurrentphaseRelationJosephson2004a}:
+$f(\gamma)$ is called the current-phase relation and $I_s$ has a maximum amplitude of $I_c$. In general $f$ has the following properties\cite{golubovCurrentphaseRelationJosephson2004a}:
 \begin{equation}
 	f(\gamma) = f(\gamma + 2\pi) \quad f(\gamma) = -f(-\gamma) \quad f(2\pi n) = f(\pi m) = 0
 \end{equation}
@@ -122,7 +122,7 @@ Ideally $\beta_c$ is minimized and $\beta_L \approx 1$.\cite{rogSQUIDontipMagnet
 \end{figure}
 
 \subsection{dc-SQUID magnetometer readout}
-By passing a bias current $I_B > 2I_c$ through the dc-SQUID a voltage $V_s$ develops. By measuring this voltage and applying an external field you can determine the calibration curve of the dc-SQUID magnetometer. Since the periodicity of the SQI is always $\Phi_0$ this allows you to determine the relation between $V_s$ and $\Phi$. Figure~\ref{fig:example-SQI} shows that there are (small) regions where the dc-SQUID's response is linear. In this region we can define a transfer function\cite{rogSQUIDontipMagneticMicroscopy2022}:
+By passing a bias current $I_B > 2I_c$ through the dc-SQUID a voltage $V_s$ develops. By measuring this voltage and applying an external field you can determine the calibration curve of the dc-SQUID magnetometer. Since the periodicity of the SQI is always $\Phi_0$ this allows you to determine the relation between $V_s$ and $\Phi$. Figure~\ref{fig:example-SQI} shows that there are (small) regions where the dc-SQUID's response is linear. In this region we define the transfer function\cite{rogSQUIDontipMagneticMicroscopy2022}:
 \begin{equation}
 	H = \left. \frac{\partial V_s}{\partial \Phi} \right|_{I_B}
 \end{equation}

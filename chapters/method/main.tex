@@ -10,7 +10,7 @@ Our method is based on \citeauthor{frolovMeasurementCurrentPhaseRelation2004}\ci
 	\begin{circuitikz}
 		% Main loop with single Josephson Junction and an inductor for clarity.
 		\draw (0,0) to [short, *-, i=$I_t$] (2,0)
-		to [josephsonjunction, i=$I_s$, l_=$JJ$] (2, -2)
+		to [josephsonjunction, i=$I_s$] (2, -2)
 		to [short, -*, i=$I_t$] (0, -2);
 		\draw (2,0) to [short, i=$I_l$] (4, 0)
 		to [inductor, l_=$L_l$] (4, -2)
@@ -27,17 +27,17 @@ Our method is based on \citeauthor{frolovMeasurementCurrentPhaseRelation2004}\ci
 		\node[] at (6,-1) {$\Phi_s$};
 	\end{circuitikz}
 
-	\caption{Schematic depiction of the system. The left loop is inductively coupled to the dc-SQUID on the right. This is illustrated by $L_l$ and $L_s$. The junction itself has an inductance $L_{JJ}$. The current $I_t$ is controlled externally. The flux through the two loops is denoted by $\Phi_l$ and $\Phi_s$. The junction under study is part of the left loop. Please note that the four contacts used for the dc-SQUID readout are not shown.}
+	\caption{Schematic depiction of the system. The left loop is inductively coupled to the dc-SQUID on the right. This is illustrated by $L_l$ and $L_s$. The junction under study is part of the left loop and has an inductance $L_{JJ}$. The current $I_t$ is controlled externally. The flux through the two loops is denoted by $\Phi_l$ and $\Phi_s$. Please note that the four contacts used for the dc-SQUID readout are not shown.}
 	\label{fig:schematic-setup}
 \end{figure}
 
 \section{Analysis method}
 \label{sec:analysis-method}
-Our method requires little to no analysis, which immediately highlights one of the key benefits of this method. The measurements are performed by passing a current through the junction's loop $I_t$. Constrained by flux quantization and the CPR of the junction it will distribute the current between the loop and the junction:
+Our method requires little to no analysis, which highlights one of the key benefits of this method. The measurements are performed by passing a current $I_t$ through the junction's loop. Constrained by flux quantisation and the CPR of the junction it will distribute the current between the loop and the junction:
 \begin{equation}
 	I_t = I_s + I_l
 \end{equation}
-This can be seen by applying Ohm's law to the circuit in Figure~\ref{fig:schematic-setup}. By simultaneously measuring $V_s$ we are able to determine $\Phi_s$. Using the dc-SQUID's flux we can determine both $\gamma$ and $\Phi_l$. More details on this can be found in Section~\ref{sec:flux-phase-relation} and Section~\ref{sec:magnetic-coupling}.
+This can be seen by applying Ohm's law to the circuit in Figure~\ref{fig:schematic-setup}. By simultaneously measuring $V_s$ it is possible to determine $\Phi_s \propto \Phi_l \propto \gamma$. More details on this can be found in Section~\ref{sec:flux-phase-relation} and Section~\ref{sec:magnetic-coupling}.
 \begin{equation}
 	I_l = \frac{\Phi_s}{M} \qquad \Phi_l = \frac{L_l}{M}\Phi_s
 \end{equation}
@@ -116,7 +116,7 @@ Using the inductance of the junction's loop we then also find $\Phi_l$:
 Again the (mutual) inductance can be estimated numerically in SuperScreen.\cite{bishop-vanhornSuperScreenOpensourcePackage2022} The numerical simulation does not take into account the possibility of magnetic lensing.\cite{prigozhin3DSimulationSuperconducting2018} As such the mutual inductance might be larger in practice. This means that the dc-SQUID might react more sensitively to changes in the junction's loop.
 
 \section{Sample geometries}
-The diameter of the dc-SQUID is chosen such that the periodicity of the SQUID interference pattern is on the order of a few \unit{\milli\tesla}. This means the effective diameter should be around \qtyrange{1}{2}{\micro\meter}. Furthermore, the width of the loop together with the thickness of the superconductor determine the geometric factor $\tilde{j}$, they are chosen such that the figure of merit is sufficiently small. In practice this means that the width is around \qty{0.3}{\micro\meter} and the thickness around \qty{100}{\nano\meter}. Details on this can be found on a per sample basis later as well as details on the type of junction.
+The diameter of the dc-SQUID is chosen such that the periodicity of the SQUID interference pattern is on the order of a few \unit{\milli\tesla}. This means the effective diameter should be around \qtyrange{1}{2}{\micro\meter}. Furthermore, the width of the loop together with the thickness of the superconductor determine the geometric factor $\tilde{j}$, they are chosen such that the figure of merit is sufficiently small. In practice this means that the width is around \qty{0.3}{\micro\meter} and the thickness around \qty{100}{\nano\meter}. Details on this can be found on a per sample basis in Chapter~\ref{chapter:samples}.
 
 \section{Sample fabrication}
 \label{sec:method-sample-fabrication}
