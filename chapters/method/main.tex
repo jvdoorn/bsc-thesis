@@ -48,12 +48,12 @@ Arguments for the proportionality between $\gamma$ and $\Phi_l$ are provided in 
 \begin{equation}
 	I_s = I_t - I_l = I_t - \frac{\Phi_s}{M}
 \end{equation}
-The value for $L_l$ can be determined numerically. However, as this might not match the true value it is also possible to extract $L_l$ from the data by exploiting the fact that the current-phase relation must be $2\pi$ periodic, see Section~\ref{sec:josephson-effect}. Similarly the value for the mutual inductance can be measured indirectly by determining the linear trend we see between $\Phi_s$ and $I_t$. Figure~\ref{fig:sinusoidal-CPR-prediction} shows an example of what the data looks like for a perfectly sinusoidal CPR. 
+The value for $L_l$ can be determined numerically by determining the static magnetic response of the superconducting rings. For this purpose \texttt{SuperScreen} was used. For more details see \cite{bishop-vanhornSuperScreenOpensourcePackage2022}. The numerical value might not match the true value, but is also possible to extract $L_l$ from the data by exploiting the fact that the current-phase relation must be $2\pi$ periodic, see Section~\ref{sec:josephson-effect}. Similarly the value for the mutual inductance can be measured indirectly by determining the linear trend we see between $\Phi_s$ and $I_t$. Figure~\ref{fig:sinusoidal-CPR-prediction} shows an example of what the data looks like for a perfectly sinusoidal CPR. The parameters are given in the caption of the figure. 
 
 \begin{figure}[ht!]
 	\centering
 	\input{figures/simulations/CPR_sinusoidal_prediction.pgf}
-	\caption{Analytical example showing the super current, loop and total current over loop flux. We used a purely sinusoidal current-phase relation with $I_c=\qty{300}{\micro\ampere}$ and a loop inductance of \qty{1}{\pico\ampere}.}
+	\caption{Analytical example showing the super current, loop and total current over loop flux. We used a purely sinusoidal current-phase relation with $I_c=\qty{300}{\micro\ampere}$ and a loop inductance of \qty{1}{\pico\henry} such that $I_c L_l / \Phi_0 \approx 0.05$.}
 	\label{fig:sinusoidal-CPR-prediction}
 \end{figure}
 
@@ -119,24 +119,24 @@ The diameter of the dc-SQUID is chosen such that the periodicity of the SQUID in
 
 \section{Sample fabrication}
 \label{sec:method-sample-fabrication}
-We use \ce{Si} wafer of approximately \qty{1}{\square\centi\meter}. The wafer is cleaned by dusting it off using a pressurised nitrogen gas and rinsed for \qty{30}{\minute} in acetone in an ultrasonic cleaner. To get rid of acetone residue we rinse it using IPA for \qty{5}{\minute} in the ultrasonic cleaner. We spin coat the wafer with a layer of PMMA 600K followed by a layer of PMMA 950K. After this we pattern the sample using electron-beam lithography. Due to the double PMMA layers, development leaves an undercut.
+We use a \ce{Si} substrate of approximately \qty{1}{\square\centi\meter}. The substrate is cleaned by dusting it off using a pressurised nitrogen gas and rinsed for \qty{30}{\minute} in acetone in an ultrasonic cleaner. To get rid of acetone residue we rinse it using IPA for \qty{5}{\minute} in the ultrasonic cleaner. We spincoat the substrate with a layer of PMMA 600K followed by a layer of PMMA 950K. After this we pattern the sample using electron-beam lithography. Due to the double PMMA layers, development leaves an undercut.
 
-After this process we use dc-sputtering to deposit the required normal metal and superconductor layers and cap it using \qty{7}{\nano\meter} of \ce{Au}. The \ce{Nb} is sputtered in a ultra-high vacuum magnetron sputtering setup. It has a base pressure of \qty{\leq1E-9}{\milli\bar} and a argon deposition pressure of \qty{4e-3}{\milli\bar}. Lift-off is done using acetone. A final rinsing is done using IPA to remove any residues. Using this process we create all the coarse structures. These include the contact pads, leads to the contact pad and a central square in which we will make our fine geometries. Figure~\ref{fig:lithography} schematically shows the lithography and sputtering process.
+After this process we use dc-sputtering to deposit a \qty{90}{\nano\meter} layer of \ce{Nb} and cap it using \qty{7}{\nano\meter} of \ce{Au}. The thickness of the \ce{Nb} is based on estimations for our figure of merit. The \ce{Nb} is sputtered in a ultra-high vacuum magnetron sputtering setup. It has a base pressure of \qty{\leq1E-9}{\milli\bar} and a argon deposition pressure of \qty{4e-3}{\milli\bar}. Lift-off is done using acetone. A final rinsing is done using IPA to remove any residues. Using this process we create all the coarse structures. These include the contact pads, leads to the contact pad and a central square in which we will make our fine geometries. Figure~\ref{fig:lithography} schematically shows the lithography and sputtering process.
 
 \begin{figure}[ht!]
 	\centering
 	\def\svgwidth{\textwidth}
 	\import{figures}{lithography.pdf_tex}
-	\caption{Schematic depiction of the lithography and sputtering process. \textbf{a)} We start with a \ce{Si} wafer (dark grey) with a layer of PMMA 600K (\qty{0.4}{\micro\meter}) and on top of that PMMA 950K (\qty{0.4}{\micro\meter}) (yellow) and expose it to an electron beam. \textbf{b)} After exposure, we can remove the exposed regions using MIBK / IPA (1:3). \textbf{c)} We sputter the normal metal and superconductor layers (light grey) on top of the sample. \textbf{d)} In the final step we use acetone for lift-off leaving us with the coarse structures on top of the wafer. The figure is not to scale.}
+	\caption{Schematic depiction of the lithography and sputtering process. \textbf{a)} We start with a \ce{Si} substrate (dark grey) with a layer of PMMA 600K (\qty{0.4}{\micro\meter}) and on top of that PMMA 950K (\qty{0.4}{\micro\meter}) (yellow) and expose it to an electron beam. \textbf{b)} After exposure, we can remove the exposed regions using MIBK / IPA (1:3). \textbf{c)} We sputter the normal metal and superconductor layers (light grey) on top of the sample. \textbf{d)} In the final step we use acetone for lift-off leaving us with the coarse structures on top of the substrate. The figure is not to scale.}
 	\label{fig:lithography}
 \end{figure}
 
-The finer geometries in the central square are created using focussed ion beam (FIB). They are used to cut away the \ce{Nb} and \ce{Au}, leaving just the wafer. The advantage of using the FIB is less PMMA poisoning in our \ce{Nb}. Figure~\ref{fig:FIB} schematically shows the FIB process.
+The finer geometries in the central square are created using focussed ion beam (FIB). They are used to cut away the \ce{Nb} and \ce{Au}, leaving just the substrate. The advantage of using the FIB is less PMMA poisoning in our \ce{Nb}. Figure~\ref{fig:FIB} schematically shows the FIB process.
 
 \begin{figure}[ht!]
 	\centering
 	\def\svgwidth{0.5\textwidth}
 	\import{figures}{FIB.pdf_tex}
-	\caption{Schematic depiction of the FIB. \textbf{a)} We start with a \ce{Si} wafer (dark grey) with layer of \ce{Nb} and \ce{Au} on top. This was deposited using sputtering. We use a beam of \ce{Ga+} to etch away small pieces of material. \textbf{b)} The regions that have been exposed to the \ce{Ga+} beam are gone. The figure is not to scale.}
+	\caption{Schematic depiction of the FIB. \textbf{a)} We start with a \ce{Si} substrate (dark grey) with layer of \ce{Nb} and \ce{Au} on top. This was deposited using sputtering. We use a beam of \ce{Ga+} to etch away small pieces of material. \textbf{b)} The regions that have been exposed to the \ce{Ga+} beam are gone. The figure is not to scale.}
 	\label{fig:FIB}
 \end{figure}

@@ -75,10 +75,7 @@ It is clear from Equation~\ref{eqn:1st-josephson-relation} that CPRs do not desc
 \begin{equation}
 	V_s = \frac{\Phi_0}{2\pi} \frac{\partial (\Delta \varphi)}{\partial t}
 \end{equation}
-When two junctions are used parallel to each other in a loop (Figure~\ref{fig:schematic-dc-SQUID}) then the dynamic regime starts at $2I_c$. This is assuming the junctions are symmetric. The current in a superconductor is dependent on $\vec{A}$ (Equation~\ref{eqn:super-current}). That means that we can tune the phase by applying a magnetic field. The maximum current we can pass through the parallel junctions is given by\cite{tinkhamIntroductionSuperconductivity,clarkeSQUIDHandbook2004}:
-\begin{equation}
-	I_{\text{max}} = 2I_c \left| \cos(\pi \frac{\Phi}{\Phi_0}) \right|
-\end{equation}
+
 \begin{figure}
 	\centering
 	\begin{circuitikz}
@@ -102,15 +99,19 @@ When two junctions are used parallel to each other in a loop (Figure~\ref{fig:sc
 	\label{fig:schematic-dc-SQUID}
 \end{figure}
 
-This behaviour gives rise to the `dc-SQUID interference pattern' (SQI). Such a pattern is shown in Figure~\ref{fig:example-SQI}. Most importantly, this pattern is exactly $\Phi_0$ periodic independent of any device geometries. As such it is very easy to calibrate. Two parameters are important for the sensitivity and hysteresis\cite{clarkeSQUIDHandbook2004}:
+When two junctions are used parallel to each other in a loop (Figure~\ref{fig:schematic-dc-SQUID}) then the dynamic regime starts at $2I_c$. This is assuming the junctions are symmetric. The current in a superconductor is dependent on $\vec{A}$ (Equation~\ref{eqn:super-current}). That means that we can tune the phase by applying a magnetic field. The maximum current we can pass through the parallel junctions is given by\cite{tinkhamIntroductionSuperconductivity,clarkeSQUIDHandbook2004}:
 \begin{equation}
-	\beta_c = \frac{2\pi}{\Phi_0}I_cR^2C
-	\tag{Stewart-McCumber parameter}
+	I_{\text{max}} = 2I_c \left| \cos\left(\pi \frac{\Phi_s}{\Phi_0}\right) \right|
 \end{equation}
-\begin{equation}
-	\beta_L = \frac{2LI_0}{\Phi_0}
+
+With $\Phi_s$ the magnetic flux enclosed by the loop. This behaviour gives rise to the `dc-SQUID interference pattern' (SQI). Such a pattern is shown in Figure~\ref{fig:example-SQI}. Most importantly, this pattern is exactly $\Phi_0$ periodic independent of any device geometries. As such it is very easy to calibrate. Two parameters are important for the sensitivity and hysteresis\cite{clarkeSQUIDHandbook2004}:
+
+\begin{align}
+	\beta_c &= \frac{2\pi}{\Phi_0}I_cR^2C
+	\tag{Stewart-McCumber parameter} \\
+	\beta_L &= \frac{2LI_0}{\Phi_0}
 	\tag{screening parameter}
-\end{equation}
+\end{align}
 Ideally $\beta_c$ is minimized and $\beta_L \approx 1$.\cite{rogSQUIDontipMagneticMicroscopy2022}
 
 \begin{figure}[ht!]
@@ -121,7 +122,7 @@ Ideally $\beta_c$ is minimized and $\beta_L \approx 1$.\cite{rogSQUIDontipMagnet
 \end{figure}
 
 \subsection{dc-SQUID magnetometer readout}
-By passing a bias current $I_B > 2I_c$ through the dc-SQUID a voltage $V_s$ develops. By measuring this voltage and applying an external field you can determine the SQI. Since the periodicity of the SQI is always $\Phi_0$ this allows you to determine the relation between $V_s$ and $\Phi$. Figure~\ref{fig:example-SQI} shows that there are (small) regions where the dc-SQUID's response is linear. In this region we can define a transfer function\cite{rogSQUIDontipMagneticMicroscopy2022}:
+By passing a bias current $I_B > 2I_c$ through the dc-SQUID a voltage $V_s$ develops. By measuring this voltage and applying an external field you can determine the calibration curve of the dc-SQUID magnetometer. Since the periodicity of the SQI is always $\Phi_0$ this allows you to determine the relation between $V_s$ and $\Phi$. Figure~\ref{fig:example-SQI} shows that there are (small) regions where the dc-SQUID's response is linear. In this region we can define a transfer function\cite{rogSQUIDontipMagneticMicroscopy2022}:
 \begin{equation}
 	H = \left. \frac{\partial V_s}{\partial \Phi} \right|_{I_B}
 \end{equation}
