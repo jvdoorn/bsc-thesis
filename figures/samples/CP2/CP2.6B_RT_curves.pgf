@@ -2176,10 +2176,10 @@
 \pgfsetstrokeopacity{0.800000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{0.472201in}{1.674344in}}%
-\pgfpathlineto{\pgfqpoint{1.653475in}{1.674344in}}%
-\pgfpathquadraticcurveto{\pgfqpoint{1.681253in}{1.674344in}}{\pgfqpoint{1.681253in}{1.702121in}}%
-\pgfpathlineto{\pgfqpoint{1.681253in}{2.081244in}}%
-\pgfpathquadraticcurveto{\pgfqpoint{1.681253in}{2.109022in}}{\pgfqpoint{1.653475in}{2.109022in}}%
+\pgfpathlineto{\pgfqpoint{1.746113in}{1.674344in}}%
+\pgfpathquadraticcurveto{\pgfqpoint{1.773891in}{1.674344in}}{\pgfqpoint{1.773891in}{1.702121in}}%
+\pgfpathlineto{\pgfqpoint{1.773891in}{2.081244in}}%
+\pgfpathquadraticcurveto{\pgfqpoint{1.773891in}{2.109022in}}{\pgfqpoint{1.746113in}{2.109022in}}%
 \pgfpathlineto{\pgfqpoint{0.472201in}{2.109022in}}%
 \pgfpathquadraticcurveto{\pgfqpoint{0.444423in}{2.109022in}}{\pgfqpoint{0.444423in}{2.081244in}}%
 \pgfpathlineto{\pgfqpoint{0.444423in}{1.702121in}}%
