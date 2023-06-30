@@ -49,7 +49,7 @@ Arguments for the proportionality between $\gamma$ and $\Phi_l$ are provided in 
 \begin{equation}
 	I_s = I_t - I_l = I_t - \frac{\Phi_s}{M}
 \end{equation}
-The value for $L_l$ can be determined numerically by determining the static magnetic response of the superconducting rings. For this purpose \texttt{SuperScreen} was used. For more details see \cite{bishop-vanhornSuperScreenOpensourcePackage2022}. The numerical value might not match the true value, but is also possible to extract $L_l$ from the data by exploiting the fact that the current-phase relation must be $2\pi$ periodic, see Section~\ref{sec:josephson-effect}. Similarly the value for the mutual inductance can be measured indirectly by determining the linear trend we see between $\Phi_s$ and $I_t$. Figure~\ref{fig:sinusoidal-CPR-prediction} shows an example of what the data looks like for a perfectly sinusoidal CPR. The parameters are given in the caption of the figure. 
+The value for $L_l$ and $M$ can be determined numerically by using the static magnetic response of the superconducting rings. For this purpose the \texttt{Python} library \texttt{SuperScreen} was used. For more details see \cite{bishop-vanhornSuperScreenOpensourcePackage2022}. The numerical value might not match the true value, but is also possible to extract $L_l$ from the data by exploiting the fact that the current-phase relation must be $2\pi$ periodic, see Section~\ref{sec:josephson-effect}. Similarly the value for the mutual inductance can be measured indirectly by determining the linear trend we see between $\Phi_s$ and $I_t$. Figure~\ref{fig:sinusoidal-CPR-prediction} shows an example of what the data looks like for a perfectly sinusoidal CPR. The parameters are given in the caption of the figure. 
 
 \begin{figure}[ht!]
 	\centering
@@ -74,16 +74,17 @@ Where $L_{JJ}$ and $L_l$ are the inductances of the Josephson junction and loop 
 	\Phi_l = I_lL_l
 \end{equation}
 
-The steep slopes in Figure~\ref{fig:CP2.6B_super_current_over_phase} might be explained by hysteresis. The loop containing the junction under study can be seen as an rf-SQUID.\cite{clarkeSQUIDHandbook2004} The screening parameter\footnote{Normally the screening parameter refers to $\beta_l = 2LI_c/\Phi_0$. However, this is for a `normal' dc-SQUID and not an rf-SQUID.},
+\subsection{Avoiding multi-valued measurements}
+The linear background can cause multi-valued measurements. To avoid this, the screening parameter\footnote{Normally the screening parameter refers to $\beta_l = 2LI_c/\Phi_0$. However, this is for a `normal' dc-SQUID and not an rf-SQUID. An rf-SQUID is a superconducting ring with a single Josephson junction.}:
 \begin{equation}
 	\beta_{\text{rf}} = \frac{2\pi I_c L_l}{\Phi_0}
 \end{equation}
-where $I_c$ refers to the critical current of the junction, must be less than one for a non-multivalued $I_s\Phi_l$-curve\cite{clarkeSQUIDHandbook2004,frolovMeasurementCurrentPhaseRelation2004}. This gives a maximum value for the critical current, $I_{c,\text{max}}$ given $L_l$. However, based on an numerical calculation, it appears that for an SNS-junction $\beta_{\text{rf}} < 0.9$ is a more trustworthy criterium. This can be seen in Figure~\ref{fig:CPR-hysteresis}. This is because the CPR is not perfectly sinusoidal\cite{vermeerSTMbasedScanningSQUID2021,likharevSuperconductingWeakLinks1979}. A prediction has been plotted in Figure~\ref{fig:CP3.5A-analytical-prediction}. Here we have used twice the estimated value for the inductance because in the previous sample we noted that the experimental value was twice the simulated value.
+should be $\leq 1$\cite{clarkeSQUIDHandbook2004,frolovMeasurementCurrentPhaseRelation2004}. This gives a maximum value for the critical current, $I_{c,\text{max}}$ given $L_l$. Based on an numerical calculation, it appears that for superconductor-normal-supercoductor (SNS) junctions $\beta_{\text{rf}} < 0.9$ is a more trustworthy criterium. This can be seen in Figure~\ref{fig:CPR-hysteresis}. This is because the CPR is not perfectly sinusoidal\cite{vermeerSTMbasedScanningSQUID2021,likharevSuperconductingWeakLinks1979}.  A prediction for an SNS junction has been plotted in Figure~\ref{fig:CP3.5A-analytical-prediction}.
 
 \begin{figure}[ht!]
 	\centering
 	\input{figures/simulations/CPR_prediction.pgf}
-	\caption{Expectation values for the CPR of an SNS junction. The calculations where done for $I_c=\qty{100}{\micro\ampere}$, $L_l=2 \cdot \qty{0.8}{\pico\henry}$ and $\Delta(T)$ estimated at \qty{1}{\milli\electronvolt}. We note that the current through the loop creates a linear background that gets modulated by the CPR of the junction. The calculation is done for a short ballistic junction using Equation~2.13 in \cite{vermeerSTMbasedScanningSQUID2021}.}
+	\caption{Expectation values for the CPR of an SNS junction. The calculations were done for $I_c=\qty{100}{\micro\ampere}$, $L_l=2 \cdot \qty{0.8}{\pico\henry}$ and $\Delta(T)$ estimated at \qty{1}{\milli\electronvolt}. This means $\beta_{rf} \approx 0.5$. We note that the current through the loop creates a linear background that gets modulated by the CPR of the junction. The calculation is done for a short ballistic junction using Equation~2.13 in \cite{vermeerSTMbasedScanningSQUID2021}.}
 	\label{fig:CP3.5A-analytical-prediction}
 \end{figure}
 
@@ -120,7 +121,7 @@ Here $r$ is the radius (half the diameter) and $\tilde{j} = \tilde{j}(d, w, \lam
 	\label{eqn:figure-of-merit}
 \end{equation}
 
-It is important to note that the figure of merit only depends on the device geometry and is independent of experimental parameters such as $I_l$. The inductance of the loop can be estimated numerically using SuperScreen.\cite{bishop-vanhornSuperScreenOpensourcePackage2022}
+It is important to note that the figure of merit only depends on the device geometry and is independent of experimental parameters such as $I_l$.
 
 \subsection{Magnetic coupling}
 \label{sec:magnetic-coupling}
@@ -133,9 +134,9 @@ Using the inductance of the junction's loop we then also find $\Phi_l$:
 	\Phi_l = I_lL_l = \frac{L_l}{M}\Phi_s
 \end{equation}
 
-Again the (mutual) inductance can be estimated numerically in SuperScreen.\cite{bishop-vanhornSuperScreenOpensourcePackage2022} The numerical simulation does not take into account the possibility of magnetic lensing.\cite{prigozhin3DSimulationSuperconducting2018} As such the mutual inductance might be larger in practice. This means that the dc-SQUID might react more sensitively to changes in the junction's loop.
+Our numerical simulation to estimate $M$ does not take into account the possibility of magnetic lensing.\cite{prigozhin3DSimulationSuperconducting2018} As such the mutual inductance might be larger in practice. This means that the dc-SQUID might react more sensitively to changes in the junction's loop.
 
-Having to fit the mutual and loop inductance is one of the weaknesses of our method. In the linear regime of the dc-SQUID extracting the mutual inductance should be trivial. The loop inductance however is determined by the periodicity in the data. Whilst possible to compare the loop inductance to a simulated value, a factor two difference already changes a $2\pi$-periodic CPR to a $4\pi$-periodic current-phase relation. To overcome this, a reference loop without any junction could be added. Alternatively, since the loop inductance also in part determines the amplitude of the junctions critical current, it is possible to later cut the junction's loop and measure the critical current of just the junction.
+Having to fit the mutual and loop inductance is one of the weaknesses of our method. In the linear regime of the dc-SQUID extracting the mutual inductance should be trivial. The loop inductance however is determined by the periodicity in the data. Whilst possible to compare the loop inductance to a simulated value, a factor two difference already changes a $2\pi$-periodic CPR to a $4\pi$-periodic current-phase relation. To overcome this, a reference loop without any junction could be added. Alternatively, since the loop inductance also relates to the amplitude of the junction's critical current, it is possible to later cut the junction's loop and measure the critical current of just the junction using a 4-point measurement.
 
 \section{Sample geometries}
 The diameter of the dc-SQUID is chosen such that the periodicity of the SQUID interference pattern is on the order of a few \unit{\milli\tesla}. This means the effective diameter should be around \qtyrange{1}{2}{\micro\meter}. Furthermore, the width of the loop together with the thickness of the superconductor determine the geometric factor $\tilde{j}$, they are chosen such that the figure of merit is sufficiently small. In practice this means that the width is around \qty{0.3}{\micro\meter} and the thickness around \qty{100}{\nano\meter}. Details on this can be found on a per sample basis in Chapter~\ref{chapter:samples}.

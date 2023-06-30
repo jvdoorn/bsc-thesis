@@ -1,11 +1,19 @@
 % !TEX root = ../../../thesis.tex
 Figure~\ref{fig:CP2.6B_RT_curves} shows the RT-curves for the junction's loop and dc-SQUID. The critical temperature for the bulk of the sample is lower (\qty{7}{\kelvin}) compared to the first sample (\qty{8}{\kelvin}). This can be explained by the proximity effect due to the interface between the \ce{Cu} and \ce{Nb}.\cite{cirilloSuperconductingProximityEffect2005} The longer `tail' is characteristic for SNS junctions due to the proximity effect.
 
-\begin{figure}[ht!]
-	\centering
+\begin{figure}
+  \begin{minipage}[c]{0.5\textwidth}
+    \centering
 	\input{figures/samples/CP2/CP2.6B_RT_curves.pgf}
-	\caption{Temperature dependences of the 4-point resistance measured over the dc-SQUID and the junction's loop. We note that just before the superconducting transition that there is a small bump in resistance of the dc-SQUID and a long `tail' before reaching \qty{0}{\ohm}. The transition of the junction's loop is much sharper in comparison.}
-	\label{fig:CP2.6B_RT_curves}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[c]{0.4\textwidth}
+    \caption{
+       Temperature dependences of the 4-point resistance measured over the dc-SQUID and the junction's loop. We note that just before the superconducting transition that there is a small bump in resistance of the dc-SQUID and a long `tail' before reaching \qty{0}{\ohm}. The transition of the junction's loop is much sharper in comparison.
+    }
+    \vfill
+    \label{fig:CP2.6B_RT_curves}
+  \end{minipage}
 \end{figure}
 
 Figure~\ref{fig:CP2.6B_SQUID_calibration_curves} shows the interference pattern of the dc-SQUID for several bias currents. The periodicity in the the data is roughly \qty{1}{\milli\tesla}. This matches the expected period. Furthermore, the sensitivity in the linear regime increased by a factor 10 compared to the previous sample. The comparison is a bit unfair as the bias current was 3 times as large. In the previous sample however, such a large bias current was simply not possible. There are two issues with this result. First off, the period of the pattern does not seem to be constant. Secondly, the offset (in the field axis) varies a lot between curves whilst they should all be zero. Both these issues can be explained by vortices getting trapped in the magnet or sample. 
