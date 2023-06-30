@@ -17,7 +17,7 @@ Figure~\ref{fig:CP2.6B_SQUID_calibration_curves} shows the interference pattern 
 	\label{fig:CP2.6B_SQUID_calibration_curves}
 \end{figure}
 
-During an attempt to measure the CPR, the IV-curves showed anomalous spikes. Initially we attributed this to vortex trapping. However, upon closer inspection these jumps are highly correlated with the actual magnetic field produced by the magnet. Figure~\ref{fig:CP2.6B_PPMS_magnetic_field_drift} shows a clear correlation between the dc-SQUID voltage and the magnetic field as measured by the magnet. Even though a constant setpoint of \qty{0}{\milli\tesla} was used, there is quite some drift. This is because the magnet does not have a persistent mode but instead uses a feedback loop. This feedback loop has a dead band of \qty{50}{\micro\tesla}. Changing the setpoint of the field or the rate of change did not have a significant effect.
+During an attempt to measure the CPR, the IV-curves showed anomalous spikes. Initially we attributed this to vortex trapping. However, upon closer inspection these jumps are exactly correlated with the actual magnetic field reported by the magnet controller. Figure~\ref{fig:CP2.6B_PPMS_magnetic_field_drift} shows a clear overlap between the dc-SQUID voltage and the magnetic field as measured by the magnet. Even though a constant setpoint of \qty{0}{\milli\tesla} was used, there is quite some drift. This is because the magnet does not have a persistent mode but instead uses a feedback loop to keep a constant field. This feedback loop has a dead band of \qty{50}{\micro\tesla}. Changing the setpoint of the field or the rate of change did not have a significant effect.
 
 \begin{figure}[ht!]
 	\centering
